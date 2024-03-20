@@ -13,6 +13,8 @@ public enum SetType {
     SUPPLEMENTAL_MODERN_LEGAL("Modern Legal Supplemental"),
     PROMOTIONAL("Promotional"),
     JOKESET("Joke Set"),
+
+    CANDOUR("Candour"),
     CUSTOM_SET("Unofficial Set");
 
     private final String text;
@@ -37,6 +39,10 @@ public enum SetType {
     public boolean isEternalLegal() {
         // any official sets except un-sets
         return this != SetType.CUSTOM_SET && this != SetType.JOKESET && this != SetType.MAGIC_ARENA;
+    }
+
+    public boolean isCandourLegal() {
+        return this == SetType.CANDOUR;
     }
 
     public boolean isStandardLegal() {

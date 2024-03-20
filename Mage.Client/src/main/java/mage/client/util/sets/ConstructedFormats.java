@@ -29,6 +29,8 @@ public final class ConstructedFormats {
     public static final String JOKE = "- Joke Sets";
     public static final String CUSTOM = "- Custom";
     public static final String XMAGE_SETS = "- XMAGE"; // inner sets like XMAGE (special tokens)
+
+    public static final String CANDOUR = "- Candour";
     public static final Standard STANDARD_CARDS = new Standard();
 
     // Attention -Month is 0 Based so Feb = 1 for example. //
@@ -105,6 +107,7 @@ public final class ConstructedFormats {
         underlyingSetCodesPerFormat.put(JOKE, new ArrayList<>());
         underlyingSetCodesPerFormat.put(CUSTOM, new ArrayList<>());
         underlyingSetCodesPerFormat.put(XMAGE_SETS, new ArrayList<>());
+        underlyingSetCodesPerFormat.put(CANDOUR, new ArrayList<>());
         final Map<String, ExpansionInfo> expansionInfo = new HashMap<>();
         formats.clear(); // prevent NPE on sorting if this is not the first try
 
@@ -164,6 +167,11 @@ public final class ConstructedFormats {
             // pioneer
             if (set.getType().isStandardLegal() && set.getReleaseDate().after(pioneerDate)) {
                 underlyingSetCodesPerFormat.get(PIONEER).add(set.getCode());
+            }
+
+            //candour
+            if (set.getType().isCandourLegal()) {
+                underlyingSetCodesPerFormat.get(CANDOUR).add(set.getCode());
             }
 
             // modern
