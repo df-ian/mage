@@ -41,7 +41,7 @@ public final class BloodlineSkystalker extends CardImpl {
 
         BeginningOfEndStepTriggeredAbility ability = new BeginningOfEndStepTriggeredAbility(new DrawCardSourceControllerEffect(1), TargetController.SOURCE_CONTROLLER, false);
         ability.addEffect(new LoseLifeSourceControllerEffect(3).concatBy("and"));
-        ability.setTriggerPhrase("At the beginning of your end step,");
+        ability.setTriggerPhrase("At the beginning of your end step, ");
         this.addAbility(ability);
 
         this.addAbility(new SimpleActivatedAbility(new GainAbilitySourceEffect(HasteAbility.getInstance(), Duration.EndOfTurn), new SacrificeTargetCost(StaticFilters.FILTER_PERMANENT_CREATURE)));

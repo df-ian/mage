@@ -34,7 +34,7 @@ public final class AdolescentWarRhino extends CardImpl {
         // When Siege Rhino enters the battlefield, each opponent loses 3 life and you gain 3 life.
         Ability ability = new EntersBattlefieldTriggeredAbility(new LoseLifeOpponentsEffect(2));
         Effect effect = new GainLifeEffect(2);
-        effect.setText("and you gain 3 life");
+        effect.setText("and you gain 2 life");
         ability.addEffect(effect);
         this.addAbility(ability);
     }

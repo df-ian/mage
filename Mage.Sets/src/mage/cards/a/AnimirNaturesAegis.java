@@ -34,7 +34,7 @@ public final class AnimirNaturesAegis extends CardImpl {
         this.power = new MageInt(1);
         this.toughness = new MageInt(3);
 
-        Ability ability = new EntersBattlefieldOrAttacksSourceTriggeredAbility(new GainLifeEffect(3));
+        Ability ability = new EntersBattlefieldTriggeredAbility(new GainLifeEffect(3));
         ability.addEffect(new DrawCardSourceControllerEffect(1).concatBy("and"));
         this.addAbility(ability);
 

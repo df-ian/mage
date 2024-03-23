@@ -29,7 +29,7 @@ import java.util.UUID;
 public final class UniversalPredation extends CardImpl {
 
     public UniversalPredation(UUID ownerId, CardSetInfo setInfo) {
-        super(ownerId, setInfo, new CardType[]{CardType.ARTIFACT}, "{1}{G}");
+        super(ownerId, setInfo, new CardType[]{CardType.ENCHANTMENT}, "{1}{G}");
 
         // Creatures you control get +1/+0 and have haste.
         Ability ability = new SimpleStaticAbility(new BoostControlledEffect(

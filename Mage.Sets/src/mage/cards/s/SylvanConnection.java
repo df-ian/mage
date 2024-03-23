@@ -1,10 +1,7 @@
 package mage.cards.s;
 
 import mage.abilities.Ability;
-import mage.abilities.common.BecomesClassLevelTriggeredAbility;
-import mage.abilities.common.DrawCardControllerTriggeredAbility;
-import mage.abilities.common.EntersBattlefieldTriggeredAbility;
-import mage.abilities.common.SimpleStaticAbility;
+import mage.abilities.common.*;
 import mage.abilities.effects.common.DrawCardSourceControllerEffect;
 import mage.abilities.effects.common.continuous.GainClassAbilitySourceEffect;
 import mage.abilities.effects.common.continuous.MaximumHandSizeControllerEffect;
@@ -16,6 +13,7 @@ import mage.cards.CardSetInfo;
 import mage.constants.CardType;
 import mage.constants.Duration;
 import mage.constants.SubType;
+import mage.constants.Zone;
 import mage.counters.CounterType;
 import mage.target.common.TargetControlledCreaturePermanent;
 
@@ -27,10 +25,10 @@ import java.util.UUID;
 public final class SylvanConnection extends CardImpl {
 
     public SylvanConnection(UUID ownerId, CardSetInfo setInfo) {
-        super(ownerId, setInfo, new CardType[]{CardType.ENCHANTMENT}, "{G}");
+        super(ownerId, setInfo, new CardType[]{CardType.ENCHANTMENT}, "{G}{U}");
         this.addAbility(new EntersBattlefieldTriggeredAbility(new DrawCardSourceControllerEffect(1)));
         // Whenever you draw a card, put a +1/+1 counter on target creature you control.
-        Ability ability = new DrawCardControllerTriggeredAbility(
+        Ability ability = new YouDrawCardExceptFirstCardDrawStepTriggeredAbility(Zone.BATTLEFIELD,
                 new AddCountersTargetEffect(CounterType.P1P1.createInstance()), false
         );
         ability.addTarget(new TargetControlledCreaturePermanent());

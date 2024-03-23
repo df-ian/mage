@@ -29,7 +29,7 @@ public final class SquanderedHopes extends CardImpl {
     }
 
     public SquanderedHopes(UUID ownerId, CardSetInfo setInfo) {
-        super(ownerId, setInfo, new CardType[]{CardType.INSTANT}, "{1}{B}");
+        super(ownerId, setInfo, new CardType[]{CardType.INSTANT}, "{B}");
 
         // Destroy target creature or planeswalker with converted mana cost 3 or less.
         this.getSpellAbility().addEffect(new DestroyTargetEffect());

@@ -1544,7 +1544,6 @@ public final class CardUtil {
             Costs<Cost> additionalCostsNormalCard = card.getSpellAbility().getCosts();
             player.setCastSourceIdWithAlternateMana(card.getMainCard().getId(), manaCost, additionalCostsNormalCard, MageIdentifier.Default);
         }
-
         // cast it
         player.cast(player.chooseAbilityForCast(card.getMainCard(), game, false),
                 game, false, new ApprovingObject(source, game));

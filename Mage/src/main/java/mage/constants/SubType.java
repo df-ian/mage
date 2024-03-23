@@ -459,6 +459,7 @@ public enum SubType {
     ELLYWICK("Ellywick", SubTypeSet.PlaneswalkerType),
     ELMINSTER("Elminster", SubTypeSet.PlaneswalkerType),
     ELSPETH("Elspeth", SubTypeSet.PlaneswalkerType),
+    ESHUO("Eshuo", SubTypeSet.PlaneswalkerType),
     ESTRID("Estrid", SubTypeSet.PlaneswalkerType),
     FREYALISE("Freyalise", SubTypeSet.PlaneswalkerType),
     GARRUK("Garruk", SubTypeSet.PlaneswalkerType),

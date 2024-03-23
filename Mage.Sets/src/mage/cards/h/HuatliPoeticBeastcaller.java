@@ -27,7 +27,7 @@ import java.util.UUID;
 public final class HuatliPoeticBeastcaller extends CardImpl {
 
     private static final FilterCard filter = new FilterCreatureCard();
-    private static final FilterCreaturePermanent filter2 = new FilterCreaturePermanent();
+    private static final FilterCreaturePermanent filter2 = new FilterCreaturePermanent("creature with power 3 or greater");
 
     static {
         filter.add(new PowerPredicate(ComparisonType.MORE_THAN, 2));

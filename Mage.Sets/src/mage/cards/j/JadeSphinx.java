@@ -29,7 +29,7 @@ import java.util.UUID;
 public final class JadeSphinx extends CardImpl {
 
     public JadeSphinx(UUID ownerId, CardSetInfo setInfo) {
-        super(ownerId, setInfo, new CardType[]{CardType.CREATURE}, "{4}{U}{U}");
+        super(ownerId, setInfo, new CardType[]{CardType.CREATURE}, "{2}{G}{G}");
         this.subtype.add(SubType.SPHINX);
 
         this.power = new MageInt(4);

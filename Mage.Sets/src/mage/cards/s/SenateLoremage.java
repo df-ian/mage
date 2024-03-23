@@ -43,7 +43,7 @@ public final class SenateLoremage extends CardImpl {
 
         ability = new DrawNthCardTriggeredAbility(new TapTargetEffect(), true, 2);
         ability.addTarget(new TargetCreaturePermanent());
-        ability.addEffect(new AddCountersTargetEffect(CounterType.STUN.createInstance(1)).concatBy("and"));
+        ability.addEffect(new AddCountersTargetEffect(CounterType.STUN.createInstance(1)).concatBy("and").setText("put a stun counter on it"));
         this.addAbility(ability);
     }
 

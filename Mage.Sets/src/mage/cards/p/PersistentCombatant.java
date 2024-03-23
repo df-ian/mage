@@ -7,6 +7,8 @@ import mage.abilities.common.EntersBattlefieldTriggeredAbility;
 import mage.abilities.effects.common.DamageTargetEffect;
 import mage.abilities.keyword.EscapeAbility;
 import mage.abilities.keyword.EvokeAbility;
+import mage.abilities.keyword.HasteAbility;
+import mage.abilities.keyword.LifelinkAbility;
 import mage.cards.CardImpl;
 import mage.cards.CardSetInfo;
 import mage.constants.CardType;
@@ -29,6 +31,9 @@ public final class PersistentCombatant extends CardImpl {
 
         this.power = new MageInt(3);
         this.toughness = new MageInt(2);
+
+        this.addAbility(LifelinkAbility.getInstance());
+        this.addAbility(HasteAbility.getInstance());
 
         Ability ability = new EntersBattlefieldTriggeredAbility(new DamageTargetEffect(2, "it"), false);
         ability.addTarget(new TargetAnyTarget());

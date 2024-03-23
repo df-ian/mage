@@ -33,8 +33,8 @@ public final class SpellCompression extends CardImpl {
         super(ownerId,setInfo,new CardType[]{CardType.INSTANT},"{1}{U}{U}");
 
         // You may discard an Island card and another card rather than pay Foil's mana cost.
-        Ability ability = new AlternativeCostSourceAbility(new DiscardCardCost().setText(""), new PermanentsOnTheBattlefieldCondition(filter));
-        ability.addCost(new DiscardCardCost().setText("two cards"));
+        Ability ability = new AlternativeCostSourceAbility(new DiscardCardCost().setText("As long as you control an Island, you may discard two cards"), new PermanentsOnTheBattlefieldCondition(filter));
+        ability.addCost(new DiscardCardCost().setText(""));
         this.addAbility(ability);
 
         // Counter target spell.

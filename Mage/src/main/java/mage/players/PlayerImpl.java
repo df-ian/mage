@@ -1192,7 +1192,8 @@ public abstract class PlayerImpl implements Player, Serializable {
 
         // play without timing and from any zone
         boolean result;
-        if (card.isLand(game)) {
+        if (card.isLand(game)
+        ) {
             result = playLand(card, game, true);
         } else {
             game.getState().setValue("PlayFromNotOwnHandZone" + card.getId(), Boolean.TRUE);

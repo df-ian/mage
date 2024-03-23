@@ -87,6 +87,6 @@ class MagusOfTheChaliceTriggeredAbility extends TriggeredAbilityImpl {
 
     @Override
     public String getRule() {
-        return "Whenever a player casts a spell with mana value equal to the number of charge counters on {this}, counter that spell.";
+        return "Whenever a player casts a spell with mana value equal to the number of +1/+1 counters on {this}, counter that spell.";
     }
 }

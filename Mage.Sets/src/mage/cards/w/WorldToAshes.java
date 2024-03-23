@@ -44,7 +44,7 @@ public final class WorldToAshes extends CardImpl {
         this.getSpellAbility().getModes().setMinModes(1);
         this.getSpellAbility().getModes().setMaxModes(3);
 
-        this.getSpellAbility().addEffect(new DestroyTargetEffect("land", false));
+        this.getSpellAbility().addEffect(new DestroyTargetEffect("Destroy target land", false));
         this.getSpellAbility().addTarget(new TargetPermanent(StaticFilters.FILTER_LAND));
 
         Mode mode = new Mode(new DamageTargetEffect(5));

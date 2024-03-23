@@ -21,6 +21,12 @@ public class PlayLandAbility extends ActivatedAbilityImpl {
         this.name = "Play " + cardName;
     }
 
+    public PlayLandAbility(String cardName, Zone zone) {
+        super(AbilityType.PLAY_LAND, zone);
+        this.usesStack = false;
+        this.name = "Play " + cardName;
+    }
+
     protected PlayLandAbility(final PlayLandAbility ability) {
         super(ability);
     }

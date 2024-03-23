@@ -295,7 +295,11 @@ public abstract class MageObjectImpl implements MageObject {
 
     @Override
     public void setManaCost(ManaCosts<ManaCost> costs) {
-        this.manaCost = costs.copy();
+        if (costs == null) {
+            this.manaCost = null;
+        } else {
+            this.manaCost = costs.copy();
+        }
     }
 
     @Override

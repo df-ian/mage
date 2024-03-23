@@ -4,6 +4,7 @@ import mage.abilities.Ability;
 import mage.abilities.effects.SearchEffect;
 import mage.constants.Outcome;
 import mage.constants.Zone;
+import mage.filter.FilterCard;
 import mage.filter.StaticFilters;
 import mage.game.Game;
 import mage.players.Player;
@@ -17,6 +18,11 @@ public class SearchLibraryPutInGraveyardEffect extends SearchEffect {
     public SearchLibraryPutInGraveyardEffect() {
         super(new TargetCardInLibrary(StaticFilters.FILTER_CARD), Outcome.Neutral);
         staticText = "search your library for a card, put that card into your graveyard, then shuffle";
+    }
+
+    public SearchLibraryPutInGraveyardEffect(FilterCard filter) {
+        super(new TargetCardInLibrary(filter), Outcome.Neutral);
+        staticText = "search your library for a " + filter.getMessage() + ", put that card into your graveyard, then shuffle";
     }
 
     protected SearchLibraryPutInGraveyardEffect(final SearchLibraryPutInGraveyardEffect effect) {
