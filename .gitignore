@@ -134,3 +134,4 @@ build-output.log
 .env
 deploy/
 /db/
+/plugins/
