@@ -151,6 +151,10 @@ public class CandourCore extends ExpansionSet {
         cards.add(new SetCardInfo("Angelic Wrath", "268", Rarity.RARE, mage.cards.a.AngelicWrath.class));
         cards.add(new SetCardInfo("Whispering Henge", "269", Rarity.RARE, mage.cards.w.WhisperingHenge.class));
         cards.add(new SetCardInfo("Ruinous Sands", "270", Rarity.RARE, mage.cards.r.RuinousSands.class));
+        cards.add(new SetCardInfo("Ordruun Reckoner", "271", Rarity.MYTHIC, mage.cards.o.OrdruunReckoner.class));
+        cards.add(new SetCardInfo("Blighted Inquisition", "272", Rarity.RARE, mage.cards.b.BlightedInquisition.class));
+        cards.add(new SetCardInfo("Aethercatch Relic", "279", Rarity.UNCOMMON, mage.cards.a.AethercatchRelic.class));
+        cards.add(new SetCardInfo("Cloudpierce Monument", "280", Rarity.RARE, mage.cards.c.CloudpierceMonument.class));
         cards.add(new SetCardInfo("Volatile Crypt", "281", Rarity.UNCOMMON, mage.cards.v.VolatileCrypt.class));
         cards.add(new SetCardInfo("Sylvan Charm", "282", Rarity.RARE, mage.cards.s.SylvanCharm.class));
         cards.add(new SetCardInfo("Aetherpulse Dryad", "283", Rarity.UNCOMMON, mage.cards.a.AetherpulseDryad.class));
@@ -209,9 +213,6 @@ public class CandourCore extends ExpansionSet {
         //At Any Cost
         //Imperial Bloodscribe
         //Slumbering Greatwurm
-        //Blighted Inquisition
-        //Ordruun Reckoner
         //Nightmarish Ravager
-
     }
 }
