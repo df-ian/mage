@@ -35,7 +35,7 @@ public final class DevastatingZenith extends CardImpl {
 
         // Search your library for a green creature card with converted mana cost X or less, put it onto the battlefield, then shuffle your library.
         this.getSpellAbility().addEffect(new SearchLibraryWithLessCMCPutInPlayEffect(filter));
-        Mode mode = new Mode(new BoostControlledEffect(ManacostVariableValue.REGULAR, ManacostVariableValue.REGULAR, Duration.EndOfTurn));
+        Mode mode = new Mode(new BoostControlledEffect(ManacostVariableValue.REGULAR, ManacostVariableValue.REGULAR, Duration.EndOfTurn).setText("Creatures you control get +X/+X"));
         mode.addEffect(new GainAbilityControlledEffect(HasteAbility.getInstance(), Duration.EndOfTurn).setText("gain haste until end of turn").concatBy("and"));
         this.getSpellAbility().getModes().addMode(mode);
 

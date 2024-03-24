@@ -214,5 +214,7 @@ public class CandourCore extends ExpansionSet {
         //Imperial Bloodscribe
         //Slumbering Greatwurm
         //Nightmarish Ravager
+        //Starlit Cairn
+        //Chromatic Lotus
     }
 }
