@@ -133,3 +133,4 @@ build-output.log
 # Makefile
 .env
 deploy/
+/db/
