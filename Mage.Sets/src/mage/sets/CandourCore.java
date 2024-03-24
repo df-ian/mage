@@ -147,10 +147,13 @@ public class CandourCore extends ExpansionSet {
         cards.add(new SetCardInfo("Frostpeak Guide", "250", Rarity.MYTHIC, mage.cards.f.FrostpeakGuide.class));
         cards.add(new SetCardInfo("Universal Predation", "259", Rarity.MYTHIC, mage.cards.u.UniversalPredation.class));
         cards.add(new SetCardInfo("Angelic Wrath", "268", Rarity.RARE, mage.cards.a.AngelicWrath.class));
+        cards.add(new SetCardInfo("Hexclasp", "287", Rarity.UNCOMMON, mage.cards.h.Hexclasp.class));
         cards.add(new SetCardInfo("Jade Sphinx", "288", Rarity.RARE, mage.cards.j.JadeSphinx.class));
+        cards.add(new SetCardInfo("Worldsoul Preserver", "289", Rarity.RARE, mage.cards.w.WorldsoulPreserver.class));
         cards.add(new SetCardInfo("Bloodcaster Prodigy", "290", Rarity.RARE, mage.cards.b.BloodcasterProdigy.class));
         cards.add(new SetCardInfo("Amphibious Rootwalla", "291", Rarity.UNCOMMON, mage.cards.a.AmphibiousRootwalla.class));
         cards.add(new SetCardInfo("Bitter Ophiomancer", "292", Rarity.MYTHIC, mage.cards.b.BitterOphiomancer.class));
+        cards.add(new SetCardInfo("Nissa, Animist Supreme", "293", Rarity.MYTHIC, mage.cards.n.NissaAnimistSupreme.class));
         cards.add(new SetCardInfo("Enhanced Renegade", "294", Rarity.RARE, mage.cards.e.EnhancedRenegade.class));
         cards.add(new SetCardInfo("Persistent Combatant", "295", Rarity.RARE, mage.cards.p.PersistentCombatant.class));
         cards.add(new SetCardInfo("Aurelia, Relentless Vindicator", "296", Rarity.MYTHIC, mage.cards.a.AureliaRelentlessVindicator.class));
@@ -190,12 +193,20 @@ public class CandourCore extends ExpansionSet {
         cards.add(new SetCardInfo("Yavimaya Coast", "329", Rarity.RARE, mage.cards.y.YavimayaCoast.class));
         cards.add(new SetCardInfo("Hallowed Fountain", "330", Rarity.RARE, mage.cards.h.HallowedFountain.class));
 
-//Aurelia's Renown
-//Remorseful Invocation
-//Kaya Cassir
-//Liliana, Ambitious Healer
-//At Any Cost
-//Imperial Bloodscribe
-//Slumbering Greatwurm
+        //Aurelia's Renown
+        //Remorseful Invocation
+        //Kaya Cassir
+        //Liliana, Ambitious Healer
+        //At Any Cost
+        //Imperial Bloodscribe
+        //Slumbering Greatwurm
+        //Titan of Phyresis
+        //Chittering Siege
+        //Aetherpulse Dryad
+        //Blighted Inquisition
+        //Ordruun Reckoner
+        //Mismatch
+        //Devastating Zenith
+        //Nightmarish Ravager
     }
 }
