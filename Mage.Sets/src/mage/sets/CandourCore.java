@@ -146,10 +146,13 @@ public class CandourCore extends ExpansionSet {
         cards.add(new SetCardInfo("Devilshroud Veil", "248", Rarity.RARE, mage.cards.d.DevilshroudVeil.class));
         cards.add(new SetCardInfo("Impermanate", "249", Rarity.UNCOMMON, mage.cards.i.Impermanate.class));
         cards.add(new SetCardInfo("Volatile Dunes", "250", Rarity.RARE, mage.cards.v.VolatileDunes.class));
+        cards.add(new SetCardInfo("Torpor Summit", "251", Rarity.RARE, mage.cards.t.TorporSummit.class));
         cards.add(new SetCardInfo("Universal Predation", "259", Rarity.MYTHIC, mage.cards.u.UniversalPredation.class));
         cards.add(new SetCardInfo("Angelic Wrath", "268", Rarity.RARE, mage.cards.a.AngelicWrath.class));
         cards.add(new SetCardInfo("Whispering Henge", "269", Rarity.RARE, mage.cards.w.WhisperingHenge.class));
         cards.add(new SetCardInfo("Ruinous Sands", "270", Rarity.RARE, mage.cards.r.RuinousSands.class));
+        cards.add(new SetCardInfo("Volatile Crypt", "281", Rarity.UNCOMMON, mage.cards.v.VolatileCrypt.class));
+        cards.add(new SetCardInfo("Sylvan Charm", "282", Rarity.RARE, mage.cards.s.SylvanCharm.class));
         cards.add(new SetCardInfo("Aetherpulse Dryad", "283", Rarity.UNCOMMON, mage.cards.a.AetherpulseDryad.class));
         cards.add(new SetCardInfo("Mismatch", "284", Rarity.UNCOMMON, mage.cards.m.Mismatch.class));
         cards.add(new SetCardInfo("Devastating Zenith", "285", Rarity.MYTHIC, mage.cards.d.DevastatingZenith.class));

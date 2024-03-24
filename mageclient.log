@@ -1,0 +1,872 @@
+INFO  2024-03-24 15:25:21,252 Starting MAGE client version 1.4.52-V4-beta4 (build: runtime)                              =>[main] MageFrame.main 
+INFO  2024-03-24 15:25:21,253 Logging level: INFO                                                                        =>[main] MageFrame.main 
+INFO  2024-03-24 15:25:21,253 Default charset: UTF-8                                                                     =>[main] MageFrame.main 
+INFO  2024-03-24 15:25:21,503 custom Java certificate file not found at: /Users/ian/IdeaProjects/mage/cacerts            =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 15:25:22,428 Using GUI theme: Default                                                                   =>[AWT-EventQueue-0] PreferencesDialog.getCurrentTheme 
+INFO  2024-03-24 15:25:22,432 Loading database...                                                                        =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 15:25:22,643 Database stats:                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 15:25:22,644  - sets: updating                                                                          =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 15:25:22,644  - cards: updating                                                                         =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 15:25:22,644  - tokens: 1849                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 15:25:22,644  - emblems: 114                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 15:25:22,644  - planes: 21                                                                              =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 15:25:22,644  - dungeons: 3                                                                             =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 15:25:22,644 DB: creating cards database (it can take few minutes)...                                   =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 15:25:29,813 DB: need to add 500 new sets                                                               =>[AWT-EventQueue-0] ExpansionRepository.lambda$saveSets$0 
+INFO  2024-03-24 15:25:36,754 DB: need to add 72594 new cards                                                            =>[AWT-EventQueue-0] CardRepository.lambda$saveCards$0 
+INFO  2024-03-24 15:25:40,408 Done.                                                                                      =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 15:25:40,408 Images: search broken files...                                                             =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 15:25:40,421 Loading sets and formats...                                                                =>[AWT-EventQueue-0] MageFrame.bootstrapSetsAndFormats 
+INFO  2024-03-24 15:25:40,659 Loading symbols...                                                                         =>[AWT-EventQueue-0] ManaSymbols.loadImages 
+WARN  2024-03-24 15:25:40,664 Symbols can't be load for size 15: SVG fails - 63, GIF fails - 63                          =>[AWT-EventQueue-0] ManaSymbols.loadSymbolImages 
+WARN  2024-03-24 15:25:40,665 Symbols can't be load for size 25: SVG fails - 63, GIF fails - 63                          =>[AWT-EventQueue-0] ManaSymbols.loadSymbolImages 
+WARN  2024-03-24 15:25:40,665 Symbols can't be load for size 50: SVG fails - 63, GIF fails - 63                          =>[AWT-EventQueue-0] ManaSymbols.loadSymbolImages 
+INFO  2024-03-24 15:25:40,785 Loading plugins...                                                                         =>[AWT-EventQueue-0] Plugins.loadPlugins 
+INFO  2024-03-24 15:25:40,808 [Card plugin, version 0.7] has been loaded.                                                =>[AWT-EventQueue-0] CardPluginImpl.newPlugin 
+INFO  2024-03-24 15:25:40,810 [Theme plugin, version 0.5] has been loaded.                                               =>[AWT-EventQueue-0] ThemePluginImpl.newPlugin 
+INFO  2024-03-24 15:25:40,810 Done.                                                                                      =>[AWT-EventQueue-0] Plugins.loadPlugins 
+INFO  2024-03-24 15:25:41,110 Client start up time: 19 seconds                                                           =>[AWT-EventQueue-0] MageFrame.lambda$new$3 
+INFO  2024-03-24 15:26:08,493 Connect: connecting to server localhost:17171                                              =>[SwingWorker-pool-3-thread-3] SessionImpl$5.work 
+WARN  2024-03-24 15:26:08,554 Cannot connect                                                                             =>[SwingWorker-pool-3-thread-2] SessionImpl.handleCannotConnectException 
+org.jboss.remoting.CannotConnectException: Error setting up client lease upon performing connect.
+	at org.jboss.remoting.Client.connect(Client.java:1928)
+	at org.jboss.remoting.Client.connect(Client.java:737)
+	at mage.remote.SessionImpl$5.work(SessionImpl.java:449)
+	at mage.remote.SessionImpl$RemotingTask$1.doInBackground(SessionImpl.java:105)
+	at mage.remote.SessionImpl$RemotingTask$1.doInBackground(SessionImpl.java:101)
+	at javax.swing.SwingWorker$1.call(SwingWorker.java:295)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at javax.swing.SwingWorker.run(SwingWorker.java:334)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.lang.Exception: Error setting up client lease
+	at org.jboss.remoting.MicroRemoteClientInvoker.establishLease(MicroRemoteClientInvoker.java:563)
+	at org.jboss.remoting.Client.setupClientLease(Client.java:2070)
+	at org.jboss.remoting.Client.connect(Client.java:1924)
+	... 10 more
+Caused by: org.jboss.remoting.CannotConnectException: Can not get connection to server. Problem establishing socket connection for InvokerLocator [bisocket://192.168.1.184:17171/?onewayThreadPool=mage.remote.CustomThreadPool&serializationtype=java]
+	at org.jboss.remoting.transport.socket.MicroSocketClientInvoker.transport(MicroSocketClientInvoker.java:855)
+	at org.jboss.remoting.transport.bisocket.BisocketClientInvoker.transport(BisocketClientInvoker.java:470)
+	at org.jboss.remoting.MicroRemoteClientInvoker.invoke(MicroRemoteClientInvoker.java:169)
+	at org.jboss.remoting.MicroRemoteClientInvoker.establishLease(MicroRemoteClientInvoker.java:529)
+	... 12 more
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:476)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:218)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:200)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:394)
+	at java.net.Socket.connect(Socket.java:606)
+	at org.jboss.remoting.transport.socket.SocketClientInvoker.connect(SocketClientInvoker.java:293)
+	at org.jboss.remoting.transport.socket.SocketClientInvoker.createSocket(SocketClientInvoker.java:210)
+	at org.jboss.remoting.transport.bisocket.BisocketClientInvoker.createSocket(BisocketClientInvoker.java:477)
+	at org.jboss.remoting.transport.socket.MicroSocketClientInvoker.getConnection(MicroSocketClientInvoker.java:1190)
+	at org.jboss.remoting.transport.socket.MicroSocketClientInvoker.transport(MicroSocketClientInvoker.java:833)
+	... 15 more
+INFO  2024-03-24 15:26:08,556 Disconnecting DONE                                                                         =>[SwingWorker-pool-3-thread-2] SessionImpl.connectStop 
+INFO  2024-03-24 15:26:08,556 Disconnected from client side                                                              =>[SwingWorker-pool-3-thread-2] MageFrame.disconnected 
+INFO  2024-03-24 15:26:10,099 Connect: connecting to server localhost:17171                                              =>[SwingWorker-pool-3-thread-5] SessionImpl$5.work 
+WARN  2024-03-24 15:26:10,102 Cannot connect                                                                             =>[SwingWorker-pool-3-thread-4] SessionImpl.handleCannotConnectException 
+org.jboss.remoting.CannotConnectException: Error setting up client lease upon performing connect.
+	at org.jboss.remoting.Client.connect(Client.java:1928)
+	at org.jboss.remoting.Client.connect(Client.java:737)
+	at mage.remote.SessionImpl$5.work(SessionImpl.java:449)
+	at mage.remote.SessionImpl$RemotingTask$1.doInBackground(SessionImpl.java:105)
+	at mage.remote.SessionImpl$RemotingTask$1.doInBackground(SessionImpl.java:101)
+	at javax.swing.SwingWorker$1.call(SwingWorker.java:295)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at javax.swing.SwingWorker.run(SwingWorker.java:334)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.lang.Exception: Error setting up client lease
+	at org.jboss.remoting.MicroRemoteClientInvoker.establishLease(MicroRemoteClientInvoker.java:563)
+	at org.jboss.remoting.Client.setupClientLease(Client.java:2070)
+	at org.jboss.remoting.Client.connect(Client.java:1924)
+	... 10 more
+Caused by: org.jboss.remoting.CannotConnectException: Can not get connection to server. Problem establishing socket connection for InvokerLocator [bisocket://192.168.1.184:17171/?onewayThreadPool=mage.remote.CustomThreadPool&serializationtype=java]
+	at org.jboss.remoting.transport.socket.MicroSocketClientInvoker.transport(MicroSocketClientInvoker.java:855)
+	at org.jboss.remoting.transport.bisocket.BisocketClientInvoker.transport(BisocketClientInvoker.java:470)
+	at org.jboss.remoting.MicroRemoteClientInvoker.invoke(MicroRemoteClientInvoker.java:169)
+	at org.jboss.remoting.MicroRemoteClientInvoker.establishLease(MicroRemoteClientInvoker.java:529)
+	... 12 more
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:476)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:218)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:200)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:394)
+	at java.net.Socket.connect(Socket.java:606)
+	at org.jboss.remoting.transport.socket.SocketClientInvoker.connect(SocketClientInvoker.java:293)
+	at org.jboss.remoting.transport.socket.SocketClientInvoker.createSocket(SocketClientInvoker.java:210)
+	at org.jboss.remoting.transport.bisocket.BisocketClientInvoker.createSocket(BisocketClientInvoker.java:477)
+	at org.jboss.remoting.transport.socket.MicroSocketClientInvoker.getConnection(MicroSocketClientInvoker.java:1190)
+	at org.jboss.remoting.transport.socket.MicroSocketClientInvoker.transport(MicroSocketClientInvoker.java:833)
+	... 15 more
+INFO  2024-03-24 15:26:10,103 Disconnecting DONE                                                                         =>[SwingWorker-pool-3-thread-4] SessionImpl.connectStop 
+INFO  2024-03-24 15:26:10,103 Disconnected from client side                                                              =>[SwingWorker-pool-3-thread-4] MageFrame.disconnected 
+INFO  2024-03-24 15:26:29,097 Starting MAGE client version 1.4.52-V4-beta4 (build: runtime)                              =>[main] MageFrame.main 
+INFO  2024-03-24 15:26:29,098 Logging level: INFO                                                                        =>[main] MageFrame.main 
+INFO  2024-03-24 15:26:29,099 Default charset: UTF-8                                                                     =>[main] MageFrame.main 
+INFO  2024-03-24 15:26:29,267 custom Java certificate file not found at: /Users/ian/IdeaProjects/mage/cacerts            =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 15:26:29,905 Using GUI theme: Default                                                                   =>[AWT-EventQueue-0] PreferencesDialog.getCurrentTheme 
+INFO  2024-03-24 15:26:29,911 Loading database...                                                                        =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 15:26:30,692 Database stats:                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 15:26:30,692  - sets: 500                                                                               =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 15:26:30,692  - cards: 72140                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 15:26:30,693  - tokens: 1849                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 15:26:30,693  - emblems: 114                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 15:26:30,693  - planes: 21                                                                              =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 15:26:30,693  - dungeons: 3                                                                             =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 15:26:30,712 Images: search broken files...                                                             =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 15:26:30,722 Loading sets and formats...                                                                =>[AWT-EventQueue-0] MageFrame.bootstrapSetsAndFormats 
+INFO  2024-03-24 15:26:38,401 Loading symbols...                                                                         =>[AWT-EventQueue-0] ManaSymbols.loadImages 
+WARN  2024-03-24 15:26:38,407 Symbols can't be load for size 15: SVG fails - 63, GIF fails - 63                          =>[AWT-EventQueue-0] ManaSymbols.loadSymbolImages 
+WARN  2024-03-24 15:26:38,407 Symbols can't be load for size 25: SVG fails - 63, GIF fails - 63                          =>[AWT-EventQueue-0] ManaSymbols.loadSymbolImages 
+WARN  2024-03-24 15:26:38,408 Symbols can't be load for size 50: SVG fails - 63, GIF fails - 63                          =>[AWT-EventQueue-0] ManaSymbols.loadSymbolImages 
+INFO  2024-03-24 15:26:38,551 Loading plugins...                                                                         =>[AWT-EventQueue-0] Plugins.loadPlugins 
+INFO  2024-03-24 15:26:38,573 [Card plugin, version 0.7] has been loaded.                                                =>[AWT-EventQueue-0] CardPluginImpl.newPlugin 
+INFO  2024-03-24 15:26:38,574 [Theme plugin, version 0.5] has been loaded.                                               =>[AWT-EventQueue-0] ThemePluginImpl.newPlugin 
+INFO  2024-03-24 15:26:38,574 Done.                                                                                      =>[AWT-EventQueue-0] Plugins.loadPlugins 
+INFO  2024-03-24 15:26:38,831 Client start up time: 9 seconds                                                            =>[AWT-EventQueue-0] MageFrame.lambda$new$3 
+INFO  2024-03-24 15:26:59,827 Starting MAGE client version 1.4.52-V4-beta4 (build: runtime)                              =>[main] MageFrame.main 
+INFO  2024-03-24 15:26:59,828 Logging level: INFO                                                                        =>[main] MageFrame.main 
+INFO  2024-03-24 15:26:59,828 Default charset: UTF-8                                                                     =>[main] MageFrame.main 
+INFO  2024-03-24 15:26:59,991 custom Java certificate file not found at: /Users/ian/IdeaProjects/mage/cacerts            =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 15:27:00,620 Using GUI theme: Default                                                                   =>[AWT-EventQueue-0] PreferencesDialog.getCurrentTheme 
+INFO  2024-03-24 15:27:00,625 Loading database...                                                                        =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 15:27:01,365 Database stats:                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 15:27:01,365  - sets: 500                                                                               =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 15:27:01,365  - cards: 72140                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 15:27:01,365  - tokens: 1849                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 15:27:01,365  - emblems: 114                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 15:27:01,366  - planes: 21                                                                              =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 15:27:01,366  - dungeons: 3                                                                             =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 15:27:01,383 Images: search broken files...                                                             =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 15:27:01,394 Loading sets and formats...                                                                =>[AWT-EventQueue-0] MageFrame.bootstrapSetsAndFormats 
+INFO  2024-03-24 15:27:07,815 Loading symbols...                                                                         =>[AWT-EventQueue-0] ManaSymbols.loadImages 
+WARN  2024-03-24 15:27:07,818 Symbols can't be load for size 15: SVG fails - 63, GIF fails - 63                          =>[AWT-EventQueue-0] ManaSymbols.loadSymbolImages 
+WARN  2024-03-24 15:27:07,819 Symbols can't be load for size 25: SVG fails - 63, GIF fails - 63                          =>[AWT-EventQueue-0] ManaSymbols.loadSymbolImages 
+WARN  2024-03-24 15:27:07,819 Symbols can't be load for size 50: SVG fails - 63, GIF fails - 63                          =>[AWT-EventQueue-0] ManaSymbols.loadSymbolImages 
+INFO  2024-03-24 15:27:07,949 Loading plugins...                                                                         =>[AWT-EventQueue-0] Plugins.loadPlugins 
+INFO  2024-03-24 15:27:07,968 [Card plugin, version 0.7] has been loaded.                                                =>[AWT-EventQueue-0] CardPluginImpl.newPlugin 
+INFO  2024-03-24 15:27:07,968 [Theme plugin, version 0.5] has been loaded.                                               =>[AWT-EventQueue-0] ThemePluginImpl.newPlugin 
+INFO  2024-03-24 15:27:07,969 Done.                                                                                      =>[AWT-EventQueue-0] Plugins.loadPlugins 
+INFO  2024-03-24 15:27:08,202 Client start up time: 8 seconds                                                            =>[AWT-EventQueue-0] MageFrame.lambda$new$3 
+INFO  2024-03-24 15:27:23,594 Connect: connecting to server 146.190.135.147:17171                                        =>[SwingWorker-pool-3-thread-3] SessionImpl$5.work 
+INFO  2024-03-24 15:27:24,623 Connect: DONE                                                                              =>[SwingWorker-pool-3-thread-3] SessionImpl$5.work 
+INFO  2024-03-24 15:27:24,625 Logging: as username rogue to server 146.190.135.147:17171                                 =>[SwingWorker-pool-3-thread-4] SessionImpl$4.work 
+INFO  2024-03-24 15:27:26,033 Logging: DONE                                                                              =>[SwingWorker-pool-3-thread-4] SessionImpl$4.work 
+WARN  2024-03-24 15:27:35,131 Symbols can't be load for size 14: SVG fails - 63, GIF fails - 63                          =>[AWT-EventQueue-0] ManaSymbols.loadSymbolImages 
+INFO  2024-03-24 15:27:42,905 Symbols download prepare...                                                                =>[AWT-EventQueue-0] CardPluginImpl.downloadSymbols 
+ERROR 2024-03-24 15:27:42,937 Symbols: can't find set by code: DD3EVG                                                    =>[AWT-EventQueue-0] GathererSets.CheckSearchResult 
+ERROR 2024-03-24 15:27:42,940 Symbols: found duplicate code: MED                                                         =>[AWT-EventQueue-0] GathererSets.CheckSearchResult 
+WARN  2024-03-24 15:27:42,940 Symbols: set is not configured: PZEN (Zendikar Promos)                                     =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,940 Symbols: set is not configured: PPRO (Pro Tour Promos)                                     =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,940 Symbols: set is not configured: PRW2 (Ravnica Allegiance Ravnica Weekend)                  =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,940 Symbols: set is not configured: PRTR (Return to Ravnica Promos)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,940 Symbols: set is not configured: WMC (World Magic Cup Qualifiers)                           =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,940 Symbols: set is not configured: PAVR (Avacyn Restored Promos)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,940 Symbols: set is not configured: PNPH (New Phyrexia Promos)                                 =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,940 Symbols: set is not configured: PORI (Magic Origins Promos)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,940 Symbols: set is not configured: PAL99 (Arena League 1999)                                  =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,940 Symbols: set is not configured: PWAR (War of the Spark Promos)                             =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,940 Symbols: set is not configured: P15A (Fifteenth Anniversary Cards)                         =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,940 Symbols: set is not configured: PIDW (IDW Comics Inserts)                                  =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,941 Symbols: set is not configured: H17 (HASCON Promo 2017)                                    =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,941 Symbols: set is not configured: ACR (Assassin's Creed)                                     =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,941 Symbols: set is not configured: PRWK (GRN Ravnica Weekend)                                 =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,941 Symbols: set is not configured: ITP (Introductory Two-Player Set)                          =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,941 Symbols: set is not configured: FNM (Friday Night Magic 2000)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,941 Symbols: set is not configured: G00 (Judge Gift Cards 2000)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,941 Symbols: set is not configured: PDP15 (Duels of the Planeswalkers 2015 Promos)             =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,941 Symbols: set is not configured: G02 (Judge Gift Cards 2002)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,941 Symbols: set is not configured: H1R (Modern Horizons 1 Timeshifts)                         =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,941 Symbols: set is not configured: G01 (Judge Gift Cards 2001)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,941 Symbols: set is not configured: G04 (Judge Gift Cards 2004)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,941 Symbols: set is not configured: G03 (Judge Gift Cards 2003)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,941 Symbols: set is not configured: G06 (Judge Gift Cards 2006)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,941 Symbols: set is not configured: G05 (Judge Gift Cards 2005)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,941 Symbols: set is not configured: G08 (Judge Gift Cards 2008)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,941 Symbols: set is not configured: G07 (Judge Gift Cards 2007)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,941 Symbols: set is not configured: G09 (Judge Gift Cards 2009)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,941 Symbols: set is not configured: PKLD (Kaladesh Promos)                                     =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,942 Symbols: set is not configured: G11 (Judge Gift Cards 2011)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,942 Symbols: set is not configured: DKM (Deckmasters)                                          =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,942 Symbols: set is not configured: G10 (Judge Gift Cards 2010)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,942 Symbols: set is not configured: G17 (Gift Pack 2017)                                       =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,942 Symbols: set is not configured: PHEL (Open the Helvault)                                   =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,942 Symbols: set is not configured: PM19 (Core Set 2019 Promos)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,942 Symbols: set is not configured: PM15 (Magic 2015 Promos)                                   =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,942 Symbols: set is not configured: PM14 (Magic 2014 Promos)                                   =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,942 Symbols: set is not configured: F01 (Friday Night Magic 2001)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,942 Symbols: set is not configured: F03 (Friday Night Magic 2003)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,942 Symbols: set is not configured: F02 (Friday Night Magic 2002)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,942 Symbols: set is not configured: F05 (Friday Night Magic 2005)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,942 Symbols: set is not configured: F04 (Friday Night Magic 2004)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,943 Symbols: set is not configured: F07 (Friday Night Magic 2007)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,943 Symbols: set is not configured: F06 (Friday Night Magic 2006)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,943 Symbols: set is not configured: F09 (Friday Night Magic 2009)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,943 Symbols: set is not configured: F08 (Friday Night Magic 2008)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,943 Symbols: set is not configured: PM20 (Core Set 2020 Promos)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,943 Symbols: set is not configured: BIG (The Big Score)                                        =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,943 Symbols: set is not configured: F10 (Friday Night Magic 2010)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,943 Symbols: set is not configured: F12 (Friday Night Magic 2012)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,943 Symbols: set is not configured: F11 (Friday Night Magic 2011)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,943 Symbols: set is not configured: F14 (Friday Night Magic 2014)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,943 Symbols: set is not configured: F13 (Friday Night Magic 2013)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,943 Symbols: set is not configured: F16 (Friday Night Magic 2016)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,943 Symbols: set is not configured: F15 (Friday Night Magic 2015)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,943 Symbols: set is not configured: F17 (Friday Night Magic 2017)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,943 Symbols: set is not configured: PM11 (Magic 2011 Promos)                                   =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,943 Symbols: set is not configured: PM10 (Magic 2010 Promos)                                   =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,943 Symbols: set is not configured: PM13 (Magic 2013 Promos)                                   =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,943 Symbols: set is not configured: PM12 (Magic 2012 Promos)                                   =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,943 Symbols: set is not configured: PTKDF (Tarkir Dragonfury)                                  =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,944 Symbols: set is not configured: SLD (Secret Lair Drop)                                     =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,944 Symbols: set is not configured: SLC (Secret Lair 30th Anniversary Countdown Kit)           =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,944 Symbols: set is not configured: CLU (Ravnica: Clue Edition)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,944 Symbols: set is not configured: SLP (Secret Lair Showdown)                                 =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,944 Symbols: set is not configured: PL23 (Year of the Rabbit 2023)                             =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,944 Symbols: set is not configured: PL22 (Year of the Tiger 2022)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,944 Symbols: set is not configured: SLU (Secret Lair: Ultimate Edition)                        =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,944 Symbols: set is not configured: PL21 (Year of the Ox 2021)                                 =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,944 Symbols: set is not configured: SLX (Universes Within)                                     =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,944 Symbols: set is not configured: DPA (Duels of the Planeswalkers)                           =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,944 Symbols: set is not configured: BLB (Bloomburrow)                                          =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,944 Symbols: set is not configured: PJOU (Journey into Nyx Promos)                             =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,944 Symbols: set is not configured: CP2 (Fate Reforged Clash Pack)                             =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,944 Symbols: set is not configured: CP1 (Magic 2015 Clash Pack)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,944 Symbols: set is not configured: CP3 (Magic Origins Clash Pack)                             =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,944 Symbols: set is not configured: AKR (Amonkhet Remastered)                                  =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,944 Symbols: set is not configured: PIP (Fallout)                                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,944 Symbols: set is not configured: MD1 (Modern Event Deck 2014)                               =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,944 Symbols: set is not configured: PDCI (DCI Promos)                                          =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,944 Symbols: set is not configured: PBBD (Battlebond Promos)                                   =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,944 Symbols: set is not configured: PKTK (Khans of Tarkir Promos)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,945 Symbols: set is not configured: ME1 (Masters Edition)                                      =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,945 Symbols: set is not configured: G99 (Judge Gift Cards 1999)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,945 Symbols: set is not configured: PXLN (Ixalan Promos)                                       =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,945 Symbols: set is not configured: ANA (Arena New Player Experience)                          =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,945 Symbols: set is not configured: ANB (Arena Beginner Set)                                   =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,945 Symbols: set is not configured: PLG21 (Love Your LGS 2021)                                 =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,945 Symbols: set is not configured: OVNT (Vintage Championship)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,945 Symbols: set is not configured: SS1 (Signature Spellbook: Jace)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,945 Symbols: set is not configured: SS3 (Signature Spellbook: Chandra)                         =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,945 Symbols: set is not configured: SS2 (Signature Spellbook: Gideon)                          =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,945 Symbols: set is not configured: PTHB (Theros Beyond Death Promos)                          =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,945 Symbols: set is not configured: PHPR (HarperPrism Book Promos)                             =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,945 Symbols: set is not configured: WC00 (World Championship Decks 2000)                       =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,945 Symbols: set is not configured: CST (Coldsnap Theme Decks)                                 =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,945 Symbols: set is not configured: WC01 (World Championship Decks 2001)                       =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,945 Symbols: set is not configured: WC02 (World Championship Decks 2002)                       =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,945 Symbols: set is not configured: PSDC (San Diego Comic-Con 2013)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,945 Symbols: set is not configured: WC03 (World Championship Decks 2003)                       =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,945 Symbols: set is not configured: MGB (Multiverse Gift Box)                                  =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,945 Symbols: set is not configured: PJSE (Junior Series Europe)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,946 Symbols: set is not configured: BRB (Battle Royale Box Set)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,946 Symbols: set is not configured: RQS (Rivals Quick Start Set)                               =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,946 Symbols: set is not configured: WC04 (World Championship Decks 2004)                       =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,946 Symbols: set is not configured: MH3 (Modern Horizons 3)                                    =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,946 Symbols: set is not configured: PHOU (Hour of Devastation Promos)                          =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,946 Symbols: set is not configured: PDGM (Dragon's Maze Promos)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,946 Symbols: set is not configured: BRR (The Brothers' War Retro Artifacts)                    =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,946 Symbols: set is not configured: PH19 (Heroes of the Realm 2019)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,946 Symbols: set is not configured: CMB1 (Mystery Booster Playtest)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,946 Symbols: set is not configured: PELD (Throne of Eldraine Promos)                           =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,946 Symbols: set is not configured: PWOS (Wizards of the Coast Online Store)                   =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,946 Symbols: set is not configured: PWOR (Worlds)                                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,946 Symbols: set is not configured: PRES (Resale Promos)                                       =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,946 Symbols: set is not configured: PGPX (Grand Prix Promos)                                   =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,946 Symbols: set is not configured: PELP (European Land Program)                               =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,946 Symbols: set is not configured: SUM (Summer Magic)                                         =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,946 Symbols: set is not configured: PTHS (Theros Promos)                                       =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,946 Symbols: set is not configured: PISD (Innistrad Promos)                                    =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,946 Symbols: set is not configured: BTD (Beatdown Box Set)                                     =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,946 Symbols: set is not configured: PH17 (Heroes of the Realm 2017)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,946 Symbols: set is not configured: PW11 (Wizards Play Network 2011)                           =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,946 Symbols: set is not configured: P2HG (Two-Headed Giant Tournament)                         =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,946 Symbols: set is not configured: CALC (Custom Alchemy)                                      =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,946 Symbols: set is not configured: PW12 (Wizards Play Network 2012)                           =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,947 Symbols: set is not configured: PXTC (Ixalan Treasure Chest)                               =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,947 Symbols: set is not configured: P03 (Magic Player Rewards 2003)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,947 Symbols: set is not configured: PHTR (Heroes of the Realm 2016)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,947 Symbols: set is not configured: P05 (Magic Player Rewards 2005)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,947 Symbols: set is not configured: P04 (Magic Player Rewards 2004)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,947 Symbols: set is not configured: P07 (Magic Player Rewards 2007)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,947 Symbols: set is not configured: PGRN (Guilds of Ravnica Promos)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,947 Symbols: set is not configured: P06 (Magic Player Rewards 2006)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,947 Symbols: set is not configured: HA2 (Historic Anthology 2)                                 =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,947 Symbols: set is not configured: P09 (Magic Player Rewards 2009)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,947 Symbols: set is not configured: P08 (Magic Player Rewards 2008)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,947 Symbols: set is not configured: HA1 (Historic Anthology 1)                                 =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,947 Symbols: set is not configured: HA4 (Historic Anthology 4)                                 =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,947 Symbols: set is not configured: HA3 (Historic Anthology 3)                                 =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,947 Symbols: set is not configured: HA5 (Historic Anthology 5)                                 =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,947 Symbols: set is not configured: PGRU (Guru)                                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,947 Symbols: set is not configured: PBFZ (Battle for Zendikar Promos)                          =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,947 Symbols: set is not configured: MKC (Murders at Karlov Manor Commander)                    =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,947 Symbols: set is not configured: P10 (Magic Player Rewards 2010)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,947 Symbols: set is not configured: SWS (Star Wars)                                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,947 Symbols: set is not configured: MKM (Murders at Karlov Manor)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,947 Symbols: set is not configured: PDKA (Dark Ascension Promos)                               =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,947 Symbols: set is not configured: P11 (Magic Player Rewards 2011)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,947 Symbols: set is not configured: PEMN (Eldritch Moon Promos)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,948 Symbols: set is not configured: XANA (Arena New Player Experience Extras)                  =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,948 Symbols: set is not configured: ATH (Anthologies)                                          =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,948 Symbols: set is not configured: PAER (Aether Revolt Promos)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,948 Symbols: set is not configured: PUMA (Ultimate Box Topper Promos)                          =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,948 Symbols: set is not configured: PGTC (Gatecrash Promos)                                    =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,948 Symbols: set is not configured: PRM (Magic Online Promos)                                  =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,948 Symbols: set is not configured: PFRF (Fate Reforged Promos)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,948 Symbols: set is not configured: PF20 (MagicFest 2020)                                      =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,948 Symbols: set is not configured: PRIX (Rivals of Ixalan Promos)                             =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,948 Symbols: set is not configured: PNAT (Nationals Promos)                                    =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,948 Symbols: set is not configured: PHUK (Hachette UK)                                         =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,948 Symbols: set is not configured: JGP (Judge Gift Cards 1998)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,948 Symbols: set is not configured: PF19 (MagicFest 2019)                                      =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,948 Symbols: set is not configured: PTC (Pro Tour Collector Set)                               =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,948 Symbols: set is not configured: WC97 (World Championship Decks 1997)                       =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,948 Symbols: set is not configured: WC98 (World Championship Decks 1998)                       =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,948 Symbols: set is not configured: WC99 (World Championship Decks 1999)                       =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,948 Symbols: set is not configured: PURL (URL/Convention Promos)                               =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,948 Symbols: set is not configured: PCMD (Commander 2011 Launch Party)                         =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,948 Symbols: set is not configured: PCMP (Champs and States)                                   =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,948 Symbols: set is not configured: PDOM (Dominaria Promos)                                    =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,948 Symbols: set is not configured: PDRC (Dragon Con)                                          =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,948 Symbols: set is not configured: PUST (Unstable Promos)                                     =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,948 Symbols: set is not configured: PALA (Shards of Alara Promos)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,948 Symbols: set is not configured: PSOM (Scars of Mirrodin Promos)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,949 Symbols: set is not configured: OTJ (Outlaws of Thunder Junction)                          =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,949 Symbols: set is not configured: POGW (Oath of the Gatewatch Promos)                        =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,949 Symbols: set is not configured: PBNG (Born of the Gods Promos)                             =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,949 Symbols: set is not configured: MPR (Magic Player Rewards 2001)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,949 Symbols: set is not configured: PALP (Asia Pacific Land Program)                           =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,949 Symbols: set is not configured: PRNA (Ravnica Allegiance Promos)                           =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,949 Symbols: set is not configured: FMB1 (Mystery Booster Retail Edition Foils)                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,949 Symbols: set is not configured: OANA (Arena New Player Experience Cards)                   =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,949 Symbols: set is not configured: PAKH (Amonkhet Promos)                                     =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,949 Symbols: set is not configured: PMBS (Mirrodin Besieged Promos)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,949 Symbols: set is not configured: PSOI (Shadows over Innistrad Promos)                       =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,949 Symbols: set is not configured: PAL03 (Arena League 2003)                                  =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,949 Symbols: set is not configured: PAL04 (Arena League 2004)                                  =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,949 Symbols: set is not configured: PAL01 (Arena League 2001)                                  =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,949 Symbols: set is not configured: PAL02 (Arena League 2002)                                  =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,949 Symbols: set is not configured: PAL00 (Arena League 2000)                                  =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,949 Symbols: set is not configured: PWWK (Worldwake Promos)                                    =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,949 Symbols: set is not configured: PANA (MTG Arena Promos)                                    =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,949 Symbols: set is not configured: PS15 (San Diego Comic-Con 2015)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,949 Symbols: set is not configured: PS14 (San Diego Comic-Con 2014)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,949 Symbols: set is not configured: PMEI (Magazine Inserts)                                    =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,949 Symbols: set is not configured: PAL05 (Arena League 2005)                                  =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,949 Symbols: set is not configured: PAL06 (Arena League 2006)                                  =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,949 Symbols: set is not configured: PS17 (San Diego Comic-Con 2017)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,950 Symbols: set is not configured: PS16 (San Diego Comic-Con 2016)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,950 Symbols: set is not configured: PS19 (San Diego Comic-Con 2019)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,950 Symbols: set is not configured: HHO (Happy Holidays)                                       =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,950 Symbols: set is not configured: PDTK (Dragons of Tarkir Promos)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,950 Symbols: set is not configured: PS18 (San Diego Comic-Con 2018)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,950 Symbols: set is not configured: PDTP (Duels of the Planeswalkers 2009 Promos)              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,950 Symbols: set is not configured: OLGC (Legacy Championship)                                 =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,950 Symbols: set is not configured: PZ1 (Legendary Cube Prize Pack)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,950 Symbols: set is not configured: PZ2 (Treasure Chest)                                       =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,950 Symbols: set is not configured: PDP14 (Duels of the Planeswalkers 2014 Promos)             =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,950 Symbols: set is not configured: PDP13 (Duels of the Planeswalkers 2013 Promos)             =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,950 Symbols: set is not configured: PDP12 (Duels of the Planeswalkers 2012 Promos)             =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,950 Symbols: set is not configured: PDP10 (Duels of the Planeswalkers 2010 Promos)             =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,950 Symbols: set is not configured: PROE (Rise of the Eldrazi Promos)                          =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,950 Symbols: set is not configured: PMH1 (Modern Horizons Promos)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,950 Symbols: set is not configured: PJAS (Junior APAC Series)                                  =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,950 Symbols: set is not configured: ZNC (Zendikar Rising Commander)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,950 Symbols: set is not configured: DBL (Innistrad: Double Feature)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,950 Symbols: set is not configured: ZNE (Zendikar Rising Expeditions)                          =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,951 Symbols: set is not configured: CA0 (Candour Core)                                         =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,951 Symbols: set is not configured: P10E (Tenth Edition Promos)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,951 Symbols: set is not configured: PSS1 (BFZ Standard Series)                                 =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,951 Symbols: set is not configured: PSS3 (M19 Standard Showdown)                               =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,952 Symbols: set is not configured: PSS2 (Ixalan Standard Showdown)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,952 Symbols: set is not configured: DD1 (Duel Decks: Elves vs. Goblins)                        =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,952 Symbols: set is not configured: LTC (Tales of Middle-earth Commander)                      =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,952 Symbols: set is not configured: PBOOK (Miscellaneous Book Promos)                          =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,952 Symbols: set is not configured: TD0 (Magic Online Theme Decks)                             =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,952 Symbols: set is not configured: TD2 (Duel Decks: Mirrodin Pure vs. New Phyrexia)           =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,952 Symbols: set is not configured: PPP1 (M20 Promo Packs)                                     =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,952 Symbols: set is not configured: PSUS (Junior Super Series)                                 =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,952 Symbols: set is not configured: PLGM (DCI Legend Membership)                               =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,952 Symbols: set is not configured: GK1 (Guilds of Ravnica Guild Kits)                         =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,952 Symbols: set is not configured: PARL (Arena League 1996)                                   =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,952 Symbols: set is not configured: GK2 (Ravnica Allegiance Guild Kits)                        =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,952 Symbols: set is not configured: CC1 (Commander Collection: Green)                          =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,952 Symbols: set is not configured: CC2 (Commander Collection: Black)                          =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,952 Symbols: set is not configured: J12 (Judge Gift Cards 2012)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,952 Symbols: set is not configured: J14 (Judge Gift Cards 2014)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,952 Symbols: set is not configured: J13 (Judge Gift Cards 2013)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,952 Symbols: set is not configured: J16 (Judge Gift Cards 2016)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,952 Symbols: set is not configured: J15 (Judge Gift Cards 2015)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,952 Symbols: set is not configured: J18 (Judge Gift Cards 2018)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,952 Symbols: set is not configured: J17 (Judge Gift Cards 2017)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:27:42,953 Symbols: set is not configured: J19 (Judge Gift Cards 2019)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+INFO  2024-03-24 15:27:42,981 Symbols download needs 1057 files                                                          =>[AWT-EventQueue-0] CardPluginImpl.downloadSymbols 
+WARN  2024-03-24 15:27:45,669 Resource not found UP from https://gatherer.wizards.com/handlers/image.ashx?size=large&name=UP&type=symbol =>[pool-5-thread-11] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:27:45,698 Resource not found BP from https://gatherer.wizards.com/handlers/image.ashx?size=large&name=BP&type=symbol =>[pool-5-thread-2] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:27:45,725 Resource not found RP from https://gatherer.wizards.com/handlers/image.ashx?size=large&name=RP&type=symbol =>[pool-5-thread-5] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:27:45,752 Resource not found GP from https://gatherer.wizards.com/handlers/image.ashx?size=large&name=GP&type=symbol =>[pool-5-thread-7] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:27:45,781 Resource not found C from https://gatherer.wizards.com/handlers/image.ashx?size=large&name=C&type=symbol =>[pool-5-thread-11] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:27:45,826 Resource not found WP from https://gatherer.wizards.com/handlers/image.ashx?size=large&name=WP&type=symbol =>[pool-5-thread-1] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:27:45,918 Resource not found E from https://gatherer.wizards.com/handlers/image.ashx?size=large&name=E&type=symbol =>[pool-5-thread-6] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:27:47,832 Resource not found MPS_WAR-C from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=MPS_WAR&size=small&rarity=C =>[pool-5-thread-4] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:27:47,855 Resource not found MPS_WAR-R from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=MPS_WAR&size=small&rarity=R =>[pool-5-thread-1] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:27:47,855 Resource not found MPS_WAR-U from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=MPS_WAR&size=small&rarity=U =>[pool-5-thread-7] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:27:52,371 Resource not found J20-U from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=J20&size=small&rarity=U =>[pool-5-thread-6] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:27:52,380 Resource not found J20-R from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=J20&size=small&rarity=R =>[pool-5-thread-2] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:27:52,391 Resource not found J20-M from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=J20&size=small&rarity=M =>[pool-5-thread-5] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:27:52,400 Resource not found J20-C from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=J20&size=small&rarity=C =>[pool-5-thread-7] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:27:53,184 Resource not found YMID-C from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=YMID&size=small&rarity=C =>[pool-5-thread-5] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:27:53,209 Resource not found YMID-U from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=YMID&size=small&rarity=U =>[pool-5-thread-2] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:27:53,209 Resource not found YMID-R from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=YMID&size=small&rarity=R =>[pool-5-thread-4] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:27:53,238 Resource not found YMID-M from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=YMID&size=small&rarity=M =>[pool-5-thread-8] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:27:53,545 Resource not found UNF-C from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=UNF&size=small&rarity=C =>[pool-5-thread-5] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:27:53,546 Resource not found UNF-U from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=UNF&size=small&rarity=U =>[pool-5-thread-8] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:27:53,546 Resource not found UNF-M from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=UNF&size=small&rarity=M =>[pool-5-thread-6] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:27:53,562 Resource not found UNF-R from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=UNF&size=small&rarity=R =>[pool-5-thread-10] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:27:53,661 Resource not found 30A-C from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=30A&size=small&rarity=C =>[pool-5-thread-7] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:27:53,669 Resource not found 30A-R from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=30A&size=small&rarity=R =>[pool-5-thread-1] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:27:53,669 Resource not found 30A-U from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=30A&size=small&rarity=U =>[pool-5-thread-4] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:27:53,690 Resource not found 30A-M from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=30A&size=small&rarity=M =>[pool-5-thread-6] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:27:53,743 Resource not found SCD-U from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=SCD&size=small&rarity=U =>[pool-5-thread-11] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:27:53,743 Resource not found SCD-M from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=SCD&size=small&rarity=M =>[pool-5-thread-5] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:27:53,910 Resource not found SCD-R from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=SCD&size=small&rarity=R =>[pool-5-thread-4] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:27:53,921 Resource not found SCD-C from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=SCD&size=small&rarity=C =>[pool-5-thread-1] Downloader$DownloadCallback.onMessage 
+INFO  2024-03-24 15:27:55,958 New svg symbol downloaded: W                                                               =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,958 New svg symbol downloaded: U                                                               =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,959 New svg symbol downloaded: B                                                               =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,959 New svg symbol downloaded: R                                                               =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,959 New svg symbol downloaded: G                                                               =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,959 New svg symbol downloaded: W/U                                                             =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,959 New svg symbol downloaded: U/B                                                             =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,959 New svg symbol downloaded: B/R                                                             =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,959 New svg symbol downloaded: R/G                                                             =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,959 New svg symbol downloaded: G/W                                                             =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,959 New svg symbol downloaded: W/B                                                             =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,960 New svg symbol downloaded: U/R                                                             =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,960 New svg symbol downloaded: B/G                                                             =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,960 New svg symbol downloaded: R/W                                                             =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,960 New svg symbol downloaded: G/U                                                             =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,960 New svg symbol downloaded: W/U/P                                                           =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,960 New svg symbol downloaded: U/B/P                                                           =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,960 New svg symbol downloaded: B/R/P                                                           =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,960 New svg symbol downloaded: R/G/P                                                           =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,961 New svg symbol downloaded: G/W/P                                                           =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,961 New svg symbol downloaded: W/B/P                                                           =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,961 New svg symbol downloaded: U/R/P                                                           =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,961 New svg symbol downloaded: B/G/P                                                           =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,961 New svg symbol downloaded: R/W/P                                                           =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,961 New svg symbol downloaded: G/U/P                                                           =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,961 New svg symbol downloaded: 2/W                                                             =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,961 New svg symbol downloaded: 2/U                                                             =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,961 New svg symbol downloaded: 2/B                                                             =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,962 New svg symbol downloaded: 2/R                                                             =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,962 New svg symbol downloaded: 2/G                                                             =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,962 New svg symbol downloaded: WP                                                              =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,962 New svg symbol downloaded: UP                                                              =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,962 New svg symbol downloaded: BP                                                              =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,962 New svg symbol downloaded: RP                                                              =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,962 New svg symbol downloaded: GP                                                              =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,962 New svg symbol downloaded: X                                                               =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,962 New svg symbol downloaded: S                                                               =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,962 New svg symbol downloaded: T                                                               =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,962 New svg symbol downloaded: Q                                                               =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,962 New svg symbol downloaded: C                                                               =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,963 New svg symbol downloaded: E                                                               =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,963 New svg symbol downloaded: P                                                               =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,963 New svg symbol downloaded: 0                                                               =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,963 New svg symbol downloaded: 1                                                               =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,963 New svg symbol downloaded: 2                                                               =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,963 New svg symbol downloaded: 3                                                               =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,963 New svg symbol downloaded: 4                                                               =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,963 New svg symbol downloaded: 5                                                               =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,963 New svg symbol downloaded: 6                                                               =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,963 New svg symbol downloaded: 7                                                               =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,963 New svg symbol downloaded: 8                                                               =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,963 New svg symbol downloaded: 9                                                               =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,964 New svg symbol downloaded: 10                                                              =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,964 New svg symbol downloaded: 11                                                              =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,964 New svg symbol downloaded: 12                                                              =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,964 New svg symbol downloaded: 13                                                              =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,964 New svg symbol downloaded: 14                                                              =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,964 New svg symbol downloaded: 15                                                              =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,964 New svg symbol downloaded: 16                                                              =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,964 New svg symbol downloaded: 17                                                              =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,964 New svg symbol downloaded: 18                                                              =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,964 New svg symbol downloaded: 19                                                              =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:55,964 New svg symbol downloaded: 20                                                              =>[pool-5-thread-6] ScryfallSymbolsSource.parseData 
+INFO  2024-03-24 15:27:56,056 Symbols download finished                                                                  =>[AWT-EventQueue-0] CardPluginImpl$3.propertyChange 
+INFO  2024-03-24 15:27:56,066 Loading symbols...                                                                         =>[AWT-EventQueue-0] ManaSymbols.loadImages 
+INFO  2024-03-24 15:28:09,683 Symbols download prepare...                                                                =>[AWT-EventQueue-0] CardPluginImpl.downloadSymbols 
+ERROR 2024-03-24 15:28:09,701 Symbols: can't find set by code: DD3EVG                                                    =>[AWT-EventQueue-0] GathererSets.CheckSearchResult 
+ERROR 2024-03-24 15:28:09,705 Symbols: found duplicate code: MED                                                         =>[AWT-EventQueue-0] GathererSets.CheckSearchResult 
+WARN  2024-03-24 15:28:09,705 Symbols: set is not configured: PZEN (Zendikar Promos)                                     =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,705 Symbols: set is not configured: PPRO (Pro Tour Promos)                                     =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,705 Symbols: set is not configured: PRW2 (Ravnica Allegiance Ravnica Weekend)                  =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,705 Symbols: set is not configured: PRTR (Return to Ravnica Promos)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,705 Symbols: set is not configured: WMC (World Magic Cup Qualifiers)                           =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,705 Symbols: set is not configured: PAVR (Avacyn Restored Promos)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,705 Symbols: set is not configured: PNPH (New Phyrexia Promos)                                 =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,705 Symbols: set is not configured: PORI (Magic Origins Promos)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,706 Symbols: set is not configured: PAL99 (Arena League 1999)                                  =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,706 Symbols: set is not configured: PWAR (War of the Spark Promos)                             =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,706 Symbols: set is not configured: P15A (Fifteenth Anniversary Cards)                         =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,706 Symbols: set is not configured: PIDW (IDW Comics Inserts)                                  =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,706 Symbols: set is not configured: H17 (HASCON Promo 2017)                                    =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,706 Symbols: set is not configured: ACR (Assassin's Creed)                                     =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,706 Symbols: set is not configured: PRWK (GRN Ravnica Weekend)                                 =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,706 Symbols: set is not configured: ITP (Introductory Two-Player Set)                          =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,706 Symbols: set is not configured: FNM (Friday Night Magic 2000)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,706 Symbols: set is not configured: G00 (Judge Gift Cards 2000)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,706 Symbols: set is not configured: PDP15 (Duels of the Planeswalkers 2015 Promos)             =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,706 Symbols: set is not configured: G02 (Judge Gift Cards 2002)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,706 Symbols: set is not configured: H1R (Modern Horizons 1 Timeshifts)                         =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,706 Symbols: set is not configured: G01 (Judge Gift Cards 2001)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,706 Symbols: set is not configured: G04 (Judge Gift Cards 2004)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,707 Symbols: set is not configured: G03 (Judge Gift Cards 2003)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,707 Symbols: set is not configured: G06 (Judge Gift Cards 2006)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,707 Symbols: set is not configured: G05 (Judge Gift Cards 2005)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,707 Symbols: set is not configured: G08 (Judge Gift Cards 2008)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,707 Symbols: set is not configured: G07 (Judge Gift Cards 2007)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,707 Symbols: set is not configured: G09 (Judge Gift Cards 2009)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,707 Symbols: set is not configured: PKLD (Kaladesh Promos)                                     =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,707 Symbols: set is not configured: G11 (Judge Gift Cards 2011)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,707 Symbols: set is not configured: DKM (Deckmasters)                                          =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,707 Symbols: set is not configured: G10 (Judge Gift Cards 2010)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,707 Symbols: set is not configured: G17 (Gift Pack 2017)                                       =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,707 Symbols: set is not configured: PHEL (Open the Helvault)                                   =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,707 Symbols: set is not configured: PM19 (Core Set 2019 Promos)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,707 Symbols: set is not configured: PM15 (Magic 2015 Promos)                                   =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,707 Symbols: set is not configured: PM14 (Magic 2014 Promos)                                   =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,707 Symbols: set is not configured: F01 (Friday Night Magic 2001)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,708 Symbols: set is not configured: F03 (Friday Night Magic 2003)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,708 Symbols: set is not configured: F02 (Friday Night Magic 2002)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,708 Symbols: set is not configured: F05 (Friday Night Magic 2005)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,708 Symbols: set is not configured: F04 (Friday Night Magic 2004)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,708 Symbols: set is not configured: F07 (Friday Night Magic 2007)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,708 Symbols: set is not configured: F06 (Friday Night Magic 2006)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,708 Symbols: set is not configured: F09 (Friday Night Magic 2009)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,708 Symbols: set is not configured: F08 (Friday Night Magic 2008)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,708 Symbols: set is not configured: PM20 (Core Set 2020 Promos)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,708 Symbols: set is not configured: BIG (The Big Score)                                        =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,708 Symbols: set is not configured: F10 (Friday Night Magic 2010)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,708 Symbols: set is not configured: F12 (Friday Night Magic 2012)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,708 Symbols: set is not configured: F11 (Friday Night Magic 2011)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,708 Symbols: set is not configured: F14 (Friday Night Magic 2014)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,708 Symbols: set is not configured: F13 (Friday Night Magic 2013)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,708 Symbols: set is not configured: F16 (Friday Night Magic 2016)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,709 Symbols: set is not configured: F15 (Friday Night Magic 2015)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,709 Symbols: set is not configured: F17 (Friday Night Magic 2017)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,709 Symbols: set is not configured: PM11 (Magic 2011 Promos)                                   =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,709 Symbols: set is not configured: PM10 (Magic 2010 Promos)                                   =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,709 Symbols: set is not configured: PM13 (Magic 2013 Promos)                                   =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,709 Symbols: set is not configured: PM12 (Magic 2012 Promos)                                   =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,709 Symbols: set is not configured: PTKDF (Tarkir Dragonfury)                                  =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,709 Symbols: set is not configured: SLD (Secret Lair Drop)                                     =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,709 Symbols: set is not configured: SLC (Secret Lair 30th Anniversary Countdown Kit)           =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,709 Symbols: set is not configured: CLU (Ravnica: Clue Edition)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,709 Symbols: set is not configured: SLP (Secret Lair Showdown)                                 =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,709 Symbols: set is not configured: PL23 (Year of the Rabbit 2023)                             =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,709 Symbols: set is not configured: PL22 (Year of the Tiger 2022)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,709 Symbols: set is not configured: SLU (Secret Lair: Ultimate Edition)                        =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,709 Symbols: set is not configured: PL21 (Year of the Ox 2021)                                 =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,709 Symbols: set is not configured: SLX (Universes Within)                                     =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,709 Symbols: set is not configured: DPA (Duels of the Planeswalkers)                           =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,709 Symbols: set is not configured: BLB (Bloomburrow)                                          =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,710 Symbols: set is not configured: PJOU (Journey into Nyx Promos)                             =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,710 Symbols: set is not configured: CP2 (Fate Reforged Clash Pack)                             =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,710 Symbols: set is not configured: CP1 (Magic 2015 Clash Pack)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,710 Symbols: set is not configured: CP3 (Magic Origins Clash Pack)                             =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,710 Symbols: set is not configured: AKR (Amonkhet Remastered)                                  =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,710 Symbols: set is not configured: PIP (Fallout)                                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,710 Symbols: set is not configured: MD1 (Modern Event Deck 2014)                               =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,710 Symbols: set is not configured: PDCI (DCI Promos)                                          =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,710 Symbols: set is not configured: PBBD (Battlebond Promos)                                   =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,710 Symbols: set is not configured: PKTK (Khans of Tarkir Promos)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,710 Symbols: set is not configured: ME1 (Masters Edition)                                      =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,710 Symbols: set is not configured: G99 (Judge Gift Cards 1999)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,710 Symbols: set is not configured: PXLN (Ixalan Promos)                                       =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,710 Symbols: set is not configured: ANA (Arena New Player Experience)                          =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,710 Symbols: set is not configured: ANB (Arena Beginner Set)                                   =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,710 Symbols: set is not configured: PLG21 (Love Your LGS 2021)                                 =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,710 Symbols: set is not configured: OVNT (Vintage Championship)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,710 Symbols: set is not configured: SS1 (Signature Spellbook: Jace)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,710 Symbols: set is not configured: SS3 (Signature Spellbook: Chandra)                         =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,711 Symbols: set is not configured: SS2 (Signature Spellbook: Gideon)                          =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,711 Symbols: set is not configured: PTHB (Theros Beyond Death Promos)                          =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,711 Symbols: set is not configured: PHPR (HarperPrism Book Promos)                             =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,711 Symbols: set is not configured: WC00 (World Championship Decks 2000)                       =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,711 Symbols: set is not configured: CST (Coldsnap Theme Decks)                                 =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,711 Symbols: set is not configured: WC01 (World Championship Decks 2001)                       =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,711 Symbols: set is not configured: WC02 (World Championship Decks 2002)                       =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,711 Symbols: set is not configured: PSDC (San Diego Comic-Con 2013)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,711 Symbols: set is not configured: WC03 (World Championship Decks 2003)                       =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,711 Symbols: set is not configured: MGB (Multiverse Gift Box)                                  =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,711 Symbols: set is not configured: PJSE (Junior Series Europe)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,711 Symbols: set is not configured: BRB (Battle Royale Box Set)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,711 Symbols: set is not configured: RQS (Rivals Quick Start Set)                               =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,711 Symbols: set is not configured: WC04 (World Championship Decks 2004)                       =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,711 Symbols: set is not configured: MH3 (Modern Horizons 3)                                    =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,711 Symbols: set is not configured: PHOU (Hour of Devastation Promos)                          =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,711 Symbols: set is not configured: PDGM (Dragon's Maze Promos)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,711 Symbols: set is not configured: BRR (The Brothers' War Retro Artifacts)                    =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,712 Symbols: set is not configured: PH19 (Heroes of the Realm 2019)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,712 Symbols: set is not configured: CMB1 (Mystery Booster Playtest)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,712 Symbols: set is not configured: PELD (Throne of Eldraine Promos)                           =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,712 Symbols: set is not configured: PWOS (Wizards of the Coast Online Store)                   =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,712 Symbols: set is not configured: PWOR (Worlds)                                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,712 Symbols: set is not configured: PRES (Resale Promos)                                       =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,712 Symbols: set is not configured: PGPX (Grand Prix Promos)                                   =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,712 Symbols: set is not configured: PELP (European Land Program)                               =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,712 Symbols: set is not configured: SUM (Summer Magic)                                         =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,712 Symbols: set is not configured: PTHS (Theros Promos)                                       =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,712 Symbols: set is not configured: PISD (Innistrad Promos)                                    =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,712 Symbols: set is not configured: BTD (Beatdown Box Set)                                     =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,712 Symbols: set is not configured: PH17 (Heroes of the Realm 2017)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,712 Symbols: set is not configured: PW11 (Wizards Play Network 2011)                           =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,712 Symbols: set is not configured: P2HG (Two-Headed Giant Tournament)                         =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,712 Symbols: set is not configured: CALC (Custom Alchemy)                                      =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,713 Symbols: set is not configured: PW12 (Wizards Play Network 2012)                           =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,713 Symbols: set is not configured: PXTC (Ixalan Treasure Chest)                               =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,713 Symbols: set is not configured: P03 (Magic Player Rewards 2003)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,713 Symbols: set is not configured: PHTR (Heroes of the Realm 2016)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,713 Symbols: set is not configured: P05 (Magic Player Rewards 2005)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,713 Symbols: set is not configured: P04 (Magic Player Rewards 2004)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,713 Symbols: set is not configured: P07 (Magic Player Rewards 2007)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,713 Symbols: set is not configured: PGRN (Guilds of Ravnica Promos)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,713 Symbols: set is not configured: P06 (Magic Player Rewards 2006)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,713 Symbols: set is not configured: HA2 (Historic Anthology 2)                                 =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,713 Symbols: set is not configured: P09 (Magic Player Rewards 2009)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,713 Symbols: set is not configured: P08 (Magic Player Rewards 2008)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,713 Symbols: set is not configured: HA1 (Historic Anthology 1)                                 =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,713 Symbols: set is not configured: HA4 (Historic Anthology 4)                                 =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,713 Symbols: set is not configured: HA3 (Historic Anthology 3)                                 =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,713 Symbols: set is not configured: HA5 (Historic Anthology 5)                                 =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,713 Symbols: set is not configured: PGRU (Guru)                                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,714 Symbols: set is not configured: PBFZ (Battle for Zendikar Promos)                          =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,714 Symbols: set is not configured: MKC (Murders at Karlov Manor Commander)                    =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,714 Symbols: set is not configured: P10 (Magic Player Rewards 2010)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,714 Symbols: set is not configured: SWS (Star Wars)                                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,714 Symbols: set is not configured: MKM (Murders at Karlov Manor)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,714 Symbols: set is not configured: PDKA (Dark Ascension Promos)                               =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,714 Symbols: set is not configured: P11 (Magic Player Rewards 2011)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,714 Symbols: set is not configured: PEMN (Eldritch Moon Promos)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,714 Symbols: set is not configured: XANA (Arena New Player Experience Extras)                  =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,714 Symbols: set is not configured: ATH (Anthologies)                                          =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,714 Symbols: set is not configured: PAER (Aether Revolt Promos)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,714 Symbols: set is not configured: PUMA (Ultimate Box Topper Promos)                          =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,714 Symbols: set is not configured: PGTC (Gatecrash Promos)                                    =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,714 Symbols: set is not configured: PRM (Magic Online Promos)                                  =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,714 Symbols: set is not configured: PFRF (Fate Reforged Promos)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,714 Symbols: set is not configured: PF20 (MagicFest 2020)                                      =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,714 Symbols: set is not configured: PRIX (Rivals of Ixalan Promos)                             =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,714 Symbols: set is not configured: PNAT (Nationals Promos)                                    =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,714 Symbols: set is not configured: PHUK (Hachette UK)                                         =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,714 Symbols: set is not configured: JGP (Judge Gift Cards 1998)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,714 Symbols: set is not configured: PF19 (MagicFest 2019)                                      =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,714 Symbols: set is not configured: PTC (Pro Tour Collector Set)                               =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,715 Symbols: set is not configured: WC97 (World Championship Decks 1997)                       =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,715 Symbols: set is not configured: WC98 (World Championship Decks 1998)                       =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,715 Symbols: set is not configured: WC99 (World Championship Decks 1999)                       =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,715 Symbols: set is not configured: PURL (URL/Convention Promos)                               =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,715 Symbols: set is not configured: PCMD (Commander 2011 Launch Party)                         =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,715 Symbols: set is not configured: PCMP (Champs and States)                                   =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,715 Symbols: set is not configured: PDOM (Dominaria Promos)                                    =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,715 Symbols: set is not configured: PDRC (Dragon Con)                                          =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,715 Symbols: set is not configured: PUST (Unstable Promos)                                     =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,715 Symbols: set is not configured: PALA (Shards of Alara Promos)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,715 Symbols: set is not configured: PSOM (Scars of Mirrodin Promos)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,715 Symbols: set is not configured: OTJ (Outlaws of Thunder Junction)                          =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,715 Symbols: set is not configured: POGW (Oath of the Gatewatch Promos)                        =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,715 Symbols: set is not configured: PBNG (Born of the Gods Promos)                             =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,715 Symbols: set is not configured: MPR (Magic Player Rewards 2001)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,715 Symbols: set is not configured: PALP (Asia Pacific Land Program)                           =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,715 Symbols: set is not configured: PRNA (Ravnica Allegiance Promos)                           =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,715 Symbols: set is not configured: FMB1 (Mystery Booster Retail Edition Foils)                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,715 Symbols: set is not configured: OANA (Arena New Player Experience Cards)                   =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,715 Symbols: set is not configured: PAKH (Amonkhet Promos)                                     =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,715 Symbols: set is not configured: PMBS (Mirrodin Besieged Promos)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,715 Symbols: set is not configured: PSOI (Shadows over Innistrad Promos)                       =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,716 Symbols: set is not configured: PAL03 (Arena League 2003)                                  =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,716 Symbols: set is not configured: PAL04 (Arena League 2004)                                  =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,716 Symbols: set is not configured: PAL01 (Arena League 2001)                                  =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,716 Symbols: set is not configured: PAL02 (Arena League 2002)                                  =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,716 Symbols: set is not configured: PAL00 (Arena League 2000)                                  =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,716 Symbols: set is not configured: PWWK (Worldwake Promos)                                    =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,716 Symbols: set is not configured: PANA (MTG Arena Promos)                                    =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,716 Symbols: set is not configured: PS15 (San Diego Comic-Con 2015)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,716 Symbols: set is not configured: PS14 (San Diego Comic-Con 2014)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,716 Symbols: set is not configured: PMEI (Magazine Inserts)                                    =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,716 Symbols: set is not configured: PAL05 (Arena League 2005)                                  =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,716 Symbols: set is not configured: PAL06 (Arena League 2006)                                  =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,716 Symbols: set is not configured: PS17 (San Diego Comic-Con 2017)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,716 Symbols: set is not configured: PS16 (San Diego Comic-Con 2016)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,716 Symbols: set is not configured: PS19 (San Diego Comic-Con 2019)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,716 Symbols: set is not configured: HHO (Happy Holidays)                                       =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,716 Symbols: set is not configured: PDTK (Dragons of Tarkir Promos)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,716 Symbols: set is not configured: PS18 (San Diego Comic-Con 2018)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,716 Symbols: set is not configured: PDTP (Duels of the Planeswalkers 2009 Promos)              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,716 Symbols: set is not configured: OLGC (Legacy Championship)                                 =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,716 Symbols: set is not configured: PZ1 (Legendary Cube Prize Pack)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,716 Symbols: set is not configured: PZ2 (Treasure Chest)                                       =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,717 Symbols: set is not configured: PDP14 (Duels of the Planeswalkers 2014 Promos)             =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,717 Symbols: set is not configured: PDP13 (Duels of the Planeswalkers 2013 Promos)             =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,717 Symbols: set is not configured: PDP12 (Duels of the Planeswalkers 2012 Promos)             =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,717 Symbols: set is not configured: PDP10 (Duels of the Planeswalkers 2010 Promos)             =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,717 Symbols: set is not configured: PROE (Rise of the Eldrazi Promos)                          =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,717 Symbols: set is not configured: PMH1 (Modern Horizons Promos)                              =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,717 Symbols: set is not configured: PJAS (Junior APAC Series)                                  =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,717 Symbols: set is not configured: ZNC (Zendikar Rising Commander)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,717 Symbols: set is not configured: DBL (Innistrad: Double Feature)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,717 Symbols: set is not configured: ZNE (Zendikar Rising Expeditions)                          =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,717 Symbols: set is not configured: CA0 (Candour Core)                                         =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,717 Symbols: set is not configured: P10E (Tenth Edition Promos)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,717 Symbols: set is not configured: PSS1 (BFZ Standard Series)                                 =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,717 Symbols: set is not configured: PSS3 (M19 Standard Showdown)                               =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,717 Symbols: set is not configured: PSS2 (Ixalan Standard Showdown)                            =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,717 Symbols: set is not configured: DD1 (Duel Decks: Elves vs. Goblins)                        =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,717 Symbols: set is not configured: LTC (Tales of Middle-earth Commander)                      =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,717 Symbols: set is not configured: PBOOK (Miscellaneous Book Promos)                          =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,717 Symbols: set is not configured: TD0 (Magic Online Theme Decks)                             =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,717 Symbols: set is not configured: TD2 (Duel Decks: Mirrodin Pure vs. New Phyrexia)           =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,717 Symbols: set is not configured: PPP1 (M20 Promo Packs)                                     =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,717 Symbols: set is not configured: PSUS (Junior Super Series)                                 =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,717 Symbols: set is not configured: PLGM (DCI Legend Membership)                               =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,717 Symbols: set is not configured: GK1 (Guilds of Ravnica Guild Kits)                         =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,718 Symbols: set is not configured: PARL (Arena League 1996)                                   =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,718 Symbols: set is not configured: GK2 (Ravnica Allegiance Guild Kits)                        =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,718 Symbols: set is not configured: CC1 (Commander Collection: Green)                          =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,718 Symbols: set is not configured: CC2 (Commander Collection: Black)                          =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,718 Symbols: set is not configured: J12 (Judge Gift Cards 2012)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,718 Symbols: set is not configured: J14 (Judge Gift Cards 2014)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,718 Symbols: set is not configured: J13 (Judge Gift Cards 2013)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,718 Symbols: set is not configured: J16 (Judge Gift Cards 2016)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,718 Symbols: set is not configured: J15 (Judge Gift Cards 2015)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,718 Symbols: set is not configured: J18 (Judge Gift Cards 2018)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,718 Symbols: set is not configured: J17 (Judge Gift Cards 2017)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+WARN  2024-03-24 15:28:09,718 Symbols: set is not configured: J19 (Judge Gift Cards 2019)                                =>[AWT-EventQueue-0] GathererSets.AnalyseSearchResult 
+INFO  2024-03-24 15:28:09,740 Symbols download needs 1057 files                                                          =>[AWT-EventQueue-0] CardPluginImpl.downloadSymbols 
+WARN  2024-03-24 15:28:10,050 Resource not found MPS_WAR-R from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=MPS_WAR&size=small&rarity=R =>[pool-7-thread-8] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:28:10,050 Resource not found MPS_WAR-C from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=MPS_WAR&size=small&rarity=C =>[pool-7-thread-5] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:28:10,050 Resource not found BP from https://gatherer.wizards.com/handlers/image.ashx?size=large&name=BP&type=symbol =>[pool-7-thread-9] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:28:10,050 Resource not found UP from https://gatherer.wizards.com/handlers/image.ashx?size=large&name=UP&type=symbol =>[pool-7-thread-3] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:28:10,065 Resource not found C from https://gatherer.wizards.com/handlers/image.ashx?size=large&name=C&type=symbol =>[pool-7-thread-4] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:28:10,100 Resource not found E from https://gatherer.wizards.com/handlers/image.ashx?size=large&name=E&type=symbol =>[pool-7-thread-6] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:28:10,120 Resource not found RP from https://gatherer.wizards.com/handlers/image.ashx?size=large&name=RP&type=symbol =>[pool-7-thread-1] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:28:10,120 Resource not found J20-U from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=J20&size=small&rarity=U =>[pool-7-thread-5] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:28:10,130 Resource not found J20-C from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=J20&size=small&rarity=C =>[pool-7-thread-8] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:28:10,140 Resource not found J20-R from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=J20&size=small&rarity=R =>[pool-7-thread-3] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:28:10,140 Resource not found WP from https://gatherer.wizards.com/handlers/image.ashx?size=large&name=WP&type=symbol =>[pool-7-thread-7] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:28:10,140 Resource not found YMID-C from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=YMID&size=small&rarity=C =>[pool-7-thread-4] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:28:10,175 Resource not found J20-M from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=J20&size=small&rarity=M =>[pool-7-thread-9] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:28:10,175 Resource not found GP from https://gatherer.wizards.com/handlers/image.ashx?size=large&name=GP&type=symbol =>[pool-7-thread-2] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:28:10,214 Resource not found UNF-M from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=UNF&size=small&rarity=M =>[pool-7-thread-7] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:28:10,228 Resource not found UNF-C from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=UNF&size=small&rarity=C =>[pool-7-thread-8] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:28:10,228 Resource not found YMID-R from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=YMID&size=small&rarity=R =>[pool-7-thread-5] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:28:10,239 Resource not found YMID-M from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=YMID&size=small&rarity=M =>[pool-7-thread-1] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:28:10,254 Resource not found YMID-U from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=YMID&size=small&rarity=U =>[pool-7-thread-6] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:28:10,254 Resource not found 30A-C from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=30A&size=small&rarity=C =>[pool-7-thread-9] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:28:10,275 Resource not found UNF-U from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=UNF&size=small&rarity=U =>[pool-7-thread-4] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:28:10,275 Resource not found 30A-U from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=30A&size=small&rarity=U =>[pool-7-thread-2] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:28:10,299 Resource not found 30A-M from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=30A&size=small&rarity=M =>[pool-7-thread-8] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:28:10,299 Resource not found UNF-R from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=UNF&size=small&rarity=R =>[pool-7-thread-3] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:28:10,334 Resource not found 30A-R from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=30A&size=small&rarity=R =>[pool-7-thread-7] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:28:10,334 Resource not found SCD-C from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=SCD&size=small&rarity=C =>[pool-7-thread-5] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:28:10,398 Resource not found SCD-R from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=SCD&size=small&rarity=R =>[pool-7-thread-6] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:28:11,279 Resource not found MPS_WAR-U from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=MPS_WAR&size=small&rarity=U =>[pool-7-thread-10] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:28:11,571 Resource not found SCD-U from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=SCD&size=small&rarity=U =>[pool-7-thread-1] Downloader$DownloadCallback.onMessage 
+WARN  2024-03-24 15:28:11,589 Resource not found SCD-M from https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=SCD&size=small&rarity=M =>[pool-7-thread-9] Downloader$DownloadCallback.onMessage 
+INFO  2024-03-24 15:28:11,628 Symbols download finished                                                                  =>[AWT-EventQueue-0] CardPluginImpl$3.propertyChange 
+INFO  2024-03-24 15:28:11,647 Loading symbols...                                                                         =>[AWT-EventQueue-0] ManaSymbols.loadImages 
+WARN  2024-03-24 15:28:25,089 Failed to read sounds/OnNextPage.wav                                                       =>[AWT-EventQueue-0] MageClip.loadStream 
+java.io.FileNotFoundException: sounds/OnNextPage.wav (No such file or directory)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at javazoom.spi.mpeg.sampled.file.MpegAudioFileReader.getAudioInputStream(MpegAudioFileReader.java:490)
+	at javax.sound.sampled.AudioSystem.getAudioInputStream(AudioSystem.java:1181)
+	at mage.client.util.audio.MageClip.loadStream(MageClip.java:37)
+	at mage.client.util.audio.MageClip.<init>(MageClip.java:31)
+	at mage.client.util.audio.AudioManager.playAnotherTab(AudioManager.java:85)
+	at mage.client.deckeditor.collection.viewer.MageBook.lambda$addSetTabs$2(MageBook.java:186)
+	at mage.client.components.HoverButton.execute(HoverButton.java:348)
+	at mage.client.deckeditor.collection.viewer.MageBook.updateDispayedSets(MageBook.java:553)
+	at mage.client.deckeditor.collection.viewer.CollectionViewerPanel.lambda$initComponents$0(CollectionViewerPanel.java:94)
+	at javax.swing.JComboBox.fireActionEvent(JComboBox.java:1260)
+	at javax.swing.JComboBox.setSelectedItem(JComboBox.java:588)
+	at mage.client.deckeditor.collection.viewer.CollectionViewerPanel.<init>(CollectionViewerPanel.java:34)
+	at mage.client.deckeditor.collection.viewer.CollectionViewerPane.<init>(CollectionViewerPane.java:27)
+	at mage.client.MageFrame.showCollectionViewer(MageFrame.java:1379)
+	at mage.client.MageFrame.btnCollectionViewerActionPerformed(MageFrame.java:1148)
+	at mage.client.MageFrame.access$1200(MageFrame.java:87)
+	at mage.client.MageFrame$10.actionPerformed(MageFrame.java:1017)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:262)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+	at java.awt.Component.processMouseEvent(Component.java:6539)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3318)
+	at java.awt.Component.processEvent(Component.java:6304)
+	at java.awt.Container.processEvent(Container.java:2239)
+	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+	at java.awt.Container.dispatchEventImpl(Container.java:2297)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4535)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+	at java.awt.Container.dispatchEventImpl(Container.java:2283)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:760)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:84)
+	at java.awt.EventQueue$4.run(EventQueue.java:733)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:730)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+INFO  2024-03-24 15:28:44,599 Images: search broken files...                                                             =>[AWT-EventQueue-0] DownloadPicturesService.startDownload 
+INFO  2024-03-24 15:32:22,947 Starting MAGE client version 1.4.52-V4-beta4 (build: runtime)                              =>[main] MageFrame.main 
+INFO  2024-03-24 15:32:22,948 Logging level: INFO                                                                        =>[main] MageFrame.main 
+INFO  2024-03-24 15:32:22,948 Default charset: UTF-8                                                                     =>[main] MageFrame.main 
+INFO  2024-03-24 15:32:23,112 custom Java certificate file not found at: /Users/ian/IdeaProjects/mage/cacerts            =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 15:32:23,763 Using GUI theme: Default                                                                   =>[AWT-EventQueue-0] PreferencesDialog.getCurrentTheme 
+INFO  2024-03-24 15:32:23,769 Loading database...                                                                        =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 15:32:24,672 Database stats:                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 15:32:24,673  - sets: 500                                                                               =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 15:32:24,673  - cards: 72140                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 15:32:24,673  - tokens: 1849                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 15:32:24,673  - emblems: 114                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 15:32:24,673  - planes: 21                                                                              =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 15:32:24,673  - dungeons: 3                                                                             =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 15:32:24,683 Images: search broken files...                                                             =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 15:32:24,703 Loading sets and formats...                                                                =>[AWT-EventQueue-0] MageFrame.bootstrapSetsAndFormats 
+INFO  2024-03-24 15:32:32,388 Loading symbols...                                                                         =>[AWT-EventQueue-0] ManaSymbols.loadImages 
+INFO  2024-03-24 15:32:32,791 Loading plugins...                                                                         =>[AWT-EventQueue-0] Plugins.loadPlugins 
+INFO  2024-03-24 15:32:32,844 [Card plugin, version 0.7] has been loaded.                                                =>[AWT-EventQueue-0] CardPluginImpl.newPlugin 
+INFO  2024-03-24 15:32:32,845 [Theme plugin, version 0.5] has been loaded.                                               =>[AWT-EventQueue-0] ThemePluginImpl.newPlugin 
+INFO  2024-03-24 15:32:32,845 Done.                                                                                      =>[AWT-EventQueue-0] Plugins.loadPlugins 
+INFO  2024-03-24 15:32:33,077 Client start up time: 10 seconds                                                           =>[AWT-EventQueue-0] MageFrame.lambda$new$3 
+INFO  2024-03-24 15:32:54,245 Connect: trying to restore old session for user rogue                                      =>[SwingWorker-pool-3-thread-2] SessionHandler.connect 
+INFO  2024-03-24 15:32:54,247 Connect: connecting to server 146.190.135.147:17171                                        =>[SwingWorker-pool-3-thread-3] SessionImpl$5.work 
+INFO  2024-03-24 15:32:54,924 Connect: DONE                                                                              =>[SwingWorker-pool-3-thread-3] SessionImpl$5.work 
+INFO  2024-03-24 15:32:54,925 Logging: as username rogue to server 146.190.135.147:17171                                 =>[SwingWorker-pool-3-thread-4] SessionImpl$4.work 
+INFO  2024-03-24 15:32:56,547 Logging: DONE                                                                              =>[SwingWorker-pool-3-thread-4] SessionImpl$4.work 

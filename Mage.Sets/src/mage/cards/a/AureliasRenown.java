@@ -33,7 +33,7 @@ public final class AureliasRenown extends CardImpl {
         this.addSuperType(SuperType.LEGENDARY);
 
         // At the beginning of each upkeep, put a strife counter on Crescendo of War.
-        this.addAbility(new LeavesBattlefieldAllTriggeredAbility(new AddCountersSourceEffect(CounterType.VENGEANCE.createInstance(1), true), StaticFilters.FILTER_PERMANENT_CREATURES_CONTROLLED));
+        this.addAbility(new LeavesBattlefieldAllTriggeredAbility(new AddCountersSourceEffect(CounterType.VENGEANCE.createInstance(1), true), StaticFilters.FILTER_PERMANENT_A_CREATURE));
 
         // Attacking creatures get +1/+0 for each strife counter on Crescendo of War.
         this.addAbility(new SimpleStaticAbility(new BoostAllEffect(xValue, StaticValue.get(0),
