@@ -212,6 +212,7 @@ public enum CounterType {
     UNLOCK("unlock"),
     VALOR("valor"),
     VELOCITY("velocity"),
+    VENGEANCE("vengeance"),
     VERSE("verse"),
     VIGILANCE("vigilance"),
     VITALITY("vitality"),

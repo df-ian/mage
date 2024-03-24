@@ -22,7 +22,7 @@ public class CandourCore extends ExpansionSet {
 
 
         cards.add(new SetCardInfo("Fervent Trailblazers", "1", Rarity.RARE, mage.cards.f.FerventTrailblazers.class));
-        cards.add(new SetCardInfo("Gilded Hierarch", "2", Rarity.RARE, mage.cards.g.GildedHierarch.class));
+        cards.add(new SetCardInfo("Guilded Hierarch", "2", Rarity.RARE, mage.cards.g.GildedHierarch.class));
         cards.add(new SetCardInfo("Blazing Communion", "3", Rarity.UNCOMMON, mage.cards.b.BlazingCommunion.class));
         cards.add(new SetCardInfo("Icy Rebuke", "4", Rarity.UNCOMMON, mage.cards.i.IcyRebuke.class));
         cards.add(new SetCardInfo("Reap the Catacombs", "5", Rarity.UNCOMMON, mage.cards.r.ReapTheCatacombs.class));
@@ -45,7 +45,7 @@ public class CandourCore extends ExpansionSet {
         cards.add(new SetCardInfo("Conduit Mage", "23", Rarity.RARE, mage.cards.c.ConduitMage.class));
         cards.add(new SetCardInfo("Unsettled Compass", "24", Rarity.RARE, mage.cards.u.UnsettledCompass.class));
         cards.add(new SetCardInfo("Animir, Nature's Aegis", "25", Rarity.RARE, mage.cards.a.AnimirNaturesAegis.class));
-        cards.add(new SetCardInfo("Feline Spirit Guide", "26", Rarity.RARE, mage.cards.f.FelineSpiritGuide.class));
+        //cards.add(new SetCardInfo("Feline Spirit Guide", "26", Rarity.RARE, mage.cards.f.FelineSpiritGuide.class));
         cards.add(new SetCardInfo("Lotus-Eyed Selkie", "27", Rarity.RARE, mage.cards.l.LotusEyedSelkie.class));
         cards.add(new SetCardInfo("Senate Loremage", "28", Rarity.RARE, mage.cards.s.SenateLoremage.class));
         cards.add(new SetCardInfo("Najeela, Blossoming Fury", "29", Rarity.MYTHIC, mage.cards.n.NajeelaBlossomingFury.class));
@@ -70,6 +70,7 @@ public class CandourCore extends ExpansionSet {
         cards.add(new SetCardInfo("Rotten Rootrager", "50", Rarity.UNCOMMON, mage.cards.r.RottenRootrager.class));
         cards.add(new SetCardInfo("Pernicious Revenant", "51", Rarity.UNCOMMON, mage.cards.p.PerniciousRevenant.class));
         cards.add(new SetCardInfo("Spiteful Journeymage", "52", Rarity.RARE, mage.cards.s.SpitefulJourneymage.class));
+        cards.add(new SetCardInfo("Isadora of the Eternal Watch", "53", Rarity.RARE, mage.cards.i.IsadoraOfTheEternalWatch.class));
         cards.add(new SetCardInfo("Bronzeforge Fanatic", "54", Rarity.RARE, mage.cards.b.BronzeforgeFanatic.class));
         cards.add(new SetCardInfo("Squandered Hopes", "55", Rarity.UNCOMMON, mage.cards.s.SquanderedHopes.class));
         cards.add(new SetCardInfo("Coiling Wrath Engine", "56", Rarity.MYTHIC, mage.cards.c.CoilingWrathEngine.class));
@@ -94,7 +95,7 @@ public class CandourCore extends ExpansionSet {
         cards.add(new SetCardInfo("Hedron Mystic", "75", Rarity.RARE, mage.cards.h.HedronMystic.class));
         cards.add(new SetCardInfo("Tamiyo, Truthseeker", "76", Rarity.MYTHIC, mage.cards.t.TamiyoTruthSeeker.class));
         cards.add(new SetCardInfo("Valakut Convergence", "77", Rarity.MYTHIC, mage.cards.v.ValakutConvergence.class));
-        cards.add(new SetCardInfo("Starnheim Avenger", "78", Rarity.MYTHIC, mage.cards.s.StarnheimAvenger.class));
+        cards.add(new SetCardInfo("Chittering Siege", "78", Rarity.UNCOMMON, mage.cards.c.ChitteringSiege.class));
         cards.add(new SetCardInfo("Rapacious Rodent", "79", Rarity.UNCOMMON, mage.cards.r.RapaciousRodent.class));
         cards.add(new SetCardInfo("Spontaneous Succession", "82", Rarity.MYTHIC, mage.cards.s.SpontaneousSuccession.class));
         cards.add(new SetCardInfo("Seasoned Ascension", "83", Rarity.MYTHIC, mage.cards.s.SeasonedAscension.class));
@@ -105,7 +106,7 @@ public class CandourCore extends ExpansionSet {
         cards.add(new SetCardInfo("Apex of the Peaks", "88", Rarity.MYTHIC, mage.cards.a.ApexOfThePeaks.class));
         cards.add(new SetCardInfo("Swiftslash Thief", "89", Rarity.RARE, mage.cards.s.SwiftslashThief.class));
         cards.add(new SetCardInfo("Consign to Nothingness", "90", Rarity.RARE, mage.cards.c.ConsignToNothingness.class));
-        cards.add(new SetCardInfo("Trinket Merchant", "91", Rarity.MYTHIC, mage.cards.t.TrinketMerchant.class));
+        //cards.add(new SetCardInfo("Trinket Merchant", "91", Rarity.MYTHIC, mage.cards.t.TrinketMerchant.class));
         cards.add(new SetCardInfo("Dina, Vitality Alchemist", "92", Rarity.MYTHIC, mage.cards.d.DinaVitalityAlchemist.class));
         cards.add(new SetCardInfo("Malevolent Artifice", "93", Rarity.RARE, mage.cards.m.MalevolentArtifice.class));
         cards.add(new SetCardInfo("Liliana's Invocation", "94", Rarity.RARE, mage.cards.l.LilianasInvocation.class));
@@ -120,9 +121,9 @@ public class CandourCore extends ExpansionSet {
         cards.add(new SetCardInfo("Clockwork Curio", "201", Rarity.RARE, mage.cards.c.ClockworkCurio.class));
         cards.add(new SetCardInfo("Flickerfowl", "206", Rarity.UNCOMMON, mage.cards.f.Flickerfowl.class));
         cards.add(new SetCardInfo("Stalking Vipercat", "207", Rarity.UNCOMMON, mage.cards.s.StalkingVipercat.class));
-        cards.add(new SetCardInfo("Adolescent War Rhino", "208", Rarity.RARE, mage.cards.a.AdolescentWarRhino.class));
+        cards.add(new SetCardInfo("Saheeli's Splendor", "208", Rarity.RARE, mage.cards.s.SaheelisSplendor.class));
         cards.add(new SetCardInfo("Second Endeavour", "209", Rarity.UNCOMMON, mage.cards.s.SecondEndeavour.class));
-        cards.add(new SetCardInfo("Spell Compression", "213", Rarity.RARE, mage.cards.s.SpellCompression.class));
+        cards.add(new SetCardInfo("Aurelia's Renown", "210", Rarity.RARE, mage.cards.a.AureliasRenown.class));
         cards.add(new SetCardInfo("Midnight Beastcaller", "216", Rarity.RARE, mage.cards.m.MidnightBeastcaller.class));
         cards.add(new SetCardInfo("Tasigur, Eternal Tyrant", "224", Rarity.RARE, mage.cards.t.TasigurEternalTyrant.class));
         cards.add(new SetCardInfo("Collected Construction", "229", Rarity.RARE, mage.cards.c.CollectedConstruction.class));
@@ -144,9 +145,15 @@ public class CandourCore extends ExpansionSet {
         cards.add(new SetCardInfo("Mox Bismuth", "247", Rarity.MYTHIC, mage.cards.m.MoxBismuth.class));
         cards.add(new SetCardInfo("Devilshroud Veil", "248", Rarity.RARE, mage.cards.d.DevilshroudVeil.class));
         cards.add(new SetCardInfo("Impermanate", "249", Rarity.UNCOMMON, mage.cards.i.Impermanate.class));
-        cards.add(new SetCardInfo("Frostpeak Guide", "250", Rarity.MYTHIC, mage.cards.f.FrostpeakGuide.class));
+        cards.add(new SetCardInfo("Volatile Dunes", "250", Rarity.RARE, mage.cards.v.VolatileDunes.class));
         cards.add(new SetCardInfo("Universal Predation", "259", Rarity.MYTHIC, mage.cards.u.UniversalPredation.class));
         cards.add(new SetCardInfo("Angelic Wrath", "268", Rarity.RARE, mage.cards.a.AngelicWrath.class));
+        cards.add(new SetCardInfo("Whispering Henge", "269", Rarity.RARE, mage.cards.w.WhisperingHenge.class));
+        cards.add(new SetCardInfo("Ruinous Sands", "270", Rarity.RARE, mage.cards.r.RuinousSands.class));
+        cards.add(new SetCardInfo("Aetherpulse Dryad", "283", Rarity.UNCOMMON, mage.cards.a.AetherpulseDryad.class));
+        cards.add(new SetCardInfo("Mismatch", "284", Rarity.UNCOMMON, mage.cards.m.Mismatch.class));
+        cards.add(new SetCardInfo("Devastating Zenith", "285", Rarity.MYTHIC, mage.cards.d.DevastatingZenith.class));
+        cards.add(new SetCardInfo("Titan of Phyresis", "286", Rarity.MYTHIC, mage.cards.t.TitanOfPhyresis.class));
         cards.add(new SetCardInfo("Hexclasp", "287", Rarity.UNCOMMON, mage.cards.h.Hexclasp.class));
         cards.add(new SetCardInfo("Jade Sphinx", "288", Rarity.RARE, mage.cards.j.JadeSphinx.class));
         cards.add(new SetCardInfo("Worldsoul Preserver", "289", Rarity.RARE, mage.cards.w.WorldsoulPreserver.class));
@@ -193,20 +200,15 @@ public class CandourCore extends ExpansionSet {
         cards.add(new SetCardInfo("Yavimaya Coast", "329", Rarity.RARE, mage.cards.y.YavimayaCoast.class));
         cards.add(new SetCardInfo("Hallowed Fountain", "330", Rarity.RARE, mage.cards.h.HallowedFountain.class));
 
-        //Aurelia's Renown
         //Remorseful Invocation
         //Kaya Cassir
         //Liliana, Ambitious Healer
         //At Any Cost
         //Imperial Bloodscribe
         //Slumbering Greatwurm
-        //Titan of Phyresis
-        //Chittering Siege
-        //Aetherpulse Dryad
         //Blighted Inquisition
         //Ordruun Reckoner
-        //Mismatch
-        //Devastating Zenith
         //Nightmarish Ravager
+
     }
 }

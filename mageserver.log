@@ -1,0 +1,53 @@
+INFO  2024-03-23 16:45:06,831 Starting MAGE server version 1.4.52-V4-beta4 (build: runtime)                              =>[main] Main.main 
+INFO  2024-03-23 16:45:06,832 Logging level: INFO                                                                        =>[main] Main.main 
+INFO  2024-03-23 16:45:06,832 Default charset: UTF-8                                                                     =>[main] Main.main 
+INFO  2024-03-23 16:45:06,833 Reading configuration from path=config/config.xml                                          =>[main] Main.main 
+INFO  2024-03-23 16:46:34,926 Starting MAGE server version 1.4.52-V4-beta4 (build: runtime)                              =>[main] Main.main 
+INFO  2024-03-23 16:46:34,928 Logging level: INFO                                                                        =>[main] Main.main 
+INFO  2024-03-23 16:46:34,928 Default charset: UTF-8                                                                     =>[main] Main.main 
+INFO  2024-03-23 16:46:34,929 Reading configuration from path=config/config.xml                                          =>[main] Main.main 
+INFO  2024-03-23 16:47:11,111 Starting MAGE server version 1.4.52-V4-beta4 (build: runtime)                              =>[main] Main.main 
+INFO  2024-03-23 16:47:11,113 Logging level: INFO                                                                        =>[main] Main.main 
+INFO  2024-03-23 16:47:11,113 Default charset: UTF-8                                                                     =>[main] Main.main 
+INFO  2024-03-23 16:47:11,114 Reading configuration from path=config/config.xml                                          =>[main] Main.main 
+INFO  2024-03-23 16:47:11,224 Loading database...                                                                        =>[main] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-23 16:47:11,486 Database stats:                                                                            =>[main] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-23 16:47:11,486  - sets: updating                                                                          =>[main] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-23 16:47:11,486  - cards: updating                                                                         =>[main] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-23 16:47:11,486  - tokens: 1849                                                                            =>[main] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-23 16:47:11,486  - emblems: 114                                                                            =>[main] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-23 16:47:11,487  - planes: 21                                                                              =>[main] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-23 16:47:11,487  - dungeons: 3                                                                             =>[main] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-23 16:47:11,487 Done.                                                                                      =>[main] Main.main 
+INFO  2024-03-23 16:47:11,487 Loading extension packages...                                                              =>[main] Main.main 
+INFO  2024-03-23 16:47:11,487 Done.                                                                                      =>[main] Main.main 
+INFO  2024-03-23 16:47:11,487 Loading cards...                                                                           =>[main] Main.main 
+INFO  2024-03-23 16:47:18,398 DB: need to add 500 new sets                                                               =>[main] ExpansionRepository.lambda$saveSets$0 
+INFO  2024-03-23 16:47:25,371 DB: need to add 72587 new cards                                                            =>[main] CardRepository.lambda$saveCards$0 
+INFO  2024-03-23 16:47:29,189 Done.                                                                                      =>[main] Main.main 
+INFO  2024-03-23 16:47:29,189 Updating user stats DB...                                                                  =>[main] Main.main 
+ERROR 2024-03-23 16:47:29,205 Error creating user_stats repository -                                                     =>[main] UserStatsRepository.<init> 
+java.sql.SQLException: Error opening connection
+	at org.sqlite.SQLiteConnection.open(SQLiteConnection.java:239)
+	at org.sqlite.SQLiteConnection.<init>(SQLiteConnection.java:61)
+	at org.sqlite.jdbc3.JDBC3Connection.<init>(JDBC3Connection.java:28)
+	at org.sqlite.jdbc4.JDBC4Connection.<init>(JDBC4Connection.java:21)
+	at org.sqlite.JDBC.createConnection(JDBC.java:115)
+	at org.sqlite.JDBC.connect(JDBC.java:90)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at com.j256.ormlite.jdbc.JdbcConnectionSource.makeConnection(JdbcConnectionSource.java:139)
+	at com.j256.ormlite.jdbc.BaseJdbcConnectionSource.getReadWriteConnection(BaseJdbcConnectionSource.java:154)
+	at com.j256.ormlite.table.TableUtils.doCreateTable(TableUtils.java:370)
+	at com.j256.ormlite.table.TableUtils.doCreateTable(TableUtils.java:357)
+	at com.j256.ormlite.table.TableUtils.createTableIfNotExists(TableUtils.java:75)
+	at mage.cards.repository.RepositoryUtil.isDatabaseObsolete(RepositoryUtil.java:45)
+	at mage.server.record.UserStatsRepository.<init>(UserStatsRepository.java:39)
+	at mage.server.record.UserStatsRepository.<clinit>(UserStatsRepository.java:23)
+	at mage.server.Main.main(Main.java:189)
+Caused by: java.lang.Exception: No native library found for os.name=Mac, os.arch=aarch64, paths=[/Users/ian/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+	at org.sqlite.SQLiteJDBCLoader.loadSQLiteNativeLibrary(SQLiteJDBCLoader.java:367)
+	at org.sqlite.SQLiteJDBCLoader.initialize(SQLiteJDBCLoader.java:67)
+	at org.sqlite.core.NativeDB.load(NativeDB.java:63)
+	at org.sqlite.SQLiteConnection.open(SQLiteConnection.java:235)
+	... 16 more
