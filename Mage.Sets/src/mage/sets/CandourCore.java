@@ -216,5 +216,7 @@ public class CandourCore extends ExpansionSet {
         //Nightmarish Ravager
         //Starlit Cairn
         //Chromatic Lotus
+        //Cranial Clamp
+        //Diviner's Terrarium
     }
 }

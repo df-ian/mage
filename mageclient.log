@@ -1112,3 +1112,294 @@ Possible reasons:
 	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
 	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
 	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+INFO  2024-03-24 17:59:28,194 Starting MAGE client version 1.4.52-V4-beta4 (build: runtime)                              =>[main] MageFrame.main 
+INFO  2024-03-24 17:59:28,196 Logging level: INFO                                                                        =>[main] MageFrame.main 
+INFO  2024-03-24 17:59:28,196 Default charset: UTF-8                                                                     =>[main] MageFrame.main 
+INFO  2024-03-24 17:59:28,367 custom Java certificate file not found at: /Users/ian/IdeaProjects/mage/cacerts            =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 17:59:29,083 Using GUI theme: Default                                                                   =>[AWT-EventQueue-0] PreferencesDialog.getCurrentTheme 
+INFO  2024-03-24 17:59:29,091 Loading database...                                                                        =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 17:59:29,819 Database stats:                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 17:59:29,819  - sets: 500                                                                               =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 17:59:29,819  - cards: 72146                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 17:59:29,819  - tokens: 1849                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 17:59:29,820  - emblems: 114                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 17:59:29,820  - planes: 21                                                                              =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 17:59:29,820  - dungeons: 3                                                                             =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 17:59:29,829 Images: search broken files...                                                             =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 17:59:29,854 Loading sets and formats...                                                                =>[AWT-EventQueue-0] MageFrame.bootstrapSetsAndFormats 
+INFO  2024-03-24 17:59:37,459 Loading symbols...                                                                         =>[AWT-EventQueue-0] ManaSymbols.loadImages 
+INFO  2024-03-24 17:59:37,947 Loading plugins...                                                                         =>[AWT-EventQueue-0] Plugins.loadPlugins 
+INFO  2024-03-24 17:59:38,004 [Card plugin, version 0.7] has been loaded.                                                =>[AWT-EventQueue-0] CardPluginImpl.newPlugin 
+INFO  2024-03-24 17:59:38,005 [Theme plugin, version 0.5] has been loaded.                                               =>[AWT-EventQueue-0] ThemePluginImpl.newPlugin 
+INFO  2024-03-24 17:59:38,006 Done.                                                                                      =>[AWT-EventQueue-0] Plugins.loadPlugins 
+INFO  2024-03-24 17:59:38,253 Client start up time: 10 seconds                                                           =>[AWT-EventQueue-0] MageFrame.lambda$new$3 
+INFO  2024-03-24 18:00:01,881 Connect: trying to restore old session for user rogue                                      =>[SwingWorker-pool-3-thread-2] SessionHandler.connect 
+INFO  2024-03-24 18:00:01,883 Connect: connecting to server 146.190.135.147:17171                                        =>[SwingWorker-pool-3-thread-3] SessionImpl$5.work 
+INFO  2024-03-24 18:00:03,082 Connect: DONE                                                                              =>[SwingWorker-pool-3-thread-3] SessionImpl$5.work 
+INFO  2024-03-24 18:00:03,084 Logging: as username rogue to server 146.190.135.147:17171                                 =>[SwingWorker-pool-3-thread-4] SessionImpl$4.work 
+INFO  2024-03-24 18:00:04,435 Logging: DONE                                                                              =>[SwingWorker-pool-3-thread-4] SessionImpl$4.work 
+INFO  2024-03-24 18:00:51,816 Starting MAGE client version 1.4.52-V4-beta4 (build: runtime)                              =>[main] MageFrame.main 
+INFO  2024-03-24 18:00:51,817 Logging level: INFO                                                                        =>[main] MageFrame.main 
+INFO  2024-03-24 18:00:51,817 Default charset: UTF-8                                                                     =>[main] MageFrame.main 
+INFO  2024-03-24 18:00:51,982 custom Java certificate file not found at: /Users/ian/IdeaProjects/mage/cacerts            =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 18:00:52,698 Using GUI theme: Default                                                                   =>[AWT-EventQueue-0] PreferencesDialog.getCurrentTheme 
+INFO  2024-03-24 18:00:52,704 Loading database...                                                                        =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:00:52,952 Database stats:                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:00:52,953  - sets: updating                                                                          =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:00:52,953  - cards: updating                                                                         =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:00:52,953  - tokens: 1849                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:00:52,953  - emblems: 114                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:00:52,953  - planes: 21                                                                              =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:00:52,953  - dungeons: 3                                                                             =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:00:52,953 DB: creating cards database (it can take few minutes)...                                   =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 18:01:00,070 DB: need to add 500 new sets                                                               =>[AWT-EventQueue-0] ExpansionRepository.lambda$saveSets$0 
+FATAL 2024-03-24 18:01:07,026 Error loading card: mage.cards.t.TorporSummit (CA0)                                        =>[AWT-EventQueue-0] CardImpl.createCard 
+java.lang.IllegalArgumentException: DoIfCostPaid effect must have only one optional settings, but it have two (trigger + DoIfCostPaid): BeginningOfUpkeepTriggeredAbility
+	at mage.abilities.TriggeredAbilityImpl.<init>(TriggeredAbilityImpl.java:48)
+	at mage.abilities.common.BeginningOfUpkeepTriggeredAbility.<init>(BeginningOfUpkeepTriggeredAbility.java:34)
+	at mage.abilities.common.BeginningOfUpkeepTriggeredAbility.<init>(BeginningOfUpkeepTriggeredAbility.java:30)
+	at mage.abilities.common.BeginningOfUpkeepTriggeredAbility.<init>(BeginningOfUpkeepTriggeredAbility.java:26)
+	at mage.abilities.common.BeginningOfUpkeepTriggeredAbility.<init>(BeginningOfUpkeepTriggeredAbility.java:22)
+	at mage.cards.t.TorporSummit.<init>(TorporSummit.java:56)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at mage.cards.CardImpl.createCard(CardImpl.java:193)
+	at mage.cards.repository.CardScanner.scan(CardScanner.java:58)
+	at mage.cards.repository.CardScanner.scan(CardScanner.java:21)
+	at mage.client.MageFrame.<init>(MageFrame.java:264)
+	at mage.client.MageFrame.lambda$main$9(MageFrame.java:1461)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+INFO  2024-03-24 18:01:07,379 DB: need to add 72600 new cards                                                            =>[AWT-EventQueue-0] CardRepository.lambda$saveCards$0 
+INFO  2024-03-24 18:01:11,128 Done.                                                                                      =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 18:01:11,129 Images: search broken files...                                                             =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 18:01:11,171 Loading sets and formats...                                                                =>[AWT-EventQueue-0] MageFrame.bootstrapSetsAndFormats 
+INFO  2024-03-24 18:01:11,385 Loading symbols...                                                                         =>[AWT-EventQueue-0] ManaSymbols.loadImages 
+INFO  2024-03-24 18:01:11,833 Loading plugins...                                                                         =>[AWT-EventQueue-0] Plugins.loadPlugins 
+INFO  2024-03-24 18:01:11,891 [Card plugin, version 0.7] has been loaded.                                                =>[AWT-EventQueue-0] CardPluginImpl.newPlugin 
+INFO  2024-03-24 18:01:11,892 [Theme plugin, version 0.5] has been loaded.                                               =>[AWT-EventQueue-0] ThemePluginImpl.newPlugin 
+INFO  2024-03-24 18:01:11,893 Done.                                                                                      =>[AWT-EventQueue-0] Plugins.loadPlugins 
+INFO  2024-03-24 18:01:12,205 Client start up time: 20 seconds                                                           =>[AWT-EventQueue-0] MageFrame.lambda$new$3 
+INFO  2024-03-24 18:01:20,828 Connect: trying to restore old session for user rogue                                      =>[SwingWorker-pool-3-thread-2] SessionHandler.connect 
+INFO  2024-03-24 18:01:20,830 Connect: connecting to server 146.190.135.147:17171                                        =>[SwingWorker-pool-3-thread-3] SessionImpl$5.work 
+INFO  2024-03-24 18:01:21,748 Connect: DONE                                                                              =>[SwingWorker-pool-3-thread-3] SessionImpl$5.work 
+INFO  2024-03-24 18:01:21,750 Logging: as username rogue to server 146.190.135.147:17171                                 =>[SwingWorker-pool-3-thread-4] SessionImpl$4.work 
+INFO  2024-03-24 18:01:23,202 Logging: DONE                                                                              =>[SwingWorker-pool-3-thread-4] SessionImpl$4.work 
+INFO  2024-03-24 18:02:51,060 Starting MAGE client version 1.4.52-V4-beta4 (build: runtime)                              =>[main] MageFrame.main 
+INFO  2024-03-24 18:02:51,061 Logging level: INFO                                                                        =>[main] MageFrame.main 
+INFO  2024-03-24 18:02:51,061 Default charset: UTF-8                                                                     =>[main] MageFrame.main 
+INFO  2024-03-24 18:02:51,247 custom Java certificate file not found at: /Users/ian/IdeaProjects/mage/cacerts            =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 18:02:51,946 Using GUI theme: Default                                                                   =>[AWT-EventQueue-0] PreferencesDialog.getCurrentTheme 
+INFO  2024-03-24 18:02:51,953 Loading database...                                                                        =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:02:52,226 Database stats:                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:02:52,226  - sets: updating                                                                          =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:02:52,226  - cards: updating                                                                         =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:02:52,226  - tokens: 1849                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:02:52,226  - emblems: 114                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:02:52,226  - planes: 21                                                                              =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:02:52,226  - dungeons: 3                                                                             =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:02:52,227 DB: creating cards database (it can take few minutes)...                                   =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 18:02:59,342 DB: need to add 500 new sets                                                               =>[AWT-EventQueue-0] ExpansionRepository.lambda$saveSets$0 
+FATAL 2024-03-24 18:03:05,925 Error loading card: mage.cards.t.TorporSummit (CA0)                                        =>[AWT-EventQueue-0] CardImpl.createCard 
+java.lang.IllegalArgumentException: DoIfCostPaid effect must have only one optional settings, but it have two (trigger + DoIfCostPaid): BeginningOfUpkeepTriggeredAbility
+	at mage.abilities.TriggeredAbilityImpl.<init>(TriggeredAbilityImpl.java:48)
+	at mage.abilities.common.BeginningOfUpkeepTriggeredAbility.<init>(BeginningOfUpkeepTriggeredAbility.java:34)
+	at mage.abilities.common.BeginningOfUpkeepTriggeredAbility.<init>(BeginningOfUpkeepTriggeredAbility.java:30)
+	at mage.abilities.common.BeginningOfUpkeepTriggeredAbility.<init>(BeginningOfUpkeepTriggeredAbility.java:26)
+	at mage.abilities.common.BeginningOfUpkeepTriggeredAbility.<init>(BeginningOfUpkeepTriggeredAbility.java:22)
+	at mage.cards.t.TorporSummit.<init>(TorporSummit.java:56)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at mage.cards.CardImpl.createCard(CardImpl.java:193)
+	at mage.cards.repository.CardScanner.scan(CardScanner.java:58)
+	at mage.cards.repository.CardScanner.scan(CardScanner.java:21)
+	at mage.client.MageFrame.<init>(MageFrame.java:264)
+	at mage.client.MageFrame.lambda$main$9(MageFrame.java:1461)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+INFO  2024-03-24 18:03:06,269 DB: need to add 72600 new cards                                                            =>[AWT-EventQueue-0] CardRepository.lambda$saveCards$0 
+INFO  2024-03-24 18:03:10,263 Done.                                                                                      =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 18:03:10,263 Images: search broken files...                                                             =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 18:03:10,287 Loading sets and formats...                                                                =>[AWT-EventQueue-0] MageFrame.bootstrapSetsAndFormats 
+INFO  2024-03-24 18:03:10,477 Loading symbols...                                                                         =>[AWT-EventQueue-0] ManaSymbols.loadImages 
+INFO  2024-03-24 18:03:10,921 Loading plugins...                                                                         =>[AWT-EventQueue-0] Plugins.loadPlugins 
+INFO  2024-03-24 18:03:10,972 [Card plugin, version 0.7] has been loaded.                                                =>[AWT-EventQueue-0] CardPluginImpl.newPlugin 
+INFO  2024-03-24 18:03:10,974 [Theme plugin, version 0.5] has been loaded.                                               =>[AWT-EventQueue-0] ThemePluginImpl.newPlugin 
+INFO  2024-03-24 18:03:10,974 Done.                                                                                      =>[AWT-EventQueue-0] Plugins.loadPlugins 
+INFO  2024-03-24 18:03:11,242 Client start up time: 20 seconds                                                           =>[AWT-EventQueue-0] MageFrame.lambda$new$3 
+INFO  2024-03-24 18:03:22,227 Connect: trying to restore old session for user rogue                                      =>[SwingWorker-pool-3-thread-2] SessionHandler.connect 
+INFO  2024-03-24 18:03:22,230 Connect: connecting to server 146.190.135.147:17171                                        =>[SwingWorker-pool-3-thread-3] SessionImpl$5.work 
+INFO  2024-03-24 18:03:23,102 Connect: DONE                                                                              =>[SwingWorker-pool-3-thread-3] SessionImpl$5.work 
+INFO  2024-03-24 18:03:23,104 Logging: as username rogue to server 146.190.135.147:17171                                 =>[SwingWorker-pool-3-thread-4] SessionImpl$4.work 
+INFO  2024-03-24 18:03:24,734 Logging: DONE                                                                              =>[SwingWorker-pool-3-thread-4] SessionImpl$4.work 
+INFO  2024-03-24 18:03:57,528 Starting MAGE client version 1.4.52-V4-beta4 (build: runtime)                              =>[main] MageFrame.main 
+INFO  2024-03-24 18:03:57,529 Logging level: INFO                                                                        =>[main] MageFrame.main 
+INFO  2024-03-24 18:03:57,529 Default charset: UTF-8                                                                     =>[main] MageFrame.main 
+INFO  2024-03-24 18:03:57,701 custom Java certificate file not found at: /Users/ian/IdeaProjects/mage/cacerts            =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 18:03:58,393 Using GUI theme: Default                                                                   =>[AWT-EventQueue-0] PreferencesDialog.getCurrentTheme 
+INFO  2024-03-24 18:03:58,399 Loading database...                                                                        =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:03:59,163 Database stats:                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:03:59,163  - sets: 500                                                                               =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:03:59,163  - cards: 72146                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:03:59,163  - tokens: 1849                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:03:59,163  - emblems: 114                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:03:59,164  - planes: 21                                                                              =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:03:59,164  - dungeons: 3                                                                             =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:03:59,172 Images: search broken files...                                                             =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 18:03:59,190 Loading sets and formats...                                                                =>[AWT-EventQueue-0] MageFrame.bootstrapSetsAndFormats 
+INFO  2024-03-24 18:04:06,701 Loading symbols...                                                                         =>[AWT-EventQueue-0] ManaSymbols.loadImages 
+INFO  2024-03-24 18:04:07,138 Loading plugins...                                                                         =>[AWT-EventQueue-0] Plugins.loadPlugins 
+INFO  2024-03-24 18:04:07,195 [Card plugin, version 0.7] has been loaded.                                                =>[AWT-EventQueue-0] CardPluginImpl.newPlugin 
+INFO  2024-03-24 18:04:07,196 [Theme plugin, version 0.5] has been loaded.                                               =>[AWT-EventQueue-0] ThemePluginImpl.newPlugin 
+INFO  2024-03-24 18:04:07,197 Done.                                                                                      =>[AWT-EventQueue-0] Plugins.loadPlugins 
+INFO  2024-03-24 18:04:07,428 Client start up time: 9 seconds                                                            =>[AWT-EventQueue-0] MageFrame.lambda$new$3 
+INFO  2024-03-24 18:04:09,091 Connect: trying to restore old session for user rogue                                      =>[SwingWorker-pool-3-thread-2] SessionHandler.connect 
+INFO  2024-03-24 18:04:09,094 Connect: connecting to server 146.190.135.147:17171                                        =>[SwingWorker-pool-3-thread-3] SessionImpl$5.work 
+INFO  2024-03-24 18:04:09,798 Connect: DONE                                                                              =>[SwingWorker-pool-3-thread-3] SessionImpl$5.work 
+INFO  2024-03-24 18:04:09,800 Logging: as username rogue to server 146.190.135.147:17171                                 =>[SwingWorker-pool-3-thread-4] SessionImpl$4.work 
+INFO  2024-03-24 18:04:11,233 Logging: DONE                                                                              =>[SwingWorker-pool-3-thread-4] SessionImpl$4.work 
+INFO  2024-03-24 18:06:43,617 Starting MAGE client version 1.4.52-V4-beta4 (build: runtime)                              =>[main] MageFrame.main 
+INFO  2024-03-24 18:06:43,618 Logging level: INFO                                                                        =>[main] MageFrame.main 
+INFO  2024-03-24 18:06:43,618 Default charset: UTF-8                                                                     =>[main] MageFrame.main 
+INFO  2024-03-24 18:06:43,783 custom Java certificate file not found at: /Users/ian/IdeaProjects/mage/cacerts            =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 18:06:44,472 Using GUI theme: Default                                                                   =>[AWT-EventQueue-0] PreferencesDialog.getCurrentTheme 
+INFO  2024-03-24 18:06:44,478 Loading database...                                                                        =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:06:44,681 Database stats:                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:06:44,681  - sets: updating                                                                          =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:06:44,681  - cards: updating                                                                         =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:06:44,682  - tokens: 1849                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:06:44,682  - emblems: 114                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:06:44,682  - planes: 21                                                                              =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:06:44,682  - dungeons: 3                                                                             =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:06:44,682 DB: creating cards database (it can take few minutes)...                                   =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 18:06:51,655 DB: need to add 500 new sets                                                               =>[AWT-EventQueue-0] ExpansionRepository.lambda$saveSets$0 
+FATAL 2024-03-24 18:06:58,225 Error loading card: mage.cards.t.TorporSummit (CA0)                                        =>[AWT-EventQueue-0] CardImpl.createCard 
+java.lang.IllegalArgumentException: DoIfCostPaid effect must have only one optional settings, but it have two (trigger + DoIfCostPaid): BeginningOfUpkeepTriggeredAbility
+	at mage.abilities.TriggeredAbilityImpl.<init>(TriggeredAbilityImpl.java:48)
+	at mage.abilities.common.BeginningOfUpkeepTriggeredAbility.<init>(BeginningOfUpkeepTriggeredAbility.java:34)
+	at mage.abilities.common.BeginningOfUpkeepTriggeredAbility.<init>(BeginningOfUpkeepTriggeredAbility.java:30)
+	at mage.abilities.common.BeginningOfUpkeepTriggeredAbility.<init>(BeginningOfUpkeepTriggeredAbility.java:26)
+	at mage.abilities.common.BeginningOfUpkeepTriggeredAbility.<init>(BeginningOfUpkeepTriggeredAbility.java:22)
+	at mage.cards.t.TorporSummit.<init>(TorporSummit.java:56)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at mage.cards.CardImpl.createCard(CardImpl.java:193)
+	at mage.cards.repository.CardScanner.scan(CardScanner.java:58)
+	at mage.cards.repository.CardScanner.scan(CardScanner.java:21)
+	at mage.client.MageFrame.<init>(MageFrame.java:264)
+	at mage.client.MageFrame.lambda$main$9(MageFrame.java:1461)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+INFO  2024-03-24 18:06:58,582 DB: need to add 72600 new cards                                                            =>[AWT-EventQueue-0] CardRepository.lambda$saveCards$0 
+INFO  2024-03-24 18:07:02,452 Done.                                                                                      =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 18:07:02,452 Images: search broken files...                                                             =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 18:07:02,483 Loading sets and formats...                                                                =>[AWT-EventQueue-0] MageFrame.bootstrapSetsAndFormats 
+INFO  2024-03-24 18:07:02,681 Loading symbols...                                                                         =>[AWT-EventQueue-0] ManaSymbols.loadImages 
+INFO  2024-03-24 18:07:03,102 Loading plugins...                                                                         =>[AWT-EventQueue-0] Plugins.loadPlugins 
+INFO  2024-03-24 18:07:03,158 [Card plugin, version 0.7] has been loaded.                                                =>[AWT-EventQueue-0] CardPluginImpl.newPlugin 
+INFO  2024-03-24 18:07:03,159 [Theme plugin, version 0.5] has been loaded.                                               =>[AWT-EventQueue-0] ThemePluginImpl.newPlugin 
+INFO  2024-03-24 18:07:03,160 Done.                                                                                      =>[AWT-EventQueue-0] Plugins.loadPlugins 
+INFO  2024-03-24 18:07:03,427 Client start up time: 19 seconds                                                           =>[AWT-EventQueue-0] MageFrame.lambda$new$3 
+INFO  2024-03-24 18:07:08,498 Connect: trying to restore old session for user rogue                                      =>[SwingWorker-pool-3-thread-2] SessionHandler.connect 
+INFO  2024-03-24 18:07:08,500 Connect: connecting to server 146.190.135.147:17171                                        =>[SwingWorker-pool-3-thread-3] SessionImpl$5.work 
+INFO  2024-03-24 18:07:09,176 Connect: DONE                                                                              =>[SwingWorker-pool-3-thread-3] SessionImpl$5.work 
+INFO  2024-03-24 18:07:09,178 Logging: as username rogue to server 146.190.135.147:17171                                 =>[SwingWorker-pool-3-thread-4] SessionImpl$4.work 
+INFO  2024-03-24 18:07:10,649 Logging: DONE                                                                              =>[SwingWorker-pool-3-thread-4] SessionImpl$4.work 
+INFO  2024-03-24 18:13:26,129 Starting MAGE client version 1.4.52-V4-beta4 (build: runtime)                              =>[main] MageFrame.main 
+INFO  2024-03-24 18:13:26,130 Logging level: INFO                                                                        =>[main] MageFrame.main 
+INFO  2024-03-24 18:13:26,131 Default charset: UTF-8                                                                     =>[main] MageFrame.main 
+INFO  2024-03-24 18:13:26,296 custom Java certificate file not found at: /Users/ian/IdeaProjects/mage/cacerts            =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 18:13:26,989 Using GUI theme: Default                                                                   =>[AWT-EventQueue-0] PreferencesDialog.getCurrentTheme 
+INFO  2024-03-24 18:13:26,996 Loading database...                                                                        =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:13:27,770 Database stats:                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:13:27,771  - sets: 500                                                                               =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:13:27,771  - cards: 72146                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:13:27,771  - tokens: 1849                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:13:27,771  - emblems: 114                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:13:27,771  - planes: 21                                                                              =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:13:27,771  - dungeons: 3                                                                             =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:13:27,784 Images: search broken files...                                                             =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 18:13:27,812 Loading sets and formats...                                                                =>[AWT-EventQueue-0] MageFrame.bootstrapSetsAndFormats 
+INFO  2024-03-24 18:13:35,561 Loading symbols...                                                                         =>[AWT-EventQueue-0] ManaSymbols.loadImages 
+INFO  2024-03-24 18:13:35,996 Loading plugins...                                                                         =>[AWT-EventQueue-0] Plugins.loadPlugins 
+INFO  2024-03-24 18:13:36,051 [Card plugin, version 0.7] has been loaded.                                                =>[AWT-EventQueue-0] CardPluginImpl.newPlugin 
+INFO  2024-03-24 18:13:36,052 [Theme plugin, version 0.5] has been loaded.                                               =>[AWT-EventQueue-0] ThemePluginImpl.newPlugin 
+INFO  2024-03-24 18:13:36,053 Done.                                                                                      =>[AWT-EventQueue-0] Plugins.loadPlugins 
+INFO  2024-03-24 18:13:36,277 Client start up time: 10 seconds                                                           =>[AWT-EventQueue-0] MageFrame.lambda$new$3 
+INFO  2024-03-24 18:14:11,522 Connect: trying to restore old session for user rogue                                      =>[SwingWorker-pool-3-thread-2] SessionHandler.connect 
+INFO  2024-03-24 18:14:11,526 Connect: connecting to server 146.190.135.147:17171                                        =>[SwingWorker-pool-3-thread-3] SessionImpl$5.work 
+INFO  2024-03-24 18:14:12,118 Connect: DONE                                                                              =>[SwingWorker-pool-3-thread-3] SessionImpl$5.work 
+INFO  2024-03-24 18:14:12,119 Logging: as username rogue to server 146.190.135.147:17171                                 =>[SwingWorker-pool-3-thread-4] SessionImpl$4.work 
+INFO  2024-03-24 18:14:13,357 Logging: DONE                                                                              =>[SwingWorker-pool-3-thread-4] SessionImpl$4.work 
+INFO  2024-03-24 18:14:39,857 Starting MAGE client version 1.4.52-V4-beta4 (build: runtime)                              =>[main] MageFrame.main 
+INFO  2024-03-24 18:14:39,858 Logging level: INFO                                                                        =>[main] MageFrame.main 
+INFO  2024-03-24 18:14:39,858 Default charset: UTF-8                                                                     =>[main] MageFrame.main 
+INFO  2024-03-24 18:14:40,037 custom Java certificate file not found at: /Users/ian/IdeaProjects/mage/cacerts            =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 18:14:40,757 Using GUI theme: Default                                                                   =>[AWT-EventQueue-0] PreferencesDialog.getCurrentTheme 
+INFO  2024-03-24 18:14:40,763 Loading database...                                                                        =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:14:40,970 Database stats:                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:14:40,970  - sets: updating                                                                          =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:14:40,970  - cards: updating                                                                         =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:14:40,970  - tokens: 1849                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:14:40,970  - emblems: 114                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:14:40,970  - planes: 21                                                                              =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:14:40,970  - dungeons: 3                                                                             =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:14:40,971 DB: creating cards database (it can take few minutes)...                                   =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 18:14:47,871 DB: need to add 500 new sets                                                               =>[AWT-EventQueue-0] ExpansionRepository.lambda$saveSets$0 
+INFO  2024-03-24 18:14:55,027 DB: need to add 72601 new cards                                                            =>[AWT-EventQueue-0] CardRepository.lambda$saveCards$0 
+INFO  2024-03-24 18:14:59,044 Done.                                                                                      =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 18:14:59,044 Images: search broken files...                                                             =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 18:14:59,069 Loading sets and formats...                                                                =>[AWT-EventQueue-0] MageFrame.bootstrapSetsAndFormats 
+INFO  2024-03-24 18:14:59,325 Loading symbols...                                                                         =>[AWT-EventQueue-0] ManaSymbols.loadImages 
+INFO  2024-03-24 18:14:59,794 Loading plugins...                                                                         =>[AWT-EventQueue-0] Plugins.loadPlugins 
+INFO  2024-03-24 18:14:59,849 [Card plugin, version 0.7] has been loaded.                                                =>[AWT-EventQueue-0] CardPluginImpl.newPlugin 
+INFO  2024-03-24 18:14:59,851 [Theme plugin, version 0.5] has been loaded.                                               =>[AWT-EventQueue-0] ThemePluginImpl.newPlugin 
+INFO  2024-03-24 18:14:59,851 Done.                                                                                      =>[AWT-EventQueue-0] Plugins.loadPlugins 
+INFO  2024-03-24 18:15:00,106 Client start up time: 20 seconds                                                           =>[AWT-EventQueue-0] MageFrame.lambda$new$3 
+INFO  2024-03-24 18:15:23,371 Connect: trying to restore old session for user rogue                                      =>[SwingWorker-pool-3-thread-2] SessionHandler.connect 
+INFO  2024-03-24 18:15:23,373 Connect: connecting to server 146.190.135.147:17171                                        =>[SwingWorker-pool-3-thread-3] SessionImpl$5.work 
+INFO  2024-03-24 18:15:24,515 Connect: DONE                                                                              =>[SwingWorker-pool-3-thread-3] SessionImpl$5.work 
+INFO  2024-03-24 18:15:24,516 Logging: as username rogue to server 146.190.135.147:17171                                 =>[SwingWorker-pool-3-thread-4] SessionImpl$4.work 
+INFO  2024-03-24 18:15:26,136 Logging: DONE                                                                              =>[SwingWorker-pool-3-thread-4] SessionImpl$4.work 
