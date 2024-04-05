@@ -147,12 +147,18 @@ public class CandourCore extends ExpansionSet {
         cards.add(new SetCardInfo("Impermanate", "249", Rarity.UNCOMMON, mage.cards.i.Impermanate.class));
         cards.add(new SetCardInfo("Volatile Dunes", "250", Rarity.RARE, mage.cards.v.VolatileDunes.class));
         cards.add(new SetCardInfo("Torpor Summit", "251", Rarity.RARE, mage.cards.t.TorporSummit.class));
+        cards.add(new SetCardInfo("Starlit Cairn", "252", Rarity.RARE, mage.cards.s.StarlitCairn.class));
+        cards.add(new SetCardInfo("Cranial Clamp", "253", Rarity.RARE, mage.cards.c.CranialClamp.class));
         cards.add(new SetCardInfo("Universal Predation", "259", Rarity.MYTHIC, mage.cards.u.UniversalPredation.class));
         cards.add(new SetCardInfo("Angelic Wrath", "268", Rarity.RARE, mage.cards.a.AngelicWrath.class));
         cards.add(new SetCardInfo("Whispering Henge", "269", Rarity.RARE, mage.cards.w.WhisperingHenge.class));
         cards.add(new SetCardInfo("Ruinous Sands", "270", Rarity.RARE, mage.cards.r.RuinousSands.class));
         cards.add(new SetCardInfo("Ordruun Reckoner", "271", Rarity.MYTHIC, mage.cards.o.OrdruunReckoner.class));
         cards.add(new SetCardInfo("Blighted Inquisition", "272", Rarity.RARE, mage.cards.b.BlightedInquisition.class));
+        cards.add(new SetCardInfo("Servoswipe Adept", "275", Rarity.RARE, mage.cards.s.ServoswipeAdept.class));
+        cards.add(new SetCardInfo("Slumbering Greatwurm", "276", Rarity.MYTHIC, mage.cards.s.SlumberingGreatwurm.class));
+        cards.add(new SetCardInfo("Diviner's Terrarium", "277", Rarity.UNCOMMON, mage.cards.d.DivinersTerrarium.class));
+        cards.add(new SetCardInfo("Chromatic Lotus", "278", Rarity.UNCOMMON, mage.cards.c.ChromaticLotus.class));
         cards.add(new SetCardInfo("Aethercatch Relic", "279", Rarity.UNCOMMON, mage.cards.a.AethercatchRelic.class));
         cards.add(new SetCardInfo("Cloudpierce Monument", "280", Rarity.RARE, mage.cards.c.CloudpierceMonument.class));
         cards.add(new SetCardInfo("Volatile Crypt", "281", Rarity.UNCOMMON, mage.cards.v.VolatileCrypt.class));
@@ -212,11 +218,18 @@ public class CandourCore extends ExpansionSet {
         //Liliana, Ambitious Healer
         //At Any Cost
         //Imperial Bloodscribe
-        //Slumbering Greatwurm
         //Nightmarish Ravager
-        //Starlit Cairn
-        //Chromatic Lotus
-        //Cranial Clamp
-        //Diviner's Terrarium
+        //Mephidross Mawcrusher
+        //Gitaxian Scrap-searcher
+        //Archmage's Astrolabe
+        //Scion of Skithiryx
+        //Etherium Vial
+        //Verdant Slingshot
+        //Slinking Scorcher
+        //Atraxa's Assimilator
+        //Dreamcleaver Hierarch
+        //Enigmatic Serpent
+        //Rampaging Lhurgoyf
+        //Surging Rampage
     }
 }

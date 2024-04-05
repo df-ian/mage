@@ -27,7 +27,7 @@ public final class SeethingReturn extends CardImpl {
         this.getSpellAbility().addEffect(new ReturnFromGraveyardToBattlefieldTargetEffect());
         this.getSpellAbility().addTarget(new TargetCardInYourGraveyard(StaticFilters.FILTER_CARD_CREATURE_YOUR_GRAVEYARD));
 
-        FlashbackAbility ability = new FlashbackAbility(this, new ManaCostsImpl<>("{1}{U}"));
+        FlashbackAbility ability = new FlashbackAbility(this, new ManaCostsImpl<>("{1}{B}"));
         ability.addCost(new SacrificeTargetCost(1, new FilterControlledCreaturePermanent()));
         this.addAbility(ability);
     }

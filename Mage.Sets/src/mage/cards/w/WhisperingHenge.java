@@ -29,6 +29,8 @@ public final class WhisperingHenge extends CardImpl {
         super(ownerId, setInfo, new CardType[]{CardType.LAND}, "");
 
 
+        this.addAbility(new EntersBattlefieldTappedAbility());
+
         // {T}: Add {C}.
         this.addAbility(new ColorlessManaAbility());
 
@@ -37,7 +39,7 @@ public final class WhisperingHenge extends CardImpl {
                 new EntersBattlefieldThisOrAnotherTriggeredAbility(
                         new CreateTokenEffect(new WhisperingHengeToken()), StaticFilters.FILTER_LAND, false, true
                 ), WhisperingHengeCondition.instance, "Whenever {this} or another land " +
-                "enters the battlefield under your control, if you control five or more lands with different names, " +
+                "enters the battlefield under your control, if you control six or more lands with different names, " +
                 "create a 1/1 black Wraith creature token."
         ));
     }
@@ -68,6 +70,6 @@ enum WhisperingHengeCondition implements Condition {
                 .map(permanent -> permanent.getName())
                 .filter(s -> s.length() > 0)
                 .distinct()
-                .count() >= 5;
+                .count() >= 6;
     }
 }

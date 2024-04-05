@@ -22,7 +22,7 @@ import java.util.UUID;
 public final class SaheelisSplendor extends CardImpl {
 
     public SaheelisSplendor(UUID ownerId, CardSetInfo setInfo) {
-        super(ownerId, setInfo, new CardType[]{CardType.INSTANT}, "{1}{B}");
+        super(ownerId, setInfo, new CardType[]{CardType.INSTANT}, "{U}{R}");
 
         // As an additional cost to cast this spell, you may sacrifice one or more creatures. When you do, copy this spell for each creature sacrificed this way.
         this.getSpellAbility().addCost(new SaheelisSplendorCost());

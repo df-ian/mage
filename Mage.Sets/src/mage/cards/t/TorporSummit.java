@@ -53,8 +53,8 @@ public final class TorporSummit extends CardImpl {
         // {T}: Add {C}.
         this.addAbility(new ColorlessManaAbility());
 
-        Ability a = new BeginningOfUpkeepTriggeredAbility(new DoIfCostPaid(
-                new SearchLibraryPutInPlayEffect(new TargetCardInLibrary(filter)), new SacrificeSourceCost()), TargetController.SOURCE_CONTROLLER, false);
+        Ability a = new BeginningOfUpkeepTriggeredAbility(Zone.BATTLEFIELD, new DoIfCostPaid(
+                new SearchLibraryPutInPlayEffect(new TargetCardInLibrary(filter)), new SacrificeSourceCost()), TargetController.SOURCE_CONTROLLER, false,  false,"At the beginning of your upkeep,");
         this.addAbility(a);
     }
 
