@@ -1403,6 +1403,786 @@ INFO  2024-03-24 18:15:23,373 Connect: connecting to server 146.190.135.147:1717
 INFO  2024-03-24 18:15:24,515 Connect: DONE                                                                              =>[SwingWorker-pool-3-thread-3] SessionImpl$5.work 
 INFO  2024-03-24 18:15:24,516 Logging: as username rogue to server 146.190.135.147:17171                                 =>[SwingWorker-pool-3-thread-4] SessionImpl$4.work 
 INFO  2024-03-24 18:15:26,136 Logging: DONE                                                                              =>[SwingWorker-pool-3-thread-4] SessionImpl$4.work 
+INFO  2024-03-24 18:27:14,198 Starting MAGE client version 1.4.52-V4-beta4 (build: runtime)                              =>[main] MageFrame.main 
+INFO  2024-03-24 18:27:14,199 Logging level: INFO                                                                        =>[main] MageFrame.main 
+INFO  2024-03-24 18:27:14,199 Default charset: UTF-8                                                                     =>[main] MageFrame.main 
+INFO  2024-03-24 18:27:14,379 custom Java certificate file not found at: /Users/ian/IdeaProjects/mage/cacerts            =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 18:27:15,055 Using GUI theme: Default                                                                   =>[AWT-EventQueue-0] PreferencesDialog.getCurrentTheme 
+INFO  2024-03-24 18:27:15,062 Loading database...                                                                        =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:27:15,912 Database stats:                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:27:15,912  - sets: 500                                                                               =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:27:15,912  - cards: 72147                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:27:15,912  - tokens: 1849                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:27:15,912  - emblems: 114                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:27:15,912  - planes: 21                                                                              =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:27:15,912  - dungeons: 3                                                                             =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:27:15,920 Images: search broken files...                                                             =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 18:27:15,942 Loading sets and formats...                                                                =>[AWT-EventQueue-0] MageFrame.bootstrapSetsAndFormats 
+INFO  2024-03-24 18:27:23,495 Loading symbols...                                                                         =>[AWT-EventQueue-0] ManaSymbols.loadImages 
+INFO  2024-03-24 18:27:23,924 Loading plugins...                                                                         =>[AWT-EventQueue-0] Plugins.loadPlugins 
+INFO  2024-03-24 18:27:23,976 [Card plugin, version 0.7] has been loaded.                                                =>[AWT-EventQueue-0] CardPluginImpl.newPlugin 
+INFO  2024-03-24 18:27:23,977 [Theme plugin, version 0.5] has been loaded.                                               =>[AWT-EventQueue-0] ThemePluginImpl.newPlugin 
+INFO  2024-03-24 18:27:23,977 Done.                                                                                      =>[AWT-EventQueue-0] Plugins.loadPlugins 
+INFO  2024-03-24 18:27:24,195 Client start up time: 9 seconds                                                            =>[AWT-EventQueue-0] MageFrame.lambda$new$3 
+INFO  2024-03-24 18:27:40,540 Connect: trying to restore old session for user rogue                                      =>[SwingWorker-pool-3-thread-2] SessionHandler.connect 
+INFO  2024-03-24 18:27:40,543 Connect: connecting to server 146.190.135.147:17171                                        =>[SwingWorker-pool-3-thread-3] SessionImpl$5.work 
+FATAL 2024-03-24 18:27:51,516 Connect: unknown IO error                                                                  =>[SwingWorker-pool-3-thread-2] SessionImpl.doRemoteWorkAndHandleErrors 
+java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:476)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:218)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:200)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:394)
+	at java.net.Socket.connect(Socket.java:606)
+	at java.net.Socket.connect(Socket.java:555)
+	at java.net.Socket.<init>(Socket.java:451)
+	at java.net.Socket.<init>(Socket.java:228)
+	at org.jboss.remoting.transport.bisocket.BisocketServerInvoker$2.run(BisocketServerInvoker.java:403)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.jboss.remoting.transport.bisocket.BisocketServerInvoker.createControlConnection(BisocketServerInvoker.java:395)
+	at org.jboss.remoting.transport.bisocket.BisocketClientInvoker.transport(BisocketClientInvoker.java:459)
+	at org.jboss.remoting.MicroRemoteClientInvoker.invoke(MicroRemoteClientInvoker.java:169)
+	at org.jboss.remoting.Client.invoke(Client.java:2084)
+	at org.jboss.remoting.Client.addCallbackListener(Client.java:2153)
+	at org.jboss.remoting.Client.addListener(Client.java:1258)
+	at org.jboss.remoting.Client.addListener(Client.java:1144)
+	at org.jboss.remoting.Client.addListener(Client.java:1127)
+	at mage.remote.SessionImpl$5.work(SessionImpl.java:456)
+	at mage.remote.SessionImpl$RemotingTask$1.doInBackground(SessionImpl.java:105)
+	at mage.remote.SessionImpl$RemotingTask$1.doInBackground(SessionImpl.java:101)
+	at javax.swing.SwingWorker$1.call(SwingWorker.java:295)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at javax.swing.SwingWorker.run(SwingWorker.java:334)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+INFO  2024-03-24 18:27:51,522 Disconnecting...                                                                           =>[SwingWorker-pool-3-thread-2] SessionImpl.connectStop 
+INFO  2024-03-24 18:27:51,803 Disconnecting DONE                                                                         =>[SwingWorker-pool-3-thread-2] SessionImpl.connectStop 
+INFO  2024-03-24 18:27:51,803 Disconnected from client side                                                              =>[SwingWorker-pool-3-thread-2] MageFrame.disconnected 
+INFO  2024-03-24 18:27:56,684 Connect: trying to restore old session for user rogue                                      =>[SwingWorker-pool-3-thread-4] SessionHandler.connect 
+INFO  2024-03-24 18:27:56,685 Connect: connecting to server 146.190.135.147:17171                                        =>[SwingWorker-pool-3-thread-5] SessionImpl$5.work 
+FATAL 2024-03-24 18:28:07,319 Connect: unknown IO error                                                                  =>[SwingWorker-pool-3-thread-4] SessionImpl.doRemoteWorkAndHandleErrors 
+java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:476)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:218)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:200)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:394)
+	at java.net.Socket.connect(Socket.java:606)
+	at java.net.Socket.connect(Socket.java:555)
+	at java.net.Socket.<init>(Socket.java:451)
+	at java.net.Socket.<init>(Socket.java:228)
+	at org.jboss.remoting.transport.bisocket.BisocketServerInvoker$2.run(BisocketServerInvoker.java:403)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.jboss.remoting.transport.bisocket.BisocketServerInvoker.createControlConnection(BisocketServerInvoker.java:395)
+	at org.jboss.remoting.transport.bisocket.BisocketClientInvoker.transport(BisocketClientInvoker.java:459)
+	at org.jboss.remoting.MicroRemoteClientInvoker.invoke(MicroRemoteClientInvoker.java:169)
+	at org.jboss.remoting.Client.invoke(Client.java:2084)
+	at org.jboss.remoting.Client.addCallbackListener(Client.java:2153)
+	at org.jboss.remoting.Client.addListener(Client.java:1258)
+	at org.jboss.remoting.Client.addListener(Client.java:1144)
+	at org.jboss.remoting.Client.addListener(Client.java:1127)
+	at mage.remote.SessionImpl$5.work(SessionImpl.java:456)
+	at mage.remote.SessionImpl$RemotingTask$1.doInBackground(SessionImpl.java:105)
+	at mage.remote.SessionImpl$RemotingTask$1.doInBackground(SessionImpl.java:101)
+	at javax.swing.SwingWorker$1.call(SwingWorker.java:295)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at javax.swing.SwingWorker.run(SwingWorker.java:334)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+INFO  2024-03-24 18:28:07,321 Disconnecting...                                                                           =>[SwingWorker-pool-3-thread-4] SessionImpl.connectStop 
+INFO  2024-03-24 18:28:07,609 Disconnecting DONE                                                                         =>[SwingWorker-pool-3-thread-4] SessionImpl.connectStop 
+INFO  2024-03-24 18:28:07,609 Disconnected from client side                                                              =>[SwingWorker-pool-3-thread-4] MageFrame.disconnected 
+INFO  2024-03-24 18:28:58,716 Connect: trying to restore old session for user rogue                                      =>[SwingWorker-pool-3-thread-6] SessionHandler.connect 
+INFO  2024-03-24 18:28:58,718 Connect: connecting to server 146.190.135.147:17171                                        =>[SwingWorker-pool-3-thread-7] SessionImpl$5.work 
+WARN  2024-03-24 18:28:58,808 Cannot connect                                                                             =>[SwingWorker-pool-3-thread-6] SessionImpl.handleCannotConnectException 
+org.jboss.remoting.CannotConnectException: Error setting up client lease upon performing connect.
+	at org.jboss.remoting.Client.connect(Client.java:1928)
+	at org.jboss.remoting.Client.connect(Client.java:737)
+	at mage.remote.SessionImpl$5.work(SessionImpl.java:449)
+	at mage.remote.SessionImpl$RemotingTask$1.doInBackground(SessionImpl.java:105)
+	at mage.remote.SessionImpl$RemotingTask$1.doInBackground(SessionImpl.java:101)
+	at javax.swing.SwingWorker$1.call(SwingWorker.java:295)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at javax.swing.SwingWorker.run(SwingWorker.java:334)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.lang.Exception: Error setting up client lease
+	at org.jboss.remoting.MicroRemoteClientInvoker.establishLease(MicroRemoteClientInvoker.java:563)
+	at org.jboss.remoting.Client.setupClientLease(Client.java:2070)
+	at org.jboss.remoting.Client.connect(Client.java:1924)
+	... 10 more
+Caused by: org.jboss.remoting.CannotConnectException: Can not get connection to server. Problem establishing socket connection for InvokerLocator [bisocket://146.190.135.147:17171/?onewayThreadPool=mage.remote.CustomThreadPool&serializationtype=java]
+	at org.jboss.remoting.transport.socket.MicroSocketClientInvoker.transport(MicroSocketClientInvoker.java:855)
+	at org.jboss.remoting.transport.bisocket.BisocketClientInvoker.transport(BisocketClientInvoker.java:470)
+	at org.jboss.remoting.MicroRemoteClientInvoker.invoke(MicroRemoteClientInvoker.java:169)
+	at org.jboss.remoting.MicroRemoteClientInvoker.establishLease(MicroRemoteClientInvoker.java:529)
+	... 12 more
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:476)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:218)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:200)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:394)
+	at java.net.Socket.connect(Socket.java:606)
+	at org.jboss.remoting.transport.socket.SocketClientInvoker.connect(SocketClientInvoker.java:293)
+	at org.jboss.remoting.transport.socket.SocketClientInvoker.createSocket(SocketClientInvoker.java:210)
+	at org.jboss.remoting.transport.bisocket.BisocketClientInvoker.createSocket(BisocketClientInvoker.java:477)
+	at org.jboss.remoting.transport.socket.MicroSocketClientInvoker.getConnection(MicroSocketClientInvoker.java:1190)
+	at org.jboss.remoting.transport.socket.MicroSocketClientInvoker.transport(MicroSocketClientInvoker.java:833)
+	... 15 more
+INFO  2024-03-24 18:28:58,810 Disconnecting DONE                                                                         =>[SwingWorker-pool-3-thread-6] SessionImpl.connectStop 
+INFO  2024-03-24 18:28:58,810 Disconnected from client side                                                              =>[SwingWorker-pool-3-thread-6] MageFrame.disconnected 
+INFO  2024-03-24 18:29:11,527 Connect: trying to restore old session for user rogue                                      =>[SwingWorker-pool-3-thread-8] SessionHandler.connect 
+INFO  2024-03-24 18:29:11,528 Connect: connecting to server 146.190.135.147:17171                                        =>[SwingWorker-pool-3-thread-9] SessionImpl$5.work 
+INFO  2024-03-24 18:29:12,697 Connect: DONE                                                                              =>[SwingWorker-pool-3-thread-9] SessionImpl$5.work 
+INFO  2024-03-24 18:29:12,699 Logging: as username rogue to server 146.190.135.147:17171                                 =>[SwingWorker-pool-3-thread-10] SessionImpl$4.work 
+INFO  2024-03-24 18:29:14,194 Logging: DONE                                                                              =>[SwingWorker-pool-3-thread-10] SessionImpl$4.work 
+INFO  2024-03-24 18:36:57,435 Starting MAGE client version 1.4.52-V4-beta4 (build: runtime)                              =>[main] MageFrame.main 
+INFO  2024-03-24 18:36:57,436 Logging level: INFO                                                                        =>[main] MageFrame.main 
+INFO  2024-03-24 18:36:57,436 Default charset: UTF-8                                                                     =>[main] MageFrame.main 
+INFO  2024-03-24 18:36:57,628 custom Java certificate file not found at: /Users/ian/IdeaProjects/mage/cacerts            =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 18:36:58,310 Using GUI theme: Default                                                                   =>[AWT-EventQueue-0] PreferencesDialog.getCurrentTheme 
+INFO  2024-03-24 18:36:58,317 Loading database...                                                                        =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:36:59,015 Database stats:                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:36:59,015  - sets: 500                                                                               =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:36:59,015  - cards: 72147                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:36:59,015  - tokens: 1849                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:36:59,015  - emblems: 114                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:36:59,016  - planes: 21                                                                              =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:36:59,016  - dungeons: 3                                                                             =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:36:59,032 Images: search broken files...                                                             =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 18:36:59,055 Loading sets and formats...                                                                =>[AWT-EventQueue-0] MageFrame.bootstrapSetsAndFormats 
+INFO  2024-03-24 18:37:06,633 Loading symbols...                                                                         =>[AWT-EventQueue-0] ManaSymbols.loadImages 
+INFO  2024-03-24 18:37:07,071 Loading plugins...                                                                         =>[AWT-EventQueue-0] Plugins.loadPlugins 
+INFO  2024-03-24 18:37:07,125 [Card plugin, version 0.7] has been loaded.                                                =>[AWT-EventQueue-0] CardPluginImpl.newPlugin 
+INFO  2024-03-24 18:37:07,127 [Theme plugin, version 0.5] has been loaded.                                               =>[AWT-EventQueue-0] ThemePluginImpl.newPlugin 
+INFO  2024-03-24 18:37:07,127 Done.                                                                                      =>[AWT-EventQueue-0] Plugins.loadPlugins 
+INFO  2024-03-24 18:37:07,350 Client start up time: 9 seconds                                                            =>[AWT-EventQueue-0] MageFrame.lambda$new$3 
+INFO  2024-03-24 18:37:08,741 Connect: trying to restore old session for user rogue                                      =>[SwingWorker-pool-3-thread-2] SessionHandler.connect 
+INFO  2024-03-24 18:37:08,744 Connect: connecting to server 146.190.135.147:17171                                        =>[SwingWorker-pool-3-thread-3] SessionImpl$5.work 
+INFO  2024-03-24 18:37:09,558 Connect: DONE                                                                              =>[SwingWorker-pool-3-thread-3] SessionImpl$5.work 
+INFO  2024-03-24 18:37:09,561 Logging: as username rogue to server 146.190.135.147:17171                                 =>[SwingWorker-pool-3-thread-4] SessionImpl$4.work 
+INFO  2024-03-24 18:37:11,201 Logging: DONE                                                                              =>[SwingWorker-pool-3-thread-4] SessionImpl$4.work 
+INFO  2024-03-24 18:43:09,232 Starting MAGE client version 1.4.52-V4-beta4 (build: runtime)                              =>[main] MageFrame.main 
+INFO  2024-03-24 18:43:09,233 Logging level: INFO                                                                        =>[main] MageFrame.main 
+INFO  2024-03-24 18:43:09,233 Default charset: UTF-8                                                                     =>[main] MageFrame.main 
+INFO  2024-03-24 18:43:09,404 custom Java certificate file not found at: /Users/ian/IdeaProjects/mage/cacerts            =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 18:43:10,063 Using GUI theme: Default                                                                   =>[AWT-EventQueue-0] PreferencesDialog.getCurrentTheme 
+INFO  2024-03-24 18:43:10,069 Loading database...                                                                        =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:43:10,846 Database stats:                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:43:10,846  - sets: 500                                                                               =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:43:10,846  - cards: 72147                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:43:10,846  - tokens: 1849                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:43:10,846  - emblems: 114                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:43:10,846  - planes: 21                                                                              =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:43:10,846  - dungeons: 3                                                                             =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:43:10,864 Images: search broken files...                                                             =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 18:43:10,884 Loading sets and formats...                                                                =>[AWT-EventQueue-0] MageFrame.bootstrapSetsAndFormats 
+INFO  2024-03-24 18:43:18,384 Loading symbols...                                                                         =>[AWT-EventQueue-0] ManaSymbols.loadImages 
+INFO  2024-03-24 18:43:18,822 Loading plugins...                                                                         =>[AWT-EventQueue-0] Plugins.loadPlugins 
+INFO  2024-03-24 18:43:18,873 [Card plugin, version 0.7] has been loaded.                                                =>[AWT-EventQueue-0] CardPluginImpl.newPlugin 
+INFO  2024-03-24 18:43:18,874 [Theme plugin, version 0.5] has been loaded.                                               =>[AWT-EventQueue-0] ThemePluginImpl.newPlugin 
+INFO  2024-03-24 18:43:18,875 Done.                                                                                      =>[AWT-EventQueue-0] Plugins.loadPlugins 
+INFO  2024-03-24 18:43:19,144 Client start up time: 9 seconds                                                            =>[AWT-EventQueue-0] MageFrame.lambda$new$3 
+INFO  2024-03-24 18:43:20,984 Connect: trying to restore old session for user rogue                                      =>[SwingWorker-pool-3-thread-2] SessionHandler.connect 
+INFO  2024-03-24 18:43:20,987 Connect: connecting to server 146.190.135.147:17171                                        =>[SwingWorker-pool-3-thread-3] SessionImpl$5.work 
+INFO  2024-03-24 18:43:22,042 Connect: DONE                                                                              =>[SwingWorker-pool-3-thread-3] SessionImpl$5.work 
+INFO  2024-03-24 18:43:22,043 Logging: as username rogue to server 146.190.135.147:17171                                 =>[SwingWorker-pool-3-thread-4] SessionImpl$4.work 
+INFO  2024-03-24 18:43:23,600 Logging: DONE                                                                              =>[SwingWorker-pool-3-thread-4] SessionImpl$4.work 
+FATAL 2024-03-24 18:43:31,858 Server error                                                                               =>[AWT-EventQueue-0] SessionImpl.handleMageException 
+mage.MageException: Server error: Card not found - Torpor Summit - CA0 - 251 in deck null.
+
+Possible reasons:
+ - deck problem: un-implemented card or outdated set (fix it by open in deck editor);
+ - server problem: memory issue (load your deck again or wait a server's restart).
+	at mage.server.MageServerImpl.handleException(MageServerImpl.java:1006)
+	at mage.server.MageServerImpl.executeWithResult(MageServerImpl.java:1187)
+	at mage.server.MageServerImpl.roomJoinTable(MageServerImpl.java:293)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.jboss.remoting.transporter.TransporterHandler.invoke(TransporterHandler.java:87)
+	at org.jboss.remoting.ServerInvoker.invoke(ServerInvoker.java:967)
+	at org.jboss.remoting.transport.socket.ServerThread.completeInvocation(ServerThread.java:798)
+	at org.jboss.remoting.transport.socket.ServerThread.processInvocation(ServerThread.java:751)
+	at org.jboss.remoting.transport.socket.ServerThread.dorun(ServerThread.java:586)
+	at org.jboss.remoting.transport.socket.ServerThread.run(ServerThread.java:234)
+	at org.jboss.remoting.MicroRemoteClientInvoker.invoke(MicroRemoteClientInvoker.java:218)
+	at org.jboss.remoting.Client.invoke(Client.java:2084)
+	at org.jboss.remoting.Client.invoke(Client.java:879)
+	at org.jboss.remoting.transporter.TransporterClient.invoke(TransporterClient.java:475)
+	at com.sun.proxy.$Proxy9.roomJoinTable(Unknown Source)
+	at mage.remote.SessionImpl.joinTable(SessionImpl.java:768)
+	at mage.client.SessionHandler.joinTable(SessionHandler.java:304)
+	at mage.client.dialog.NewTableDialog.btnOKActionPerformed(NewTableDialog.java:519)
+	at mage.client.dialog.NewTableDialog.access$800(NewTableDialog.java:34)
+	at mage.client.dialog.NewTableDialog$9.actionPerformed(NewTableDialog.java:242)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:262)
+	at java.awt.Component.processMouseEvent(Component.java:6539)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3318)
+	at java.awt.Component.processEvent(Component.java:6304)
+	at java.awt.Container.processEvent(Container.java:2239)
+	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+	at java.awt.Container.dispatchEventImpl(Container.java:2297)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4535)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+	at java.awt.Container.dispatchEventImpl(Container.java:2283)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at mage.client.dialog.MageDialog.startModal(MageDialog.java:200)
+	at mage.client.dialog.MageDialog.show(MageDialog.java:109)
+	at java.awt.Component.show(Component.java:1671)
+	at java.awt.Component.setVisible(Component.java:1623)
+	at javax.swing.JComponent.setVisible(JComponent.java:2638)
+	at mage.client.dialog.MageDialog.setVisible(MageDialog.java:115)
+	at mage.client.dialog.NewTableDialog.showDialog(NewTableDialog.java:820)
+	at mage.client.table.TablesPanel.btnNewTableActionPerformed(TablesPanel.java:1735)
+	at mage.client.table.TablesPanel.access$900(TablesPanel.java:62)
+	at mage.client.table.TablesPanel$14.actionPerformed(TablesPanel.java:1083)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:262)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+	at java.awt.Component.processMouseEvent(Component.java:6539)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3318)
+	at java.awt.Component.processEvent(Component.java:6304)
+	at java.awt.Container.processEvent(Container.java:2239)
+	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+	at java.awt.Container.dispatchEventImpl(Container.java:2297)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4535)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+	at java.awt.Container.dispatchEventImpl(Container.java:2283)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:760)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:84)
+	at java.awt.EventQueue$4.run(EventQueue.java:733)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:730)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+INFO  2024-03-24 18:43:55,359 Starting MAGE client version 1.4.52-V4-beta4 (build: runtime)                              =>[main] MageFrame.main 
+INFO  2024-03-24 18:43:55,360 Logging level: INFO                                                                        =>[main] MageFrame.main 
+INFO  2024-03-24 18:43:55,361 Default charset: UTF-8                                                                     =>[main] MageFrame.main 
+INFO  2024-03-24 18:43:55,525 custom Java certificate file not found at: /Users/ian/IdeaProjects/mage/cacerts            =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 18:43:56,173 Using GUI theme: Default                                                                   =>[AWT-EventQueue-0] PreferencesDialog.getCurrentTheme 
+INFO  2024-03-24 18:43:56,177 Loading database...                                                                        =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:43:56,370 Database stats:                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:43:56,370  - sets: updating                                                                          =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:43:56,370  - cards: updating                                                                         =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:43:56,370  - tokens: 1849                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:43:56,370  - emblems: 114                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:43:56,370  - planes: 21                                                                              =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:43:56,370  - dungeons: 3                                                                             =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:43:56,371 DB: creating cards database (it can take few minutes)...                                   =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 18:44:00,440 DB: need to add 500 new sets                                                               =>[AWT-EventQueue-0] ExpansionRepository.lambda$saveSets$0 
+INFO  2024-03-24 18:44:07,287 DB: need to add 72601 new cards                                                            =>[AWT-EventQueue-0] CardRepository.lambda$saveCards$0 
+INFO  2024-03-24 18:44:11,169 Done.                                                                                      =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 18:44:11,169 Images: search broken files...                                                             =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 18:44:11,189 Loading sets and formats...                                                                =>[AWT-EventQueue-0] MageFrame.bootstrapSetsAndFormats 
+INFO  2024-03-24 18:44:11,373 Loading symbols...                                                                         =>[AWT-EventQueue-0] ManaSymbols.loadImages 
+INFO  2024-03-24 18:44:11,736 Loading plugins...                                                                         =>[AWT-EventQueue-0] Plugins.loadPlugins 
+INFO  2024-03-24 18:44:11,786 [Card plugin, version 0.7] has been loaded.                                                =>[AWT-EventQueue-0] CardPluginImpl.newPlugin 
+INFO  2024-03-24 18:44:11,788 [Theme plugin, version 0.5] has been loaded.                                               =>[AWT-EventQueue-0] ThemePluginImpl.newPlugin 
+INFO  2024-03-24 18:44:11,788 Done.                                                                                      =>[AWT-EventQueue-0] Plugins.loadPlugins 
+INFO  2024-03-24 18:44:12,014 Client start up time: 16 seconds                                                           =>[AWT-EventQueue-0] MageFrame.lambda$new$3 
+INFO  2024-03-24 18:44:13,652 Connect: trying to restore old session for user rogue                                      =>[SwingWorker-pool-3-thread-2] SessionHandler.connect 
+INFO  2024-03-24 18:44:13,654 Connect: connecting to server 146.190.135.147:17171                                        =>[SwingWorker-pool-3-thread-3] SessionImpl$5.work 
+INFO  2024-03-24 18:44:14,539 Connect: DONE                                                                              =>[SwingWorker-pool-3-thread-3] SessionImpl$5.work 
+INFO  2024-03-24 18:44:14,541 Logging: as username rogue to server 146.190.135.147:17171                                 =>[SwingWorker-pool-3-thread-4] SessionImpl$4.work 
+INFO  2024-03-24 18:44:16,208 Logging: DONE                                                                              =>[SwingWorker-pool-3-thread-4] SessionImpl$4.work 
+WARN  2024-03-24 18:44:23,157 WARNING, deck file contains errors, try to apply auto-fix and save: /Users/ian/XMage/Candour - Lands.dck =>[AWT-EventQueue-0] PlainTextDeckImporter.importDeck 
+FATAL 2024-03-24 18:44:31,570 Server error                                                                               =>[AWT-EventQueue-0] SessionImpl.handleMageException 
+mage.MageException: Server error: Card not found - Torpor Summit - CA0 - 258 in deck null.
+
+Possible reasons:
+ - deck problem: un-implemented card or outdated set (fix it by open in deck editor);
+ - server problem: memory issue (load your deck again or wait a server's restart).
+	at mage.server.MageServerImpl.handleException(MageServerImpl.java:1006)
+	at mage.server.MageServerImpl.executeWithResult(MageServerImpl.java:1187)
+	at mage.server.MageServerImpl.roomJoinTable(MageServerImpl.java:293)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.jboss.remoting.transporter.TransporterHandler.invoke(TransporterHandler.java:87)
+	at org.jboss.remoting.ServerInvoker.invoke(ServerInvoker.java:967)
+	at org.jboss.remoting.transport.socket.ServerThread.completeInvocation(ServerThread.java:798)
+	at org.jboss.remoting.transport.socket.ServerThread.processInvocation(ServerThread.java:751)
+	at org.jboss.remoting.transport.socket.ServerThread.dorun(ServerThread.java:586)
+	at org.jboss.remoting.transport.socket.ServerThread.run(ServerThread.java:234)
+	at org.jboss.remoting.MicroRemoteClientInvoker.invoke(MicroRemoteClientInvoker.java:218)
+	at org.jboss.remoting.Client.invoke(Client.java:2084)
+	at org.jboss.remoting.Client.invoke(Client.java:879)
+	at org.jboss.remoting.transporter.TransporterClient.invoke(TransporterClient.java:475)
+	at com.sun.proxy.$Proxy9.roomJoinTable(Unknown Source)
+	at mage.remote.SessionImpl.joinTable(SessionImpl.java:768)
+	at mage.client.SessionHandler.joinTable(SessionHandler.java:304)
+	at mage.client.dialog.NewTableDialog.btnOKActionPerformed(NewTableDialog.java:519)
+	at mage.client.dialog.NewTableDialog.access$800(NewTableDialog.java:34)
+	at mage.client.dialog.NewTableDialog$9.actionPerformed(NewTableDialog.java:242)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:262)
+	at java.awt.Component.processMouseEvent(Component.java:6539)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3318)
+	at java.awt.Component.processEvent(Component.java:6304)
+	at java.awt.Container.processEvent(Container.java:2239)
+	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+	at java.awt.Container.dispatchEventImpl(Container.java:2297)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4535)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+	at java.awt.Container.dispatchEventImpl(Container.java:2283)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at mage.client.dialog.MageDialog.startModal(MageDialog.java:200)
+	at mage.client.dialog.MageDialog.show(MageDialog.java:109)
+	at java.awt.Component.show(Component.java:1671)
+	at java.awt.Component.setVisible(Component.java:1623)
+	at javax.swing.JComponent.setVisible(JComponent.java:2638)
+	at mage.client.dialog.MageDialog.setVisible(MageDialog.java:115)
+	at mage.client.dialog.NewTableDialog.showDialog(NewTableDialog.java:820)
+	at mage.client.table.TablesPanel.btnNewTableActionPerformed(TablesPanel.java:1735)
+	at mage.client.table.TablesPanel.access$900(TablesPanel.java:62)
+	at mage.client.table.TablesPanel$14.actionPerformed(TablesPanel.java:1083)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:262)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+	at java.awt.Component.processMouseEvent(Component.java:6539)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3318)
+	at java.awt.Component.processEvent(Component.java:6304)
+	at java.awt.Container.processEvent(Container.java:2239)
+	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+	at java.awt.Container.dispatchEventImpl(Container.java:2297)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4535)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+	at java.awt.Container.dispatchEventImpl(Container.java:2283)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:760)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:84)
+	at java.awt.EventQueue$4.run(EventQueue.java:733)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:730)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+INFO  2024-03-24 18:45:11,421 Starting MAGE client version 1.4.52-V4-beta4 (build: runtime)                              =>[main] MageFrame.main 
+INFO  2024-03-24 18:45:11,422 Logging level: INFO                                                                        =>[main] MageFrame.main 
+INFO  2024-03-24 18:45:11,422 Default charset: UTF-8                                                                     =>[main] MageFrame.main 
+INFO  2024-03-24 18:45:11,589 custom Java certificate file not found at: /Users/ian/IdeaProjects/mage/cacerts            =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 18:45:12,248 Using GUI theme: Default                                                                   =>[AWT-EventQueue-0] PreferencesDialog.getCurrentTheme 
+INFO  2024-03-24 18:45:12,253 Loading database...                                                                        =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:45:12,639 Database stats:                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:45:12,640  - sets: updating                                                                          =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:45:12,640  - cards: updating                                                                         =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:45:12,640  - tokens: 1849                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:45:12,640  - emblems: 114                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:45:12,640  - planes: 21                                                                              =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:45:12,640  - dungeons: 3                                                                             =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:45:12,640 DB: creating cards database (it can take few minutes)...                                   =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 18:45:16,870 DB: need to add 500 new sets                                                               =>[AWT-EventQueue-0] ExpansionRepository.lambda$saveSets$0 
+INFO  2024-03-24 18:45:23,854 DB: need to add 72601 new cards                                                            =>[AWT-EventQueue-0] CardRepository.lambda$saveCards$0 
+INFO  2024-03-24 18:45:27,768 Done.                                                                                      =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 18:45:27,768 Images: search broken files...                                                             =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 18:45:27,788 Loading sets and formats...                                                                =>[AWT-EventQueue-0] MageFrame.bootstrapSetsAndFormats 
+INFO  2024-03-24 18:45:27,969 Loading symbols...                                                                         =>[AWT-EventQueue-0] ManaSymbols.loadImages 
+INFO  2024-03-24 18:45:28,361 Loading plugins...                                                                         =>[AWT-EventQueue-0] Plugins.loadPlugins 
+INFO  2024-03-24 18:45:28,415 [Card plugin, version 0.7] has been loaded.                                                =>[AWT-EventQueue-0] CardPluginImpl.newPlugin 
+INFO  2024-03-24 18:45:28,416 [Theme plugin, version 0.5] has been loaded.                                               =>[AWT-EventQueue-0] ThemePluginImpl.newPlugin 
+INFO  2024-03-24 18:45:28,417 Done.                                                                                      =>[AWT-EventQueue-0] Plugins.loadPlugins 
+INFO  2024-03-24 18:45:28,623 Client start up time: 17 seconds                                                           =>[AWT-EventQueue-0] MageFrame.lambda$new$3 
+INFO  2024-03-24 18:45:39,040 Connect: trying to restore old session for user rogue                                      =>[SwingWorker-pool-3-thread-2] SessionHandler.connect 
+INFO  2024-03-24 18:45:39,042 Connect: connecting to server 146.190.135.147:17171                                        =>[SwingWorker-pool-3-thread-3] SessionImpl$5.work 
+WARN  2024-03-24 18:45:39,156 Cannot connect                                                                             =>[SwingWorker-pool-3-thread-2] SessionImpl.handleCannotConnectException 
+org.jboss.remoting.CannotConnectException: Error setting up client lease upon performing connect.
+	at org.jboss.remoting.Client.connect(Client.java:1928)
+	at org.jboss.remoting.Client.connect(Client.java:737)
+	at mage.remote.SessionImpl$5.work(SessionImpl.java:449)
+	at mage.remote.SessionImpl$RemotingTask$1.doInBackground(SessionImpl.java:105)
+	at mage.remote.SessionImpl$RemotingTask$1.doInBackground(SessionImpl.java:101)
+	at javax.swing.SwingWorker$1.call(SwingWorker.java:295)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at javax.swing.SwingWorker.run(SwingWorker.java:334)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.lang.Exception: Error setting up client lease
+	at org.jboss.remoting.MicroRemoteClientInvoker.establishLease(MicroRemoteClientInvoker.java:563)
+	at org.jboss.remoting.Client.setupClientLease(Client.java:2070)
+	at org.jboss.remoting.Client.connect(Client.java:1924)
+	... 10 more
+Caused by: org.jboss.remoting.CannotConnectException: Can not get connection to server. Problem establishing socket connection for InvokerLocator [bisocket://146.190.135.147:17171/?onewayThreadPool=mage.remote.CustomThreadPool&serializationtype=java]
+	at org.jboss.remoting.transport.socket.MicroSocketClientInvoker.transport(MicroSocketClientInvoker.java:855)
+	at org.jboss.remoting.transport.bisocket.BisocketClientInvoker.transport(BisocketClientInvoker.java:470)
+	at org.jboss.remoting.MicroRemoteClientInvoker.invoke(MicroRemoteClientInvoker.java:169)
+	at org.jboss.remoting.MicroRemoteClientInvoker.establishLease(MicroRemoteClientInvoker.java:529)
+	... 12 more
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:476)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:218)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:200)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:394)
+	at java.net.Socket.connect(Socket.java:606)
+	at org.jboss.remoting.transport.socket.SocketClientInvoker.connect(SocketClientInvoker.java:293)
+	at org.jboss.remoting.transport.socket.SocketClientInvoker.createSocket(SocketClientInvoker.java:210)
+	at org.jboss.remoting.transport.bisocket.BisocketClientInvoker.createSocket(BisocketClientInvoker.java:477)
+	at org.jboss.remoting.transport.socket.MicroSocketClientInvoker.getConnection(MicroSocketClientInvoker.java:1190)
+	at org.jboss.remoting.transport.socket.MicroSocketClientInvoker.transport(MicroSocketClientInvoker.java:833)
+	... 15 more
+INFO  2024-03-24 18:45:39,159 Disconnecting DONE                                                                         =>[SwingWorker-pool-3-thread-2] SessionImpl.connectStop 
+INFO  2024-03-24 18:45:39,159 Disconnected from client side                                                              =>[SwingWorker-pool-3-thread-2] MageFrame.disconnected 
+INFO  2024-03-24 18:45:46,108 Connect: trying to restore old session for user rogue                                      =>[SwingWorker-pool-3-thread-4] SessionHandler.connect 
+INFO  2024-03-24 18:45:46,109 Connect: connecting to server 146.190.135.147:17171                                        =>[SwingWorker-pool-3-thread-5] SessionImpl$5.work 
+WARN  2024-03-24 18:45:46,174 Cannot connect                                                                             =>[SwingWorker-pool-3-thread-4] SessionImpl.handleCannotConnectException 
+org.jboss.remoting.CannotConnectException: Error setting up client lease upon performing connect.
+	at org.jboss.remoting.Client.connect(Client.java:1928)
+	at org.jboss.remoting.Client.connect(Client.java:737)
+	at mage.remote.SessionImpl$5.work(SessionImpl.java:449)
+	at mage.remote.SessionImpl$RemotingTask$1.doInBackground(SessionImpl.java:105)
+	at mage.remote.SessionImpl$RemotingTask$1.doInBackground(SessionImpl.java:101)
+	at javax.swing.SwingWorker$1.call(SwingWorker.java:295)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at javax.swing.SwingWorker.run(SwingWorker.java:334)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.lang.Exception: Error setting up client lease
+	at org.jboss.remoting.MicroRemoteClientInvoker.establishLease(MicroRemoteClientInvoker.java:563)
+	at org.jboss.remoting.Client.setupClientLease(Client.java:2070)
+	at org.jboss.remoting.Client.connect(Client.java:1924)
+	... 10 more
+Caused by: org.jboss.remoting.CannotConnectException: Can not get connection to server. Problem establishing socket connection for InvokerLocator [bisocket://146.190.135.147:17171/?onewayThreadPool=mage.remote.CustomThreadPool&serializationtype=java]
+	at org.jboss.remoting.transport.socket.MicroSocketClientInvoker.transport(MicroSocketClientInvoker.java:855)
+	at org.jboss.remoting.transport.bisocket.BisocketClientInvoker.transport(BisocketClientInvoker.java:470)
+	at org.jboss.remoting.MicroRemoteClientInvoker.invoke(MicroRemoteClientInvoker.java:169)
+	at org.jboss.remoting.MicroRemoteClientInvoker.establishLease(MicroRemoteClientInvoker.java:529)
+	... 12 more
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:476)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:218)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:200)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:394)
+	at java.net.Socket.connect(Socket.java:606)
+	at org.jboss.remoting.transport.socket.SocketClientInvoker.connect(SocketClientInvoker.java:293)
+	at org.jboss.remoting.transport.socket.SocketClientInvoker.createSocket(SocketClientInvoker.java:210)
+	at org.jboss.remoting.transport.bisocket.BisocketClientInvoker.createSocket(BisocketClientInvoker.java:477)
+	at org.jboss.remoting.transport.socket.MicroSocketClientInvoker.getConnection(MicroSocketClientInvoker.java:1190)
+	at org.jboss.remoting.transport.socket.MicroSocketClientInvoker.transport(MicroSocketClientInvoker.java:833)
+	... 15 more
+INFO  2024-03-24 18:45:46,176 Disconnecting DONE                                                                         =>[SwingWorker-pool-3-thread-4] SessionImpl.connectStop 
+INFO  2024-03-24 18:45:46,176 Disconnected from client side                                                              =>[SwingWorker-pool-3-thread-4] MageFrame.disconnected 
+INFO  2024-03-24 18:45:47,568 Connect: trying to restore old session for user rogue                                      =>[SwingWorker-pool-3-thread-6] SessionHandler.connect 
+INFO  2024-03-24 18:45:47,569 Connect: connecting to server 146.190.135.147:17171                                        =>[SwingWorker-pool-3-thread-7] SessionImpl$5.work 
+WARN  2024-03-24 18:45:47,713 Cannot connect                                                                             =>[SwingWorker-pool-3-thread-6] SessionImpl.handleCannotConnectException 
+org.jboss.remoting.CannotConnectException: Error setting up client lease upon performing connect.
+	at org.jboss.remoting.Client.connect(Client.java:1928)
+	at org.jboss.remoting.Client.connect(Client.java:737)
+	at mage.remote.SessionImpl$5.work(SessionImpl.java:449)
+	at mage.remote.SessionImpl$RemotingTask$1.doInBackground(SessionImpl.java:105)
+	at mage.remote.SessionImpl$RemotingTask$1.doInBackground(SessionImpl.java:101)
+	at javax.swing.SwingWorker$1.call(SwingWorker.java:295)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at javax.swing.SwingWorker.run(SwingWorker.java:334)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.lang.Exception: Error setting up client lease
+	at org.jboss.remoting.MicroRemoteClientInvoker.establishLease(MicroRemoteClientInvoker.java:563)
+	at org.jboss.remoting.Client.setupClientLease(Client.java:2070)
+	at org.jboss.remoting.Client.connect(Client.java:1924)
+	... 10 more
+Caused by: org.jboss.remoting.CannotConnectException: Can not get connection to server. Problem establishing socket connection for InvokerLocator [bisocket://146.190.135.147:17171/?onewayThreadPool=mage.remote.CustomThreadPool&serializationtype=java]
+	at org.jboss.remoting.transport.socket.MicroSocketClientInvoker.transport(MicroSocketClientInvoker.java:855)
+	at org.jboss.remoting.transport.bisocket.BisocketClientInvoker.transport(BisocketClientInvoker.java:470)
+	at org.jboss.remoting.MicroRemoteClientInvoker.invoke(MicroRemoteClientInvoker.java:169)
+	at org.jboss.remoting.MicroRemoteClientInvoker.establishLease(MicroRemoteClientInvoker.java:529)
+	... 12 more
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:476)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:218)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:200)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:394)
+	at java.net.Socket.connect(Socket.java:606)
+	at org.jboss.remoting.transport.socket.SocketClientInvoker.connect(SocketClientInvoker.java:293)
+	at org.jboss.remoting.transport.socket.SocketClientInvoker.createSocket(SocketClientInvoker.java:210)
+	at org.jboss.remoting.transport.bisocket.BisocketClientInvoker.createSocket(BisocketClientInvoker.java:477)
+	at org.jboss.remoting.transport.socket.MicroSocketClientInvoker.getConnection(MicroSocketClientInvoker.java:1190)
+	at org.jboss.remoting.transport.socket.MicroSocketClientInvoker.transport(MicroSocketClientInvoker.java:833)
+	... 15 more
+INFO  2024-03-24 18:45:47,714 Disconnecting DONE                                                                         =>[SwingWorker-pool-3-thread-6] SessionImpl.connectStop 
+INFO  2024-03-24 18:45:47,715 Disconnected from client side                                                              =>[SwingWorker-pool-3-thread-6] MageFrame.disconnected 
+INFO  2024-03-24 18:45:54,180 Connect: trying to restore old session for user rogue                                      =>[SwingWorker-pool-3-thread-8] SessionHandler.connect 
+INFO  2024-03-24 18:45:54,181 Connect: connecting to server 146.190.135.147:17171                                        =>[SwingWorker-pool-3-thread-9] SessionImpl$5.work 
+INFO  2024-03-24 18:45:54,784 Connect: DONE                                                                              =>[SwingWorker-pool-3-thread-9] SessionImpl$5.work 
+INFO  2024-03-24 18:45:54,786 Logging: as username rogue to server 146.190.135.147:17171                                 =>[SwingWorker-pool-3-thread-10] SessionImpl$4.work 
+INFO  2024-03-24 18:45:56,246 Logging: DONE                                                                              =>[SwingWorker-pool-3-thread-10] SessionImpl$4.work 
+FATAL 2024-03-24 18:46:04,019 Server error                                                                               =>[AWT-EventQueue-0] SessionImpl.handleMageException 
+mage.MageException: Server error: Card not found - Torpor Summit - CA0 - 258 in deck null.
+
+Possible reasons:
+ - deck problem: un-implemented card or outdated set (fix it by open in deck editor);
+ - server problem: memory issue (load your deck again or wait a server's restart).
+	at mage.server.MageServerImpl.handleException(MageServerImpl.java:1006)
+	at mage.server.MageServerImpl.executeWithResult(MageServerImpl.java:1187)
+	at mage.server.MageServerImpl.roomJoinTable(MageServerImpl.java:293)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.jboss.remoting.transporter.TransporterHandler.invoke(TransporterHandler.java:87)
+	at org.jboss.remoting.ServerInvoker.invoke(ServerInvoker.java:967)
+	at org.jboss.remoting.transport.socket.ServerThread.completeInvocation(ServerThread.java:798)
+	at org.jboss.remoting.transport.socket.ServerThread.processInvocation(ServerThread.java:751)
+	at org.jboss.remoting.transport.socket.ServerThread.dorun(ServerThread.java:586)
+	at org.jboss.remoting.transport.socket.ServerThread.run(ServerThread.java:234)
+	at org.jboss.remoting.MicroRemoteClientInvoker.invoke(MicroRemoteClientInvoker.java:218)
+	at org.jboss.remoting.Client.invoke(Client.java:2084)
+	at org.jboss.remoting.Client.invoke(Client.java:879)
+	at org.jboss.remoting.transporter.TransporterClient.invoke(TransporterClient.java:475)
+	at com.sun.proxy.$Proxy9.roomJoinTable(Unknown Source)
+	at mage.remote.SessionImpl.joinTable(SessionImpl.java:768)
+	at mage.client.SessionHandler.joinTable(SessionHandler.java:304)
+	at mage.client.dialog.NewTableDialog.btnOKActionPerformed(NewTableDialog.java:519)
+	at mage.client.dialog.NewTableDialog.access$800(NewTableDialog.java:34)
+	at mage.client.dialog.NewTableDialog$9.actionPerformed(NewTableDialog.java:242)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:262)
+	at java.awt.Component.processMouseEvent(Component.java:6539)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3318)
+	at java.awt.Component.processEvent(Component.java:6304)
+	at java.awt.Container.processEvent(Container.java:2239)
+	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+	at java.awt.Container.dispatchEventImpl(Container.java:2297)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4535)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+	at java.awt.Container.dispatchEventImpl(Container.java:2283)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at mage.client.dialog.MageDialog.startModal(MageDialog.java:200)
+	at mage.client.dialog.MageDialog.show(MageDialog.java:109)
+	at java.awt.Component.show(Component.java:1671)
+	at java.awt.Component.setVisible(Component.java:1623)
+	at javax.swing.JComponent.setVisible(JComponent.java:2638)
+	at mage.client.dialog.MageDialog.setVisible(MageDialog.java:115)
+	at mage.client.dialog.NewTableDialog.showDialog(NewTableDialog.java:820)
+	at mage.client.table.TablesPanel.btnNewTableActionPerformed(TablesPanel.java:1735)
+	at mage.client.table.TablesPanel.access$900(TablesPanel.java:62)
+	at mage.client.table.TablesPanel$14.actionPerformed(TablesPanel.java:1083)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:262)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+	at java.awt.Component.processMouseEvent(Component.java:6539)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3318)
+	at java.awt.Component.processEvent(Component.java:6304)
+	at java.awt.Container.processEvent(Container.java:2239)
+	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+	at java.awt.Container.dispatchEventImpl(Container.java:2297)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4535)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+	at java.awt.Container.dispatchEventImpl(Container.java:2283)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:760)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:84)
+	at java.awt.EventQueue$4.run(EventQueue.java:733)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:730)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+INFO  2024-03-24 18:46:19,376 Starting MAGE client version 1.4.52-V4-beta4 (build: runtime)                              =>[main] MageFrame.main 
+INFO  2024-03-24 18:46:19,377 Logging level: INFO                                                                        =>[main] MageFrame.main 
+INFO  2024-03-24 18:46:19,377 Default charset: UTF-8                                                                     =>[main] MageFrame.main 
+INFO  2024-03-24 18:46:19,541 custom Java certificate file not found at: /Users/ian/IdeaProjects/mage/cacerts            =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 18:46:20,192 Using GUI theme: Default                                                                   =>[AWT-EventQueue-0] PreferencesDialog.getCurrentTheme 
+INFO  2024-03-24 18:46:20,196 Loading database...                                                                        =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:46:20,389 Database stats:                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:46:20,389  - sets: updating                                                                          =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:46:20,389  - cards: updating                                                                         =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:46:20,389  - tokens: 1849                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:46:20,389  - emblems: 114                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:46:20,389  - planes: 21                                                                              =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:46:20,389  - dungeons: 3                                                                             =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 18:46:20,390 DB: creating cards database (it can take few minutes)...                                   =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 18:46:24,462 DB: need to add 500 new sets                                                               =>[AWT-EventQueue-0] ExpansionRepository.lambda$saveSets$0 
+INFO  2024-03-24 18:46:31,166 DB: need to add 72601 new cards                                                            =>[AWT-EventQueue-0] CardRepository.lambda$saveCards$0 
+INFO  2024-03-24 18:46:35,000 Done.                                                                                      =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 18:46:35,000 Images: search broken files...                                                             =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 18:46:35,020 Loading sets and formats...                                                                =>[AWT-EventQueue-0] MageFrame.bootstrapSetsAndFormats 
+INFO  2024-03-24 18:46:35,204 Loading symbols...                                                                         =>[AWT-EventQueue-0] ManaSymbols.loadImages 
+INFO  2024-03-24 18:46:35,583 Loading plugins...                                                                         =>[AWT-EventQueue-0] Plugins.loadPlugins 
+INFO  2024-03-24 18:46:35,632 [Card plugin, version 0.7] has been loaded.                                                =>[AWT-EventQueue-0] CardPluginImpl.newPlugin 
+INFO  2024-03-24 18:46:35,634 [Theme plugin, version 0.5] has been loaded.                                               =>[AWT-EventQueue-0] ThemePluginImpl.newPlugin 
+INFO  2024-03-24 18:46:35,634 Done.                                                                                      =>[AWT-EventQueue-0] Plugins.loadPlugins 
+INFO  2024-03-24 18:46:35,863 Client start up time: 16 seconds                                                           =>[AWT-EventQueue-0] MageFrame.lambda$new$3 
+INFO  2024-03-24 18:46:37,448 Connect: trying to restore old session for user rogue                                      =>[SwingWorker-pool-3-thread-2] SessionHandler.connect 
+INFO  2024-03-24 18:46:37,450 Connect: connecting to server 146.190.135.147:17171                                        =>[SwingWorker-pool-3-thread-3] SessionImpl$5.work 
+INFO  2024-03-24 18:46:38,625 Connect: DONE                                                                              =>[SwingWorker-pool-3-thread-3] SessionImpl$5.work 
+INFO  2024-03-24 18:46:38,628 Logging: as username rogue to server 146.190.135.147:17171                                 =>[SwingWorker-pool-3-thread-4] SessionImpl$4.work 
+INFO  2024-03-24 18:46:40,331 Logging: DONE                                                                              =>[SwingWorker-pool-3-thread-4] SessionImpl$4.work 
+WARN  2024-03-24 18:46:45,260 WARNING, deck file contains errors, try to apply auto-fix and save: /Users/ian/XMage/Candour - Lands.dck =>[AWT-EventQueue-0] PlainTextDeckImporter.importDeck 
+FATAL 2024-03-24 18:46:45,413 Server error                                                                               =>[AWT-EventQueue-0] SessionImpl.handleMageException 
+mage.MageException: Server error: Card not found - Torpor Summit - CA0 - 251 in deck null.
+
+Possible reasons:
+ - deck problem: un-implemented card or outdated set (fix it by open in deck editor);
+ - server problem: memory issue (load your deck again or wait a server's restart).
+	at mage.server.MageServerImpl.handleException(MageServerImpl.java:1006)
+	at mage.server.MageServerImpl.executeWithResult(MageServerImpl.java:1187)
+	at mage.server.MageServerImpl.roomJoinTable(MageServerImpl.java:293)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.jboss.remoting.transporter.TransporterHandler.invoke(TransporterHandler.java:87)
+	at org.jboss.remoting.ServerInvoker.invoke(ServerInvoker.java:967)
+	at org.jboss.remoting.transport.socket.ServerThread.completeInvocation(ServerThread.java:798)
+	at org.jboss.remoting.transport.socket.ServerThread.processInvocation(ServerThread.java:751)
+	at org.jboss.remoting.transport.socket.ServerThread.dorun(ServerThread.java:586)
+	at org.jboss.remoting.transport.socket.ServerThread.run(ServerThread.java:234)
+	at org.jboss.remoting.MicroRemoteClientInvoker.invoke(MicroRemoteClientInvoker.java:218)
+	at org.jboss.remoting.Client.invoke(Client.java:2084)
+	at org.jboss.remoting.Client.invoke(Client.java:879)
+	at org.jboss.remoting.transporter.TransporterClient.invoke(TransporterClient.java:475)
+	at com.sun.proxy.$Proxy9.roomJoinTable(Unknown Source)
+	at mage.remote.SessionImpl.joinTable(SessionImpl.java:768)
+	at mage.client.SessionHandler.joinTable(SessionHandler.java:304)
+	at mage.client.dialog.NewTableDialog.btnOKActionPerformed(NewTableDialog.java:519)
+	at mage.client.dialog.NewTableDialog.access$800(NewTableDialog.java:34)
+	at mage.client.dialog.NewTableDialog$9.actionPerformed(NewTableDialog.java:242)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:262)
+	at java.awt.Component.processMouseEvent(Component.java:6539)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3318)
+	at java.awt.Component.processEvent(Component.java:6304)
+	at java.awt.Container.processEvent(Container.java:2239)
+	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+	at java.awt.Container.dispatchEventImpl(Container.java:2297)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4535)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+	at java.awt.Container.dispatchEventImpl(Container.java:2283)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at mage.client.dialog.MageDialog.startModal(MageDialog.java:200)
+	at mage.client.dialog.MageDialog.show(MageDialog.java:109)
+	at java.awt.Component.show(Component.java:1671)
+	at java.awt.Component.setVisible(Component.java:1623)
+	at javax.swing.JComponent.setVisible(JComponent.java:2638)
+	at mage.client.dialog.MageDialog.setVisible(MageDialog.java:115)
+	at mage.client.dialog.NewTableDialog.showDialog(NewTableDialog.java:820)
+	at mage.client.table.TablesPanel.btnNewTableActionPerformed(TablesPanel.java:1735)
+	at mage.client.table.TablesPanel.access$900(TablesPanel.java:62)
+	at mage.client.table.TablesPanel$14.actionPerformed(TablesPanel.java:1083)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:262)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+	at java.awt.Component.processMouseEvent(Component.java:6539)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3318)
+	at java.awt.Component.processEvent(Component.java:6304)
+	at java.awt.Container.processEvent(Container.java:2239)
+	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+	at java.awt.Container.dispatchEventImpl(Container.java:2297)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4535)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+	at java.awt.Container.dispatchEventImpl(Container.java:2283)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:760)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:84)
+	at java.awt.EventQueue$4.run(EventQueue.java:733)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:730)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
 INFO  2024-03-24 22:15:42,833 Starting MAGE client version 1.4.52-V4-beta4 (build: runtime)                              =>[main] MageFrame.main 
 INFO  2024-03-24 22:15:42,835 Logging level: INFO                                                                        =>[main] MageFrame.main 
 INFO  2024-03-24 22:15:42,835 Default charset: UTF-8                                                                     =>[main] MageFrame.main 
