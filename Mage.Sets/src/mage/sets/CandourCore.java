@@ -218,5 +218,42 @@ public class CandourCore extends ExpansionSet {
         //Chromatic Lotus
         //Cranial Clamp
         //Diviner's Terrarium
+        //Servoswipe Adept
+        //Mephidross Mawcrusher
+        //Gitaxian Scrap-searcher
+        //Archamge's Astrolabe
+        //Scion of Skithryx
+        //Etherium Vial
+        //Verdant Slingshot
+        //Slinking Scorcher
+        //Atraxa's Assimilator
+        //Dreamcleaver Hierarch
+        //Enigmatic Serpent
+        //Rampaging Lhurgoyf
+        //Surging Rampage
+        //Tinkerleaf Sprites
+        //Aeon Ritual
+        //Shifting Bonsai
+        //Call of the Multiverse
+        //Glen Elendra Scion
+        //Seasoned Fireweaver
+        //Dreadhorde Ambassador
+        //Lochthwain Compleat
+        //Tibalt, Vanguard of Pain
+        //Skywhale Umbra
+        //Hurried Forging
+        //Aetherwing, Ghirapur Flagship
+        //Elesh Norn, Annex Regent
+        //Thousand-legged Deathcoil
+        //Road to Exile
+        //Strixhaven Falls
+        //Sunrise Champion
+        //Adventurous Instinct
+        //Pestermage
+        //Splintering Agony
+        //Throne of Argoth
+        //Koilos Sleep Chamber
+        //Descent of the Wicked Slumber
+        //Tomakul, Domed Settlement
     }
 }

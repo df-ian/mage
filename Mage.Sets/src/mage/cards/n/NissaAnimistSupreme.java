@@ -30,7 +30,7 @@ public final class NissaAnimistSupreme extends CardImpl {
         this.subtype.add(SubType.DRUID);
 
         this.power = new MageInt(5);
-        this.toughness = new MageInt(67);
+        this.toughness = new MageInt(7);
 
         // Trample
         this.addAbility(new WardAbility(new ManaCostsImpl<>("{4}")));
