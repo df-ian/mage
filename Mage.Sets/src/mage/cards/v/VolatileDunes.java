@@ -2,12 +2,14 @@ package mage.cards.v;
 
 import mage.abilities.Ability;
 import mage.abilities.common.ActivateIfConditionActivatedAbility;
+import mage.abilities.common.EntersBattlefieldTappedAbility;
 import mage.abilities.common.SimpleActivatedAbility;
 import mage.abilities.condition.Condition;
 import mage.abilities.condition.common.PermanentsOnTheBattlefieldCondition;
 import mage.abilities.costs.common.SacrificeSourceCost;
 import mage.abilities.costs.common.TapSourceCost;
 import mage.abilities.costs.mana.GenericManaCost;
+import mage.abilities.costs.mana.ManaCostsImpl;
 import mage.abilities.effects.common.DrawCardSourceControllerEffect;
 import mage.abilities.effects.common.DrawDiscardControllerEffect;
 import mage.abilities.mana.ColorlessManaAbility;
@@ -28,14 +30,17 @@ public final class VolatileDunes extends CardImpl {
     public VolatileDunes(UUID ownerId, CardSetInfo setInfo) {
         super(ownerId, setInfo, new CardType[]{CardType.LAND}, "");
 
+        this.addAbility(new EntersBattlefieldTappedAbility());
+
         // {T}: Add {C}.
         this.addAbility(new ColorlessManaAbility());
 
         // {1}, {T}, Sacrifice Cryptic Caves: Draw a card. Activate this ability only if you control five or more lands.
         Ability ability = new SimpleActivatedAbility(
                 Zone.BATTLEFIELD, new DrawDiscardControllerEffect(2, 1),
-                new TapSourceCost()
+                new ManaCostsImpl<>("{1}")
         );
+        ability.addCost(new TapSourceCost());
         ability.addCost(new SacrificeSourceCost());
         this.addAbility(ability);
     }

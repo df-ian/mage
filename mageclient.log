@@ -1403,3 +1403,95 @@ INFO  2024-03-24 18:15:23,373 Connect: connecting to server 146.190.135.147:1717
 INFO  2024-03-24 18:15:24,515 Connect: DONE                                                                              =>[SwingWorker-pool-3-thread-3] SessionImpl$5.work 
 INFO  2024-03-24 18:15:24,516 Logging: as username rogue to server 146.190.135.147:17171                                 =>[SwingWorker-pool-3-thread-4] SessionImpl$4.work 
 INFO  2024-03-24 18:15:26,136 Logging: DONE                                                                              =>[SwingWorker-pool-3-thread-4] SessionImpl$4.work 
+INFO  2024-03-24 22:15:42,833 Starting MAGE client version 1.4.52-V4-beta4 (build: runtime)                              =>[main] MageFrame.main 
+INFO  2024-03-24 22:15:42,835 Logging level: INFO                                                                        =>[main] MageFrame.main 
+INFO  2024-03-24 22:15:42,835 Default charset: UTF-8                                                                     =>[main] MageFrame.main 
+INFO  2024-03-24 22:15:42,987 custom Java certificate file not found at: C:\Users\Ian\Documents\GitHub\mage-candour\cacerts =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 22:15:43,547 Using GUI theme: Default                                                                   =>[AWT-EventQueue-0] PreferencesDialog.getCurrentTheme 
+INFO  2024-03-24 22:15:43,559 Loading database...                                                                        =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 22:15:43,936 Database stats:                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 22:15:43,936  - sets: updating                                                                          =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 22:15:43,936  - cards: updating                                                                         =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 22:15:43,937  - tokens: 1849                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 22:15:43,937  - emblems: 114                                                                            =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 22:15:43,937  - planes: 21                                                                              =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 22:15:43,937  - dungeons: 3                                                                             =>[AWT-EventQueue-0] RepositoryUtil.bootstrapLocalDb 
+INFO  2024-03-24 22:15:43,937 DB: creating cards database (it can take few minutes)...                                   =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 22:15:57,508 DB: need to add 500 new sets                                                               =>[AWT-EventQueue-0] ExpansionRepository.lambda$saveSets$0 
+INFO  2024-03-24 22:16:09,058 DB: need to add 72607 new cards                                                            =>[AWT-EventQueue-0] CardRepository.lambda$saveCards$0 
+INFO  2024-03-24 22:16:14,333 Done.                                                                                      =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 22:16:14,334 Images: search broken files...                                                             =>[AWT-EventQueue-0] MageFrame.<init> 
+INFO  2024-03-24 22:16:14,340 Loading sets and formats...                                                                =>[AWT-EventQueue-0] MageFrame.bootstrapSetsAndFormats 
+INFO  2024-03-24 22:16:14,680 Loading symbols...                                                                         =>[AWT-EventQueue-0] ManaSymbols.loadImages 
+INFO  2024-03-24 22:16:15,750 Loading plugins...                                                                         =>[AWT-EventQueue-0] Plugins.loadPlugins 
+INFO  2024-03-24 22:16:15,938 [Card plugin, version 0.7] has been loaded.                                                =>[AWT-EventQueue-0] CardPluginImpl.newPlugin 
+INFO  2024-03-24 22:16:15,939 [Theme plugin, version 0.5] has been loaded.                                               =>[AWT-EventQueue-0] ThemePluginImpl.newPlugin 
+INFO  2024-03-24 22:16:15,940 Done.                                                                                      =>[AWT-EventQueue-0] Plugins.loadPlugins 
+INFO  2024-03-24 22:16:16,476 Client start up time: 33 seconds                                                           =>[AWT-EventQueue-0] MageFrame.lambda$new$3 
+INFO  2024-03-24 22:16:16,498 Auto-connecting to 146.190.135.147                                                         =>[AWT-EventQueue-0] MageFrame.autoConnect 
+INFO  2024-03-24 22:16:16,618 Connect: connecting to server 146.190.135.147:17171                                        =>[SwingWorker-pool-4-thread-2] SessionImpl$5.work 
+INFO  2024-03-24 22:16:18,108 Connect: DONE                                                                              =>[SwingWorker-pool-4-thread-2] SessionImpl$5.work 
+INFO  2024-03-24 22:16:18,110 Logging: as username Rogue to server 146.190.135.147:17171                                 =>[SwingWorker-pool-4-thread-3] SessionImpl$4.work 
+INFO  2024-03-24 22:16:19,373 Logging: DONE                                                                              =>[SwingWorker-pool-4-thread-3] SessionImpl$4.work 
+WARN  2024-03-24 22:23:23,614 Failed to read sounds\OnNextPage.wav                                                       =>[AWT-EventQueue-0] MageClip.loadStream 
+java.io.FileNotFoundException: sounds\OnNextPage.wav (The system cannot find the path specified)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at javazoom.spi.mpeg.sampled.file.MpegAudioFileReader.getAudioInputStream(MpegAudioFileReader.java:490)
+	at javax.sound.sampled.AudioSystem.getAudioInputStream(AudioSystem.java:1181)
+	at mage.client.util.audio.MageClip.loadStream(MageClip.java:37)
+	at mage.client.util.audio.MageClip.<init>(MageClip.java:31)
+	at mage.client.util.audio.AudioManager.playAnotherTab(AudioManager.java:85)
+	at mage.client.deckeditor.collection.viewer.MageBook.lambda$addSetTabs$2(MageBook.java:186)
+	at mage.client.components.HoverButton.execute(HoverButton.java:348)
+	at mage.client.deckeditor.collection.viewer.MageBook.updateDispayedSets(MageBook.java:553)
+	at mage.client.deckeditor.collection.viewer.CollectionViewerPanel.lambda$initComponents$0(CollectionViewerPanel.java:94)
+	at javax.swing.JComboBox.fireActionEvent(JComboBox.java:1260)
+	at javax.swing.JComboBox.setSelectedItem(JComboBox.java:588)
+	at mage.client.deckeditor.collection.viewer.CollectionViewerPanel.<init>(CollectionViewerPanel.java:34)
+	at mage.client.deckeditor.collection.viewer.CollectionViewerPane.<init>(CollectionViewerPane.java:27)
+	at mage.client.MageFrame.showCollectionViewer(MageFrame.java:1379)
+	at mage.client.MageFrame.btnCollectionViewerActionPerformed(MageFrame.java:1148)
+	at mage.client.MageFrame.access$1200(MageFrame.java:87)
+	at mage.client.MageFrame$10.actionPerformed(MageFrame.java:1017)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:262)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+	at java.awt.Component.processMouseEvent(Component.java:6539)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3318)
+	at java.awt.Component.processEvent(Component.java:6304)
+	at java.awt.Container.processEvent(Container.java:2239)
+	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+	at java.awt.Container.dispatchEventImpl(Container.java:2297)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4535)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+	at java.awt.Container.dispatchEventImpl(Container.java:2283)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:760)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:84)
+	at java.awt.EventQueue$4.run(EventQueue.java:733)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:730)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+INFO  2024-03-24 22:34:13,330 Disconnecting...                                                                           =>[AWT-EventQueue-0] SessionImpl.connectStop 
+INFO  2024-03-24 22:34:13,601 Disconnecting DONE                                                                         =>[AWT-EventQueue-0] SessionImpl.connectStop 
+INFO  2024-03-24 22:34:13,601 Disconnected from server side                                                              =>[AWT-EventQueue-0] MageFrame.disconnected 
