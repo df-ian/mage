@@ -533,10 +533,10 @@ public class DragCardGrid extends JPanel implements DragCardSource, DragCardTarg
             return card.isBattle();
         }
     };
-    private final CardTypeCounter tribalCounter = new CardTypeCounter() {
+    private final CardTypeCounter kindredCounter = new CardTypeCounter() {
         @Override
         protected boolean is(CardView card) {
-            return card.isTribal();
+            return card.isKindred();
         }
     };
 
@@ -549,7 +549,7 @@ public class DragCardGrid extends JPanel implements DragCardSource, DragCardTarg
             planeswalkerCounter,
             sorceryCounter,
             battleCounter,
-            tribalCounter
+            kindredCounter
     };
 
     // Listener
@@ -1861,9 +1861,9 @@ public class DragCardGrid extends JPanel implements DragCardSource, DragCardTarg
                     List<CardView> gridStack = new ArrayList<>();
                     gridRow.add(gridStack);
                     for (DeckCardInfo info : stack) {
-                        if (trackedCards.containsKey(info.getSetCode()) && trackedCards.get(info.getSetCode()).containsKey(info.getCardNum())) {
+                        if (trackedCards.containsKey(info.getSetCode()) && trackedCards.get(info.getSetCode()).containsKey(info.getCardNumber())) {
                             List<CardView> candidates
-                                    = trackedCards.get(info.getSetCode()).get(info.getCardNum());
+                                    = trackedCards.get(info.getSetCode()).get(info.getCardNumber());
                             if (!candidates.isEmpty()) {
                                 gridStack.add(candidates.remove(0));
                                 thisMaxStackSize = Math.max(thisMaxStackSize, gridStack.size());
@@ -1914,8 +1914,8 @@ public class DragCardGrid extends JPanel implements DragCardSource, DragCardTarg
                     return planeswalkerCounter.get();
                 case SORCERY:
                     return sorceryCounter.get();
-                case TRIBAL:
-                    return tribalCounter.get();
+                case KINDRED:
+                    return kindredCounter.get();
                 default:
                     break;
             }

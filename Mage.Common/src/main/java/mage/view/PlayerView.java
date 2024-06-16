@@ -1,7 +1,7 @@
 package mage.view;
 
 import mage.cards.Card;
-import mage.counters.Counters;
+import mage.counters.Counter;
 import mage.designations.Designation;
 import mage.game.ExileZone;
 import mage.game.Game;
@@ -27,10 +27,9 @@ public class PlayerView implements Serializable {
     private final boolean controlled; // gui: player is current user
     private final boolean isHuman; // human or computer
     private final int life;
-    private final Counters counters;
+    private final List<CounterView> counters;
     private final int wins;
     private final int winsNeeded;
-    private final long deckHashCode;
     private final int libraryCount;
     private final int handCount;
     private final boolean isActive;
@@ -65,11 +64,8 @@ public class PlayerView implements Serializable {
         this.controlled = player.getId().equals(createdForPlayerId);
         this.isHuman = player.isHuman();
         this.life = player.getLife();
-        this.counters = player.getCounters();
         this.wins = player.getMatchPlayer().getWins();
         this.winsNeeded = player.getMatchPlayer().getWinsNeeded();
-        // If match ended immediately before, deck can be set to null so check is necessarry here
-        this.deckHashCode = player.getMatchPlayer().getDeck() != null ? player.getMatchPlayer().getDeck().getDeckHashCode() : 0;
         this.libraryCount = player.getLibrary().size();
         this.handCount = player.getHand().size();
         this.manaPool = new ManaPoolView(player.getManaPool());
@@ -161,6 +157,10 @@ public class PlayerView implements Serializable {
         for (Designation designation : player.getDesignations()) {
             this.designationNames.add(designation.getName());
         }
+        this.counters = new ArrayList<>();
+        for (Counter counter : player.getCountersAsCopy().values()) {
+            counters.add(new CounterView(counter));
+        }
     }
 
     private boolean showInBattlefield(Permanent permanent, GameState state) {
@@ -190,7 +190,7 @@ public class PlayerView implements Serializable {
         return this.life;
     }
 
-    public Counters getCounters() {
+    public List<CounterView> getCounters() {
         return this.counters;
     }
 
@@ -204,10 +204,6 @@ public class PlayerView implements Serializable {
 
     public int getWinsNeeded() {
         return winsNeeded;
-    }
-
-    public long getDeckHashCode() {
-        return deckHashCode;
     }
 
     public int getHandCount() {

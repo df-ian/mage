@@ -190,16 +190,8 @@ public class TestPlayer implements Player {
         aliases.put(aliasId, objectId);
     }
 
-    public ManaOptions getAvailableManaTest(Game game) {
+    public ManaOptions getAvailableManaTest(Game game) { // TODO: remove
         return computerPlayer.getManaAvailable(game);
-    }
-
-    public void addAction(int turnNum, PhaseStep step, String action) {
-        actions.add(new PlayerAction("", turnNum, step, action));
-    }
-
-    public void addAction(String actionName, int turnNum, PhaseStep step, String action) {
-        actions.add(new PlayerAction(actionName, turnNum, step, action));
     }
 
     public void addAction(PlayerAction playerAction) {
@@ -555,11 +547,6 @@ public class TestPlayer implements Player {
             result = false;
         }
         return result;
-    }
-
-    @Override
-    public int getActionCount() {
-        return actions.size();
     }
 
     @Override
@@ -1089,6 +1076,7 @@ public class TestPlayer implements Player {
         if (numberOfActions == actions.size()) {
             foundNoAction++;
             if (foundNoAction > maxCallsWithoutAction) {
+                // how-to fix: if you really need a long game with many turns then use prepare command TestPlayer.setMaxCallsWithoutAction
                 throw new AssertionError("Too much priority calls to " + getName()
                         + " without taking any action than allowed (" + maxCallsWithoutAction + ") on turn " + game.getTurnNum());
             }
@@ -1225,10 +1213,10 @@ public class TestPlayer implements Player {
                         + ", " + (c.isTapped() ? "Tapped" : "Untapped")
                         + getPrintableAliases(", [", c.getId(), "]")
                         + (c.getAttachedTo() == null ? ""
-                                : ", attached to "
-                                        + (game.getObject(c.getAttachedTo()) == null
-                                                ? game.getPlayer(c.getAttachedTo()).getName()
-                                                : game.getObject(c.getAttachedTo()).getIdName()))))
+                        : ", attached to "
+                        + (game.getObject(c.getAttachedTo()) == null
+                        ? game.getPlayer(c.getAttachedTo()).getName()
+                        : game.getObject(c.getAttachedTo()).getIdName()))))
                 .sorted()
                 .collect(Collectors.toList());
 
@@ -2014,8 +2002,8 @@ public class TestPlayer implements Player {
         return "Ability: null";
     }
 
-    private String getInfo(Target o) {
-        return "Target: " + (o != null ? o.getClass().getSimpleName() + ": " + o.getMessage() : "null");
+    private String getInfo(Target o, Game game) {
+        return "Target: " + (o != null ? o.getClass().getSimpleName() + ": " + o.getMessage(game) : "null");
     }
 
     private void assertAliasSupportInChoices(boolean methodSupportAliases) {
@@ -2180,7 +2168,7 @@ public class TestPlayer implements Player {
         }
 
         // ignore player select
-        if (target.getMessage().equals("Select a starting player")) {
+        if (target.getMessage(game).equals("Select a starting player")) {
             return computerPlayer.choose(outcome, target, source, game, options);
         }
 
@@ -2330,7 +2318,7 @@ public class TestPlayer implements Player {
 
                 // apply only on ALL targets or revert
                 if (usedChoices.size() > 0) {
-                    if (target.isChosen()) {
+                    if (target.isChosen(game)) {
                         // remove all used choices
                         for (int i = choices.size(); i >= 0; i--) {
                             if (usedChoices.contains(i)) {
@@ -2382,7 +2370,7 @@ public class TestPlayer implements Player {
             }
         }
 
-        this.chooseStrictModeFailed("choice", game, getInfo(game.getObject(source)) + ";\n" + getInfo(target));
+        this.chooseStrictModeFailed("choice", game, getInfo(source, game) + "\n" + getInfo(target, game));
         return computerPlayer.choose(outcome, target, source, game, options);
     }
 
@@ -2695,7 +2683,7 @@ public class TestPlayer implements Player {
         }
 
         // wrong target settings by addTarget
-        // how to fix: implement target class processing above
+        // how to fix: implement target class processing above (if it a permanent target then check "filter instanceof" code too)
         if (!targets.isEmpty()) {
             String message;
 
@@ -2703,19 +2691,19 @@ public class TestPlayer implements Player {
                 message = this.getName() + " - Targets list was setup by addTarget with " + targets + ", but not used"
                         + "\nCard: " + source.getSourceObject(game)
                         + "\nAbility: " + source.getClass().getSimpleName() + " (" + source.getRule() + ")"
-                        + "\nTarget: " + target.getClass().getSimpleName() + " (" + target.getMessage() + ")"
-                        + "\nYou must implement target class support in TestPlayer or setup good targets";
+                        + "\nTarget: " + target.getClass().getSimpleName() + " (" + target.getMessage(game) + ")"
+                        + "\nYou must implement target class support in TestPlayer, \"filter instanceof\", or setup good targets";
             } else {
                 message = this.getName() + " - Targets list was setup by addTarget with " + targets + ", but not used"
                         + "\nCard: unknown source"
                         + "\nAbility: unknown source"
-                        + "\nTarget: " + target.getClass().getSimpleName() + " (" + target.getMessage() + ")"
-                        + "\nYou must implement target class support in TestPlayer or setup good targets";
+                        + "\nTarget: " + target.getClass().getSimpleName() + " (" + target.getMessage(game) + ")"
+                        + "\nYou must implement target class support in TestPlayer, \"filter instanceof\", or setup good targets";
             }
             Assert.fail(message);
         }
 
-        this.chooseStrictModeFailed("target", game, getInfo(source, game) + "\n" + getInfo(target));
+        this.chooseStrictModeFailed("target", game, getInfo(source, game) + "\n" + getInfo(target, game));
         return computerPlayer.chooseTarget(outcome, target, source, game);
     }
 
@@ -2761,7 +2749,7 @@ public class TestPlayer implements Player {
             LOGGER.warn("Wrong target");
         }
 
-        this.chooseStrictModeFailed("target", game, getInfo(source, game) + "\n" + getInfo(target));
+        this.chooseStrictModeFailed("target", game, getInfo(source, game) + "\n" + getInfo(target, game));
         return computerPlayer.chooseTarget(outcome, cards, target, source, game);
     }
 
@@ -2931,8 +2919,8 @@ public class TestPlayer implements Player {
     }
 
     @Override
-    public void signalPlayerConcede() {
-        computerPlayer.signalPlayerConcede();
+    public void signalPlayerConcede(boolean stopCurrentChooseDialog) {
+        computerPlayer.signalPlayerConcede(stopCurrentChooseDialog);
     }
 
     @Override
@@ -2973,8 +2961,8 @@ public class TestPlayer implements Player {
     }
 
     @Override
-    public Counters getCounters() {
-        return computerPlayer.getCounters();
+    public Counters getCountersAsCopy() {
+        return computerPlayer.getCountersAsCopy();
     }
 
     @Override
@@ -3039,8 +3027,8 @@ public class TestPlayer implements Player {
     }
 
     @Override
-    public boolean canBeTargetedBy(MageObject source, UUID sourceControllerId, Game game) {
-        return computerPlayer.canBeTargetedBy(source, sourceControllerId, game);
+    public boolean canBeTargetedBy(MageObject sourceObject, UUID sourceControllerId, Ability source, Game game) {
+        return computerPlayer.canBeTargetedBy(sourceObject, sourceControllerId, source, game);
     }
 
     @Override
@@ -3453,8 +3441,33 @@ public class TestPlayer implements Player {
     }
 
     @Override
-    public void removeCounters(String name, int amount, Ability source, Game game) {
-        computerPlayer.removeCounters(name, amount, source, game);
+    public void loseCounters(String counterName, int amount, Ability source, Game game) {
+        computerPlayer.loseCounters(counterName, amount, source, game);
+    }
+
+    @Override
+    public int loseAllCounters(Ability source, Game game) {
+        return computerPlayer.loseAllCounters(source, game);
+    }
+
+    @Override
+    public int loseAllCounters(String counterName, Ability source, Game game) {
+        return computerPlayer.loseAllCounters(counterName, source, game);
+    }
+
+    @Override
+    public int getCountersCount(CounterType counterType) {
+        return computerPlayer.getCountersCount(counterType);
+    }
+
+    @Override
+    public int getCountersCount(String counterName) {
+        return computerPlayer.getCountersCount(counterName);
+    }
+
+    @Override
+    public int getCountersTotalCount() {
+        return computerPlayer.getCountersTotalCount();
     }
 
     @Override
@@ -3774,11 +3787,6 @@ public class TestPlayer implements Player {
     }
 
     @Override
-    public void addAction(String action) {
-        computerPlayer.addAction(action);
-    }
-
-    @Override
     public void setAllowBadMoves(boolean allowBadMoves) {
         computerPlayer.setAllowBadMoves(allowBadMoves);
     }
@@ -3831,6 +3839,16 @@ public class TestPlayer implements Player {
     @Override
     public void setDrawsOnOpponentsTurn(boolean drawsOnOpponentsTurn) {
         computerPlayer.setDrawsOnOpponentsTurn(drawsOnOpponentsTurn);
+    }
+
+    @Override
+    public boolean canPlotFromTopOfLibrary() {
+        return computerPlayer.canPlotFromTopOfLibrary();
+    }
+
+    @Override
+    public void setPlotFromTopOfLibrary(boolean canPlotFromTopOfLibrary) {
+        computerPlayer.setPlotFromTopOfLibrary(canPlotFromTopOfLibrary);
     }
 
     @Override
@@ -4142,7 +4160,7 @@ public class TestPlayer implements Player {
             assertWrongChoiceUsage(choices.size() > 0 ? choices.get(0) : "empty list");
         }
 
-        this.chooseStrictModeFailed("choice", game, getInfo(target));
+        this.chooseStrictModeFailed("choice", game, getInfo(source, game) + "\n" + getInfo(target, game));
         return computerPlayer.choose(outcome, cards, target, source, game);
     }
 
@@ -4215,7 +4233,7 @@ public class TestPlayer implements Player {
             }
         }
 
-        this.chooseStrictModeFailed("target", game, getInfo(source, game) + "\n" + getInfo(target));
+        this.chooseStrictModeFailed("target", game, getInfo(source, game) + "\n" + getInfo(target, game));
         return computerPlayer.chooseTargetAmount(outcome, target, source, game);
     }
 

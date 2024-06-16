@@ -369,7 +369,7 @@ public class CardView extends SimpleCardView {
                 this.power = Integer.toString(card.getPower().getValue());
                 this.toughness = Integer.toString(card.getToughness().getValue());
                 this.cardTypes = new ArrayList<>(card.getCardType());
-                this.color = card.getColor(null);
+                this.color = card.getColor(null).copy();
                 this.superTypes = new ArrayList<>(card.getSuperType());
                 this.subTypes = card.getSubtype().copy();
                 this.rules = new ArrayList<>(card.getRules());
@@ -485,6 +485,9 @@ public class CardView extends SimpleCardView {
                 }
                 if (!permanent.getControllerId().equals(permanent.getOwnerId())) {
                     controlledByOwner = false;
+                }
+                if (permanent.isTransformed()) {
+                    transformed = true;
                 }
             }
         } else {
@@ -631,10 +634,10 @@ public class CardView extends SimpleCardView {
             }
 
             // Cases, classes and sagas have portrait art
-            if (card.getSubtype().contains(SubType.CASE) ||
-                    card.getSubtype().contains(SubType.CLASS)) {
+            if (card.getSubtype(game).contains(SubType.CASE) ||
+                    card.getSubtype(game).contains(SubType.CLASS)) {
                 artRect = ArtRect.FULL_LENGTH_LEFT;
-            } else if (card.getSubtype().contains(SubType.SAGA)) {
+            } else if (card.getSubtype(game).contains(SubType.SAGA)) {
                 artRect = ArtRect.FULL_LENGTH_RIGHT;
             }
 
@@ -1144,7 +1147,7 @@ public class CardView extends SimpleCardView {
 
         // from normal targets
         for (Target target : targets) {
-            if (target.isChosen()) {
+            if (target.isChosen(game)) {
                 newTargets.addAll(target.getTargets());
             }
         }
@@ -1570,8 +1573,8 @@ public class CardView extends SimpleCardView {
         return cardTypes.contains(CardType.ARTIFACT);
     }
 
-    public boolean isTribal() {
-        return cardTypes.contains(CardType.TRIBAL);
+    public boolean isKindred() {
+        return cardTypes.contains(CardType.KINDRED);
     }
 
     public void setInViewerOnly(boolean inViewerOnly) {

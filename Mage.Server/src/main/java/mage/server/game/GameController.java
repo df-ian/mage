@@ -516,6 +516,8 @@ public class GameController implements GameCallback {
                     if (game.canRollbackTurns(turnsToRollback)) {
                         UUID playerId = getPlayerId(userId);
                         if (game.getPriorityPlayerId().equals(playerId)) {
+                            // rollback request on own priority - can stop current choose dialog
+                            // TODO: make it async on any priority like concede
                             requestsOpen = requestPermissionToRollback(userId, turnsToRollback);
                             if (requestsOpen == 0) {
                                 game.rollbackTurns(turnsToRollback);
@@ -568,9 +570,17 @@ public class GameController implements GameCallback {
                 }
             }
             break;
-            case CONCEDE:
-                game.concede(getPlayerId(userId));
+            case CONCEDE: {
+                UUID playerId = getPlayerId(userId);
+                if (playerId != null) {
+                    Player player = game.getPlayer(playerId);
+                    if (player != null) {
+                        game.informPlayers(player.getLogName() + " want to concede");
+                        game.setConcedingPlayer(getPlayerId(userId));
+                    }
+                }
                 break;
+            }
             case MANA_AUTO_PAYMENT_OFF:
                 game.setManaPaymentMode(getPlayerId(userId), false);
                 break;
@@ -600,7 +610,7 @@ public class GameController implements GameCallback {
                     }
                 }
                 break;
-            case REVOKE_PERMISSIONS_TO_SEE_HAND_CARDS:
+            case REVOKE_PERMISSIONS_TO_SEE_HAND_CARDS: {
                 UUID playerId = getPlayerId(userId);
                 if (playerId != null) {
                     Player player = game.getPlayer(playerId);
@@ -609,6 +619,7 @@ public class GameController implements GameCallback {
                     }
                 }
                 break;
+            }
             case REQUEST_PERMISSION_TO_SEE_HAND_CARDS:
                 if (data instanceof UUID) {
                     requestPermissionToSeeHandCards(userId, (UUID) data);
@@ -916,8 +927,8 @@ public class GameController implements GameCallback {
         }
     }
 
-    private synchronized void informPersonal(UUID playerId, final String message) throws MageException {
-        perform(playerId, playerId1 -> getGameSession(playerId1).informPersonal(message));
+    private void informPersonal(UUID playerId, final String message) throws MageException {
+        perform(playerId, playerId1 -> getGameSession(playerId1).informPersonal(message), false);
     }
 
     private void error(String message, Exception ex) {
@@ -1287,13 +1298,13 @@ public class GameController implements GameCallback {
             return "";
         }
 
-        logger.warn("FIX command was called by " + user.getName() + " for game " + game.getId() + " - players: " +
-                game.getPlayerList().stream()
-                        .map(game::getPlayer)
-                        .filter(Objects::nonNull)
-                        .map(p -> p.getName() + (p.isInGame() ? " (play)" : " (out)"))
-                        .collect(Collectors.joining(", ")));
-
+        String playersInfo = game.getPlayerList().stream()
+                .map(game::getPlayer)
+                .filter(Objects::nonNull)
+                .map(p -> p.getName() + (p.isInGame() ? " (play)" : " (out)"))
+                .collect(Collectors.joining(", "));
+        logger.warn("FIX command was called for game " + game.getId() + " by " + user.getName()
+                + "; players: " + playersInfo + "; " + game);
         StringBuilder sb = new StringBuilder();
         sb.append("<font color='red'>FIX command called by ").append(user.getName()).append("</font>");
         sb.append("<font size='-2'>"); // font resize start for all next logs
@@ -1352,7 +1363,7 @@ public class GameController implements GameCallback {
         sb.append("</font>"); // font resize end
         sb.append("<br>");
 
-        logger.warn("FIX command result for game " + game.getId() + ": " + appliedFixes);
+        logger.warn("FIX command result: " + appliedFixes);
 
         return sb.toString();
     }

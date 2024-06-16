@@ -10,6 +10,7 @@ import mage.abilities.costs.VariableCost;
 import mage.abilities.costs.mana.*;
 import mage.abilities.dynamicvalue.DynamicValue;
 import mage.abilities.dynamicvalue.common.SavedDamageValue;
+import mage.abilities.dynamicvalue.common.SavedGainedLifeValue;
 import mage.abilities.dynamicvalue.common.StaticValue;
 import mage.abilities.effects.ContinuousEffect;
 import mage.abilities.effects.Effect;
@@ -30,7 +31,7 @@ import mage.game.CardState;
 import mage.game.Game;
 import mage.game.GameState;
 import mage.game.command.Commander;
-import mage.game.events.BatchGameEvent;
+import mage.game.events.BatchEvent;
 import mage.game.events.GameEvent;
 import mage.game.permanent.Permanent;
 import mage.game.permanent.PermanentCard;
@@ -78,7 +79,9 @@ public final class CardUtil {
             "put", "return", "exile", "discard", "sacrifice", "remove", "tap", "reveal", "pay", "collect"
     );
 
-    public static final int TESTS_SET_CODE_LOOKUP_LENGTH = 6; // search set code in commands like "set_code-card_name"
+    // search set code in commands like "set_code-card_name"
+    public static final int TESTS_SET_CODE_MIN_LOOKUP_LENGTH = 3;
+    public static final int TESTS_SET_CODE_MAX_LOOKUP_LENGTH = 6;
     public static final String TESTS_SET_CODE_DELIMETER = "-"; // delimeter for cheats and tests command "set_code-card_name"
 
     /**
@@ -315,14 +318,14 @@ public final class CardUtil {
     /**
      * Adjusts spell or ability cost to be paid by colored and generic mana.
      *
-     * @param spellAbility
-     * @param manaCostsToReduce costs to reduce
+     * @param ability           spell or ability to reduce the cost of
+     * @param manaCostsToReduce reduces the spell or ability cost by that much
      * @param convertToGeneric  colored mana does reduce generic mana if no
      *                          appropriate colored mana is in the costs
      *                          included
      */
-    public static void adjustCost(SpellAbility spellAbility, ManaCosts<ManaCost> manaCostsToReduce, boolean convertToGeneric) {
-        ManaCosts<ManaCost> previousCost = spellAbility.getManaCostsToPay();
+    public static void adjustCost(Ability ability, ManaCosts<ManaCost> manaCostsToReduce, boolean convertToGeneric) {
+        ManaCosts<ManaCost> previousCost = ability.getManaCostsToPay();
         ManaCosts<ManaCost> adjustedCost = new ManaCostsImpl<>();
         // save X value (e.g. convoke ability)
         for (VariableCost vCost : previousCost.getVariableCosts()) {
@@ -472,8 +475,8 @@ public final class CardUtil {
             adjustedCost.add(new GenericManaCost(0)); // neede to check if cost was reduced to 0
         }
         adjustedCost.setSourceFilter(previousCost.getSourceFilter());  // keep mana source restrictions
-        spellAbility.clearManaCostsToPay();
-        spellAbility.addManaCostsToPay(adjustedCost);
+        ability.clearManaCostsToPay();
+        ability.addManaCostsToPay(adjustedCost);
     }
 
     /**
@@ -916,16 +919,25 @@ public final class CardUtil {
     }
 
     public static String getAddRemoveCountersText(DynamicValue amount, Counter counter, String description, boolean add) {
-        StringBuilder sb = new StringBuilder(add ? "put " : "remove ");
+        boolean targetPlayerGets = add && (description.endsWith("player") || description.endsWith("opponent"));
+        StringBuilder sb = new StringBuilder();
+        if (targetPlayerGets) {
+            sb.append(description);
+            sb.append(" gets ");
+        } else {
+            sb.append(add ? "put " : "remove ");
+        }
         boolean xValue = amount.toString().equals("X");
         if (xValue) {
             sb.append("X ").append(counter.getName()).append(" counters");
-        } else if (amount == SavedDamageValue.MANY) {
+        } else if (amount == SavedDamageValue.MANY || amount == SavedGainedLifeValue.MANY) {
             sb.append("that many ").append(counter.getName()).append(" counters");
         } else {
             sb.append(counter.getDescription());
         }
-        sb.append(add ? " on " : " from ").append(description);
+        if (!targetPlayerGets) {
+            sb.append(add ? " on " : " from ").append(description);
+        }
         if (!amount.getMessage().isEmpty()) {
             sb.append(xValue ? ", where X is " : " for each ").append(amount.getMessage());
         }
@@ -990,6 +1002,7 @@ public final class CardUtil {
                 || text.startsWith("another ")
                 || text.startsWith("any ")
                 || text.startsWith("{this} ")
+                || text.startsWith("your ")
                 || text.startsWith("one ")) {
             return text;
         }
@@ -1041,10 +1054,8 @@ public final class CardUtil {
             if (stackAbility == null || !stackAbility.getSourceId().equals(event.getSourceId())) {
                 continue;
             }
-            for (Target target : stackAbility.getTargets()) {
-                if (target.getTargets().contains(event.getTargetId())) {
-                    return stackObject;
-                }
+            if (CardUtil.getAllSelectedTargets(stackAbility, game).contains(event.getTargetId())) {
+                return stackObject;
             }
         }
         return null;
@@ -1280,8 +1291,9 @@ public final class CardUtil {
         }
     }
 
-    public static void makeCardPlayable(Game game, Ability source, Card card, Duration duration, boolean anyColor) {
-        makeCardPlayable(game, source, card, duration, anyColor, null, null);
+    // TODO: use CastManaAdjustment instead of boolean anyColor
+    public static void makeCardPlayable(Game game, Ability source, Card card, boolean useCastSpellOnly, Duration duration, boolean anyColor) {
+        makeCardPlayable(game, source, card, useCastSpellOnly, duration, anyColor, null, null);
     }
 
     /**
@@ -1296,14 +1308,15 @@ public final class CardUtil {
      * @param anyColor
      * @param condition can be null
      */
-    public static void makeCardPlayable(Game game, Ability source, Card card, Duration duration, boolean anyColor, UUID playerId, Condition condition) {
+    // TODO: use CastManaAdjustment instead of boolean anyColor
+    public static void makeCardPlayable(Game game, Ability source, Card card, boolean useCastSpellOnly, Duration duration, boolean anyColor, UUID playerId, Condition condition) {
         // Effect can be used for cards in zones and permanents on battlefield
         // PermanentCard's ZCC is static, but we need updated ZCC from the card (after moved to another zone)
         // So there is a workaround to get actual card's ZCC
         // Example: Hostage Taker
         UUID objectId = card.getMainCard().getId();
         int zcc = game.getState().getZoneChangeCounter(objectId);
-        game.addEffect(new CanPlayCardControllerEffect(game, objectId, zcc, duration, playerId, condition), source);
+        game.addEffect(new CanPlayCardControllerEffect(game, objectId, zcc, useCastSpellOnly, duration, playerId, condition), source);
         if (anyColor) {
             game.addEffect(new YouMaySpendManaAsAnyColorToCastTargetEffect(duration, playerId, condition).setTargetPointer(new FixedTarget(objectId, zcc)), source);
         }
@@ -1323,7 +1336,7 @@ public final class CardUtil {
      * such as the adventure and main side of adventure spells or both sides of a fuse card.
      *
      * @param cardToCast
-     * @param filter           A filter to determine if a card is eligible for casting.
+     * @param filter           An optional filter to determine if a card is eligible for casting.
      * @param source           The ability or source responsible for the casting.
      * @param player
      * @param game
@@ -1347,7 +1360,9 @@ public final class CardUtil {
         if (!playLand || !player.canPlayLand() || !game.isActivePlayer(playerId)) {
             cards.removeIf(card -> card.isLand(game));
         }
-        cards.removeIf(card -> !filter.match(card, playerId, source, game));
+        if (filter != null) {
+            cards.removeIf(card -> !filter.match(card, playerId, source, game));
+        }
         if (spellCastTracker != null) {
             cards.removeIf(card -> !spellCastTracker.checkCard(card, game));
         }
@@ -1480,6 +1495,10 @@ public final class CardUtil {
     }
 
     public static void castSingle(Player player, Ability source, Game game, Card card, ManaCostsImpl<ManaCost> manaCost) {
+        castSingle(player, source, game, card, false, manaCost);
+    }
+
+    public static void castSingle(Player player, Ability source, Game game, Card card, boolean noMana, ManaCostsImpl<ManaCost> manaCost) {
         // handle split-cards
         if (card instanceof SplitCard) {
             SplitCardHalf leftHalfCard = ((SplitCard) card).getLeftHalfCard();
@@ -1545,8 +1564,8 @@ public final class CardUtil {
             player.setCastSourceIdWithAlternateMana(card.getMainCard().getId(), manaCost, additionalCostsNormalCard, MageIdentifier.Default);
         }
         // cast it
-        player.cast(player.chooseAbilityForCast(card.getMainCard(), game, false),
-                game, false, new ApprovingObject(source, game));
+        player.cast(player.chooseAbilityForCast(card.getMainCard(), game, noMana),
+                game, noMana, new ApprovingObject(source, game));
 
         // turn off effect after cast on every possible card-face
         if (card instanceof SplitCard) {
@@ -2152,19 +2171,17 @@ public final class CardUtil {
         String needImageFileName;
         int needImageNumber;
         boolean needUsesVariousArt = false;
-        if (copyFromObject instanceof Card) {
-            needUsesVariousArt = ((Card) copyFromObject).getUsesVariousArt();
-        }
 
         needSetCode = copyFromObject.getExpansionSetCode();
         needCardNumber = copyFromObject.getCardNumber();
         needImageFileName = copyFromObject.getImageFileName();
         needImageNumber = copyFromObject.getImageNumber();
+        needUsesVariousArt = copyFromObject.getUsesVariousArt();
 
         if (targetObject instanceof Permanent) {
             copySetAndCardNumber((Permanent) targetObject, needSetCode, needCardNumber, needImageFileName, needImageNumber, needUsesVariousArt);
         } else if (targetObject instanceof Token) {
-            copySetAndCardNumber((Token) targetObject, needSetCode, needCardNumber, needImageFileName, needImageNumber);
+            copySetAndCardNumber((Token) targetObject, needSetCode, needCardNumber, needImageFileName, needImageNumber, needUsesVariousArt);
         } else if (targetObject instanceof Card) {
             copySetAndCardNumber((Card) targetObject, needSetCode, needCardNumber, needImageFileName, needImageNumber, needUsesVariousArt);
         } else {
@@ -2176,40 +2193,43 @@ public final class CardUtil {
         if (targetPermanent instanceof PermanentCard
                 || targetPermanent instanceof PermanentToken) {
             targetPermanent.setExpansionSetCode(newSetCode);
+            targetPermanent.setUsesVariousArt(usesVariousArt);
             targetPermanent.setCardNumber(newCardNumber);
             targetPermanent.setImageFileName(newImageFileName);
             targetPermanent.setImageNumber(newImageNumber);
-            targetPermanent.setUsesVariousArt(usesVariousArt);
         } else {
             throw new IllegalArgumentException("Wrong code usage: un-supported target permanent type: " + targetPermanent.getClass().getSimpleName());
         }
     }
 
-    private static void copySetAndCardNumber(Token targetToken, String newSetCode, String newCardNumber, String newImageFileName, Integer newImageNumber) {
+    private static void copySetAndCardNumber(Token targetToken, String newSetCode, String newCardNumber, String newImageFileName, Integer newImageNumber, boolean newUsesVariousArt) {
         targetToken.setExpansionSetCode(newSetCode);
         targetToken.setCardNumber(newCardNumber);
         targetToken.setImageFileName(newImageFileName);
         targetToken.setImageNumber(newImageNumber);
+
+        // runtime check
+        if (newUsesVariousArt && newCardNumber.isEmpty()) {
+            throw new IllegalArgumentException("Wrong code usage: usesVariousArt can be used for token from card only");
+        }
+        targetToken.setUsesVariousArt(newUsesVariousArt);
     }
 
     private static void copySetAndCardNumber(Card targetCard, String newSetCode, String newCardNumber, String newImageFileName, Integer newImageNumber, boolean usesVariousArt) {
         targetCard.setExpansionSetCode(newSetCode);
+        targetCard.setUsesVariousArt(usesVariousArt);
         targetCard.setCardNumber(newCardNumber);
         targetCard.setImageFileName(newImageFileName);
         targetCard.setImageNumber(newImageNumber);
-        targetCard.setUsesVariousArt(usesVariousArt);
     }
 
     /**
      * One single event can be a batch (contain multiple events)
-     *
-     * @param event
-     * @return
      */
     public static Set<UUID> getEventTargets(GameEvent event) {
         Set<UUID> res = new HashSet<>();
-        if (event instanceof BatchGameEvent) {
-            res.addAll(((BatchGameEvent<?>) event).getTargets());
+        if (event instanceof BatchEvent) {
+            res.addAll(((BatchEvent<?>) event).getTargetIds());
         } else if (event != null && event.getTargetId() != null) {
             res.add(event.getTargetId());
         }

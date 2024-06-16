@@ -11,7 +11,6 @@ import mage.client.dialog.DownloadImagesDialog;
 import mage.client.dialog.PreferencesDialog;
 import mage.client.util.CardLanguage;
 import mage.client.util.GUISizeHelper;
-import mage.client.util.ImageCaches;
 import mage.client.util.sets.ConstructedFormats;
 import mage.remote.Connection;
 import net.java.truevfs.access.TFile;
@@ -50,10 +49,13 @@ public class DownloadPicturesService extends DefaultBoundedRangeModel implements
     private static final String ALL_MODERN_IMAGES = "- MODERN images (can be slow)";
     private static final String ALL_STANDARD_IMAGES = "- STANDARD images";
     private static final String ALL_TOKENS = "- TOKEN images";
+    private static final String ALL_BASICS = "- BASIC LAND images";
+
+    private static final List<String> basicList = Arrays.asList("Plains", "Island", "Swamp", "Mountain", "Forest");
 
     private static final int MAX_ERRORS_COUNT_BEFORE_CANCEL = 50;
 
-    private static final int MIN_FILE_SIZE_OF_GOOD_IMAGE = 1024 * 10; // protect from wrong data save
+    private static final int MIN_FILE_SIZE_OF_GOOD_IMAGE = 1024 * 6; // protect from wrong data save
 
     private final DownloadImagesDialog uiDialog;
     private boolean needCancel;
@@ -73,15 +75,12 @@ public class DownloadPicturesService extends DefaultBoundedRangeModel implements
     private Proxy proxy = Proxy.NO_PROXY;
 
     enum DownloadSources {
-        WIZARDS("1. wizards.com - low quality CARDS, multi-language, slow download", WizardCardsImageSource.instance),
-        TOKENS("2. tokens.mtg.onl - high quality TOKENS", TokensMtgImageSource.instance),
-        SCRYFALL("3. scryfall.com - high quality CARDS and TOKENS, multi-language", ScryfallImageSource.instance),
-        MAGIDEX("4. magidex.com - high quality CARDS", MagidexImageSource.instance),
-        GRAB_BAG("5. GrabBag - STAR WARS cards and tokens", GrabbagImageSource.instance),
-        MYTHICSPOILER("6. mythicspoiler.com", MythicspoilerComSource.instance),
-        ALTERNATIVE("7. alternative.mtg.onl", AltMtgOnlTokensImageSource.instance),
-        COPYPASTE("8. Copy and Paste Image URLs", CopyPasteImageSource.instance);
-        // MTG_ONL("mtg.onl", MtgOnlTokensImageSource.instance), Not working correctly yet
+        WIZARDS("1. wizards.com - low quality, cards only", WizardCardsImageSource.instance),
+        SCRYFALL_BIG("2a. scryfall.com - BIG: high quality (~15 GB)", ScryfallImageSource.getInstance()),
+        SCRYFALL_NORM("2b. scryfall.com - normal: good quality (~10 GB)", ScryfallImageSourceNormal.getInstance()),
+        SCRYFALL_SMALL("2c. scryfall.com - small: low quality, unreadable text (~1.5 GB)", ScryfallImageSourceSmall.getInstance()),
+        GRAB_BAG("3. GrabBag - unofficial STAR WARS cards and tokens", GrabbagImageSource.instance),
+        COPYPASTE("4. Experimental - copy and paste image URLs", CopyPasteImageSource.instance); // TODO: need rework for user friendly GUI
 
         private final String text;
         private final CardImageSource source;
@@ -162,8 +161,8 @@ public class DownloadPicturesService extends DefaultBoundedRangeModel implements
 
         // SOURCES - scryfall is default source
         uiDialog.getSourcesCombo().setModel(new DefaultComboBoxModel(DownloadSources.values()));
-        uiDialog.getSourcesCombo().setSelectedItem(DownloadSources.SCRYFALL);
-        selectedSource = ScryfallImageSource.instance;
+        uiDialog.getSourcesCombo().setSelectedItem(DownloadSources.SCRYFALL_NORM);
+        selectedSource = ScryfallImageSource.getInstance();
         uiDialog.getSourcesCombo().addItemListener((ItemEvent event) -> {
             if (event.getStateChange() == ItemEvent.SELECTED) {
                 comboboxSourceSelected(event);
@@ -221,7 +220,9 @@ public class DownloadPicturesService extends DefaultBoundedRangeModel implements
         this.cardsDownloadQueue.clear();
 
         updateGlobalMessage("Loading cards list...");
-        this.cardsAll = Collections.synchronizedList(CardRepository.instance.findCards(new CardCriteria()));
+        this.cardsAll = Collections.synchronizedList(CardRepository.instance.findCards(
+                new CardCriteria().nightCard(null) // meld cards need to be in the target cards, so we allow for night cards
+        ));
 
         updateGlobalMessage("Finding missing images...");
         this.cardsMissing = prepareMissingCards(this.cardsAll, uiDialog.getRedownloadCheckbox().isSelected());
@@ -303,6 +304,7 @@ public class DownloadPicturesService extends DefaultBoundedRangeModel implements
             setNames.add(ALL_IMAGES);
             setNames.add(ALL_MODERN_IMAGES);
             setNames.add(ALL_STANDARD_IMAGES);
+            setNames.add(ALL_BASICS);
         }
         if (selectedSource.isTokenSource()) {
             setNames.add(ALL_TOKENS);
@@ -328,6 +330,7 @@ public class DownloadPicturesService extends DefaultBoundedRangeModel implements
         // find selected sets
         selectedSets.clear();
         boolean onlyTokens = false;
+        boolean onlyBasics = false;
         List<String> formatSets;
         List<String> sourceSets = selectedSource.getSupportedSets();
         switch (selectedItem) {
@@ -350,6 +353,11 @@ public class DownloadPicturesService extends DefaultBoundedRangeModel implements
                         .forEachOrdered(selectedSets::add);
                 break;
 
+            case ALL_BASICS:
+                selectedSets.addAll(selectedSource.getSupportedSets());
+                onlyBasics = true;
+                break;
+
             case ALL_TOKENS:
                 selectedSets.addAll(selectedSource.getSupportedSets());
                 onlyTokens = true;
@@ -370,7 +378,8 @@ public class DownloadPicturesService extends DefaultBoundedRangeModel implements
         int numberCardImagesAvailable = 0;
         for (CardDownloadData data : cardsMissing) {
             if (data.isToken()) {
-                if (selectedSource.isTokenSource()
+                if (!onlyBasics
+                        && selectedSource.isTokenSource()
                         && selectedSource.isTokenImageProvided(data.getSet(), data.getName(), data.getImageNumber())
                         && selectedSets.contains(data.getSet())) {
                     numberTokenImagesAvailable++;
@@ -381,8 +390,11 @@ public class DownloadPicturesService extends DefaultBoundedRangeModel implements
                         && selectedSource.isCardSource()
                         && selectedSource.isCardImageProvided(data.getSet(), data.getName())
                         && selectedSets.contains(data.getSet())) {
-                    numberCardImagesAvailable++;
-                    cardsDownloadQueue.add(data);
+                    if (!onlyBasics
+                            || basicList.contains(data.getName())) {
+                        numberCardImagesAvailable++;
+                        cardsDownloadQueue.add(data);
+                    }
                 }
             }
         }
@@ -416,12 +428,17 @@ public class DownloadPicturesService extends DefaultBoundedRangeModel implements
 
         uiDialog.setCurrentInfo("Missing: " + missingCardsCount + " card images / " + missingTokensCount + " token images");
         int imageSum = cardCount + tokenCount;
-        float mb = (imageSum * selectedSource.getAverageSize()) / 1024;
-        updateProgressMessage(String.format(
-                cardIndex == imageSum
-                        ? "%d of %d (%d cards/%d tokens) image downloads finished! Please close!"
-                        : "%d of %d (%d cards/%d tokens) image downloads finished! Please wait! [%.1f Mb]",
-                0, imageSum, cardCount, tokenCount, mb
+        float mb = (imageSum * selectedSource.getAverageSizeKb()) / 1024;
+        String statusEnd;
+        if (imageSum == 0) {
+            statusEnd = "you have all images. Please close.";
+        } else if (cardIndex == 0) {
+            statusEnd = "image download NOT STARTED. Please start.";
+        } else {
+            statusEnd = String.format("image downloading... Please wait [%.1f Mb left].", mb);
+        }
+        updateProgressMessage(String.format("%d of %d (%d cards and %d tokens) %s",
+                0, imageSum, cardCount, tokenCount, statusEnd
         ), 0, imageSum);
     }
 
@@ -438,25 +455,26 @@ public class DownloadPicturesService extends DefaultBoundedRangeModel implements
                 if (!card.getCardNumber().isEmpty()
                         && !"0".equals(card.getCardNumber())
                         && !card.getSetCode().isEmpty()) {
-                    String cardName = card.getName();
-                    CardDownloadData url = new CardDownloadData(
-                            cardName,
-                            card.getSetCode(),
-                            card.getCardNumber(),
-                            card.usesVariousArt(),
-                            0);
-                    url.setSecondSide(card.isNightCard());
 
-                    // variations must have diff file names with additional postfix
-                    if (url.getUsesVariousArt()) {
-                        url.setDownloadName(createDownloadName(card));
+                    // main side for non-night cards.
+                    // At the exception of Meld Card, as they are not the back of an image for download
+                    if (!card.isNightCard() || card.isMeldCard()) {
+                        String cardName = card.getName();
+                        CardDownloadData url = new CardDownloadData(
+                                cardName,
+                                card.getSetCode(),
+                                card.getCardNumber(),
+                                card.usesVariousArt(),
+                                0);
+
+                        // variations must have diff file names with additional postfix
+                        if (url.getUsesVariousArt()) {
+                            url.setDownloadName(createDownloadName(card));
+                        }
+
+                        url.setSplitCard(card.isSplitCard());
+                        allCardsUrls.add(url);
                     }
-
-                    url.setSplitCard(card.isSplitCard());
-
-                    // main side
-                    allCardsUrls.add(url);
-
                     // second side
                     // xmage doesn't search night cards by default, so add it and other types manually
                     if (card.isDoubleFaced()) {
@@ -466,10 +484,10 @@ public class DownloadPicturesService extends DefaultBoundedRangeModel implements
 
                         CardInfo secondSideCard = CardRepository.instance.findCardWithPreferredSetAndNumber(card.getSecondSideName(), card.getSetCode(), card.getCardNumber());
                         if (secondSideCard == null) {
-                            throw new IllegalStateException("Can''t find second side card in database: " + card.getSecondSideName());
+                            throw new IllegalStateException("Can't find second side card in database: " + card.getSecondSideName());
                         }
 
-                        url = new CardDownloadData(
+                        CardDownloadData url = new CardDownloadData(
                                 card.getSecondSideName(),
                                 card.getSetCode(),
                                 secondSideCard.getCardNumber(),
@@ -491,7 +509,8 @@ public class DownloadPicturesService extends DefaultBoundedRangeModel implements
                                 0
                         );
                         cardDownloadData.setFlippedSide(true);
-                        cardDownloadData.setSecondSide(card.isNightCard());
+                        // meld cards urls are on their own
+                        cardDownloadData.setSecondSide(card.isNightCard() && !card.isMeldCard());
                         allCardsUrls.add(cardDownloadData);
                     }
                     if (card.getMeldsToCardName() != null) {
@@ -501,11 +520,11 @@ public class DownloadPicturesService extends DefaultBoundedRangeModel implements
 
                         CardInfo meldsToCard = CardRepository.instance.findCardWithPreferredSetAndNumber(card.getMeldsToCardName(), card.getSetCode(), card.getCardNumber());
                         if (meldsToCard == null) {
-                            throw new IllegalStateException("Can''t find meldsToCard in database: " + card.getMeldsToCardName());
+                            throw new IllegalStateException("Can't find meldsToCard in database: " + card.getMeldsToCardName());
                         }
 
                         // meld cards are normal cards from the set, so no needs to set two faces/sides here
-                        url = new CardDownloadData(
+                        CardDownloadData url = new CardDownloadData(
                                 card.getMeldsToCardName(),
                                 card.getSetCode(),
                                 meldsToCard.getCardNumber(),
@@ -713,7 +732,7 @@ public class DownloadPicturesService extends DefaultBoundedRangeModel implements
 
         DownloadTask(CardDownloadData card, String baseUrl, String actualFilename, int count) {
             this.card = card;
-            this.urls = new CardImageUrls(baseUrl, null);
+            this.urls = new CardImageUrls(baseUrl);
             this.count = count;
             this.actualFilename = actualFilename;
             this.useSpecifiedPaths = true;
@@ -917,11 +936,12 @@ public class DownloadPicturesService extends DefaultBoundedRangeModel implements
 
         if (cardIndex < needDownloadCount) {
             // downloading
-            float mb = ((needDownloadCount - lastCardIndex) * selectedSource.getAverageSize()) / 1024;
-            updateProgressMessage(String.format("%d of %d image downloads finished! Please wait! [%.1f Mb]",
+            float mb = ((needDownloadCount - lastCardIndex) * selectedSource.getAverageSizeKb()) / 1024;
+            updateProgressMessage(String.format("%d of %d image downloading... Please wait [%.1f Mb left].",
                     lastCardIndex, needDownloadCount, mb), lastCardIndex, needDownloadCount);
         } else {
             // finished
+            updateProgressMessage("Image download DONE, refreshing stats... Please wait.");
             List<CardDownloadData> downloadedCards = Collections.synchronizedList(new ArrayList<>());
             DownloadPicturesService.this.cardsMissing.parallelStream().forEach(cardDownloadData -> {
                 TFile file = new TFile(CardImageUtils.buildImagePathToCardOrToken(cardDownloadData));
@@ -936,7 +956,7 @@ public class DownloadPicturesService extends DefaultBoundedRangeModel implements
 
             if (this.cardsDownloadQueue.isEmpty()) {
                 // stop download
-                updateProgressMessage("0 images remaining. Please close.");
+                updateProgressMessage("Nothing to download. Please close.");
             } else {
                 // try download again
             }

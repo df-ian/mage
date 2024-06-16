@@ -30,6 +30,7 @@ public enum CounterType {
     BOOK("book"),
     BORE("bore"),
     BOUNTY("bounty"),
+    BRAIN("brain"),
     BRIBERY("bribery"),
     BRICK("brick"),
     BURDEN("burden"),
@@ -70,6 +71,8 @@ public enum CounterType {
     ENERGY("energy"),
     ENLIGHTENED("enlightened"),
     EON("eon"),
+    EVERYTHING("everything"),
+    EXALTED("exalted"),
     EXPERIENCE("experience"),
     EYEBALL("eyeball"),
     FADE("fade"),
@@ -94,6 +97,7 @@ public enum CounterType {
     GOLD("gold"),
     GROWTH("growth"),
     HARMONY("harmony"),
+    HASTE("haste"),
     HATCHLING("hatchling"),
     HEALING("healing"),
     HEXPROOF("hexproof"),
@@ -123,12 +127,14 @@ public enum CounterType {
     LANDMARK("landmark"),
     LEVEL("level"),
     LIFELINK("lifelink"),
+    LOOT("loot"),
     LORE("lore"),
     LUCK("luck"),
     LOYALTY("loyalty"),
     MANIFESTATION("manifestation"),
     MANNEQUIN("mannequin"),
     MATRIX("matrix"),
+    MEMORY("memory"),
     MENACE("menace"),
     M0M1(new BoostCounter(-0, -1).name),
     M0M2(new BoostCounter(-0, -2).name),
@@ -169,6 +175,7 @@ public enum CounterType {
     PRESSURE("pressure"),
     PREY("prey"),
     PUPA("pupa"),
+    RAD("rad"),
     REACH("reach"),
     REJECTION("rejection"),
     REPAIR("repair"),
@@ -304,6 +311,8 @@ public enum CounterType {
                 return new AbilityCounter(DeathtouchAbility.getInstance(), amount);
             case DOUBLE_STRIKE:
                 return new AbilityCounter(DoubleStrikeAbility.getInstance(), amount);
+            case EXALTED:
+                return new AbilityCounter(new ExaltedAbility(), amount);
             case FIRST_STRIKE:
                 return new AbilityCounter(FirstStrikeAbility.getInstance(), amount);
             case FLYING:
@@ -322,6 +331,8 @@ public enum CounterType {
                 return new AbilityCounter(ShadowAbility.getInstance(), amount);
             case TRAMPLE:
                 return new AbilityCounter(TrampleAbility.getInstance(), amount);
+            case HASTE:
+                return new AbilityCounter(HasteAbility.getInstance(), amount);
             case VIGILANCE:
                 return new AbilityCounter(VigilanceAbility.getInstance(), amount);
             default:

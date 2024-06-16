@@ -12,8 +12,8 @@ public enum SetType {
     SUPPLEMENTAL_STANDARD_LEGAL("Standard Legal Supplemental"),
     SUPPLEMENTAL_MODERN_LEGAL("Modern Legal Supplemental"),
     PROMOTIONAL("Promotional"),
-    JOKESET("Joke Set"),
-
+    REMIX("Remix"),
+    JOKE_SET("Joke Set"),
     CANDOUR("Candour"),
     CUSTOM_SET("Unofficial Set");
 
@@ -33,12 +33,12 @@ public enum SetType {
     }
 
     public boolean isJokeSet() {
-        return this == SetType.JOKESET;
+        return this == SetType.JOKE_SET;
     }
 
     public boolean isEternalLegal() {
         // any official sets except un-sets
-        return this != SetType.CUSTOM_SET && this != SetType.JOKESET && this != SetType.MAGIC_ARENA;
+        return this != SetType.CUSTOM_SET && this != SetType.JOKE_SET && this != SetType.MAGIC_ARENA;
     }
 
     public boolean isCandourLegal() {
