@@ -150,11 +150,14 @@ public class CandourCore extends ExpansionSet {
         cards.add(new SetCardInfo("Starlit Cairn", "252", Rarity.RARE, mage.cards.s.StarlitCairn.class));
         cards.add(new SetCardInfo("Cranial Clamp", "253", Rarity.RARE, mage.cards.c.CranialClamp.class));
         cards.add(new SetCardInfo("Universal Predation", "259", Rarity.MYTHIC, mage.cards.u.UniversalPredation.class));
+        cards.add(new SetCardInfo("Splintering Agony", "260", Rarity.MYTHIC, mage.cards.s.SplinteringAgony.class));
         cards.add(new SetCardInfo("Angelic Wrath", "268", Rarity.RARE, mage.cards.a.AngelicWrath.class));
         cards.add(new SetCardInfo("Whispering Henge", "269", Rarity.RARE, mage.cards.w.WhisperingHenge.class));
         cards.add(new SetCardInfo("Ruinous Sands", "270", Rarity.RARE, mage.cards.r.RuinousSands.class));
         cards.add(new SetCardInfo("Ordruun Reckoner", "271", Rarity.MYTHIC, mage.cards.o.OrdruunReckoner.class));
         cards.add(new SetCardInfo("Blighted Inquisition", "272", Rarity.RARE, mage.cards.b.BlightedInquisition.class));
+        cards.add(new SetCardInfo("Descent of the Wicked Slumber", "273", Rarity.UNCOMMON, mage.cards.d.DescentOfTheWickedSlumber.class));
+        cards.add(new SetCardInfo("Tomakul, Domed Settlement", "274", Rarity.MYTHIC, mage.cards.t.TomakulDomedSettlement.class));
         cards.add(new SetCardInfo("Servoswipe Adept", "275", Rarity.RARE, mage.cards.s.ServoswipeAdept.class));
         cards.add(new SetCardInfo("Slumbering Greatwurm", "276", Rarity.MYTHIC, mage.cards.s.SlumberingGreatwurm.class));
         cards.add(new SetCardInfo("Diviner's Terrarium", "277", Rarity.UNCOMMON, mage.cards.d.DivinersTerrarium.class));
@@ -250,10 +253,7 @@ public class CandourCore extends ExpansionSet {
         //Sunrise Champion
         //Adventurous Instinct
         //Pestermage
-        //Splintering Agony
         //Throne of Argoth
         //Koilos Sleep Chamber
-        //Descent of the Wicked Slumber
-        //Tomakul, Domed Settlement
     }
 }
