@@ -39,7 +39,7 @@ public final class GenesisPod extends CardImpl {
                 Zone.BATTLEFIELD, new GenesisPodEffect(), new ManaCostsImpl<>("{G}")
         );
         ability.addCost(new TapSourceCost());
-        ability.addCost(new SacrificeTargetCost(StaticFilters.FILTER_CONTROLLED_CREATURE_SHORT_TEXT));
+        ability.addCost(new SacrificeTargetCost(StaticFilters.FILTER_CONTROLLED_CREATURE));
         this.addAbility(ability);
     }
 
