@@ -36,7 +36,6 @@ public final class ApexOfThePeaks extends CardImpl {
         this.addAbility(FlyingAbility.getInstance());
 
         DamageTargetEffect d = new DamageTargetEffect(SavedDamageValue.MUCH);
-        d.setSourceName("it");
         // Whenever a creature you control deals combat damage to a player, create that many Treasure tokens.
         Ability a = new DealsDamageToAPlayerAllTriggeredAbility(d,
                 StaticFilters.FILTER_CONTROLLED_A_CREATURE,

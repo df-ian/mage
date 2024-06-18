@@ -21,12 +21,12 @@ public final class SunBlessedArtisan extends CardImpl {
     private static final FilterCard filter = new FilterArtifactCard();
 
     public SunBlessedArtisan(UUID ownerId, CardSetInfo setInfo) {
-        super(ownerId, setInfo, new CardType[]{CardType.CREATURE}, "{2}{W}");
+        super(ownerId, setInfo, new CardType[]{CardType.CREATURE}, "{1}{W}");
 
         this.subtype.add(SubType.HUMAN);
         this.subtype.add(SubType.ARTIFICER);
-        this.power = new MageInt(3);
-        this.toughness = new MageInt(2);
+        this.power = new MageInt(2);
+        this.toughness = new MageInt(1);
 
         // Divine Intervention — When Moon-Blessed Cleric enters the battlefield, you may search your library for an enchantment card, reveal it, then shuffle and put that card on top.
         this.addAbility(new EntersBattlefieldTriggeredAbility(

@@ -8,6 +8,7 @@ import mage.abilities.costs.common.PayLifeCost;
 import mage.abilities.effects.AsThoughEffectImpl;
 import mage.abilities.keyword.BlitzAbility;
 import mage.abilities.keyword.FlyingAbility;
+import mage.abilities.keyword.HasteAbility;
 import mage.cards.CardImpl;
 import mage.cards.CardSetInfo;
 import mage.constants.*;
@@ -28,9 +29,10 @@ public final class AshenPhoenix extends CardImpl {
         this.toughness = new MageInt(1);
 
         this.addAbility(FlyingAbility.getInstance());
+        this.addAbility(HasteAbility.getInstance());
 
         // Blitz—{2}{B}{B}, Pay 2 life.
-        Ability ability = new BlitzAbility(this, "{1}{R}{R}");
+        Ability ability = new BlitzAbility(this, "{1}{R}");
         ability.addCost(new DiscardCardCost());
         this.addAbility(ability);
 

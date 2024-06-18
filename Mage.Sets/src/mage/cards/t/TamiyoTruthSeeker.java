@@ -5,11 +5,13 @@ import mage.abilities.Ability;
 import mage.abilities.common.DiesSourceTriggeredAbility;
 import mage.abilities.common.EntersBattlefieldOrAttacksSourceTriggeredAbility;
 import mage.abilities.common.EntersBattlefieldTriggeredAbility;
+import mage.abilities.costs.mana.ManaCostsImpl;
 import mage.abilities.effects.common.BrainstormEffect;
 import mage.abilities.effects.common.ShuffleIntoLibrarySourceEffect;
 import mage.abilities.effects.keyword.ScryEffect;
 import mage.abilities.keyword.FlyingAbility;
 import mage.abilities.keyword.HexproofAbility;
+import mage.abilities.keyword.WardAbility;
 import mage.cards.CardImpl;
 import mage.cards.CardSetInfo;
 import mage.constants.CardType;
@@ -27,11 +29,12 @@ public final class TamiyoTruthSeeker extends CardImpl {
 
         this.subtype.add(SubType.MOONFOLK);
         this.subtype.add(SubType.WIZARD);
-        this.power = new MageInt(2);
+        this.power = new MageInt(1);
         this.toughness = new MageInt(3);
 
         // Flying
-        this.addAbility(HexproofAbility.getInstance());
+        this.addAbility(FlyingAbility.getInstance());
+        this.addAbility(new WardAbility(new ManaCostsImpl<>("{2}")));
 
         // When Cavalier of Gales enters the battlefield, draw three cards, then put two cards from your hand on top of your library in any order.
         this.addAbility(new EntersBattlefieldOrAttacksSourceTriggeredAbility(new BrainstormEffect()));

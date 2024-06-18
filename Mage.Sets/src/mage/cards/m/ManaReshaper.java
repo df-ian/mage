@@ -31,7 +31,7 @@ public final class ManaReshaper extends CardImpl {
 
         this.addAbility(FlyingAbility.getInstance());
 
-        this.addAbility(new WardAbility(new SacrificeTargetCost(3, StaticFilters.FILTER_LAND)));
+        this.addAbility(new WardAbility(new SacrificeTargetCost(3, StaticFilters.FILTER_LANDS)));
 
         this.addAbility(new SimpleStaticAbility(new ManaReshaperReplacementEffect()));
     }
