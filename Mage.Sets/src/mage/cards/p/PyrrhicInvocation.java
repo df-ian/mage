@@ -106,7 +106,7 @@ class PyrrhicSacEffect extends OneShotEffect {
 
     PyrrhicSacEffect() {
         super(Outcome.PutCardInPlay);
-        staticText = "Its controller loses 3 life unless they discard a card or sacrifice it";
+        staticText = "its controller loses 3 life unless they discard a card or sacrifice it";
     }
 
     private PyrrhicSacEffect(final PyrrhicSacEffect effect) {

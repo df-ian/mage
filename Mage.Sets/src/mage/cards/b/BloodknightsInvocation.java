@@ -56,7 +56,7 @@ public final class BloodknightsInvocation extends CardImpl {
         this.getSpellAbility().addMode(new Mode(new BloodknightsInvocationDestroyEffect()).withCost(new ManaCostsImpl<>("{U}")));
 
         // + {1}{B}{B} -- Each opponent discards X cards at random
-        this.getSpellAbility().addMode(new Mode(new DiscardEachPlayerEffect(TotalAmountOfDamageDealtValue.instance, true, TargetController.NOT_YOU))
+        this.getSpellAbility().addMode(new Mode(new DiscardEachPlayerEffect(TotalAmountOfDamageDealtValue.instance, true, TargetController.NOT_YOU).setText("Each opponent discards X cards at random, where X is the amount of damage sources dealt this turn."))
                 .withCost(new ManaCostsImpl<>("{1}{B}{B}")));
     }
 

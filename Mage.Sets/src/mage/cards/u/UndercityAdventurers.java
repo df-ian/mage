@@ -1,6 +1,5 @@
 package mage.cards.u;
 
-import com.sun.xml.internal.ws.wsdl.writer.document.Part;
 import mage.MageInt;
 import mage.abilities.Ability;
 import mage.abilities.Mode;

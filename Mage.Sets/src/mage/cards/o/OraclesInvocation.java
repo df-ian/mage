@@ -75,7 +75,7 @@ public final class OraclesInvocation extends CardImpl {
 class OraclesInvocationPanharmoniconEffect extends ReplacementEffectImpl {
     public OraclesInvocationPanharmoniconEffect() {
         super(Duration.EndOfTurn, Outcome.Benefit);
-        staticText = "If a permanent entering the battlefield causes an ability to trigger, that ability triggers an additional time";
+        staticText = "If a permanent entering the battlefield this turn causes an ability to trigger, that ability triggers an additional time";
     }
 
     private OraclesInvocationPanharmoniconEffect(final OraclesInvocationPanharmoniconEffect effect) {

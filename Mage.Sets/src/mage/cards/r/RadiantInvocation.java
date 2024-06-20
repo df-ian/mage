@@ -78,7 +78,7 @@ public final class RadiantInvocation extends CardImpl {
 class RadiantInvocationHardenedEffect extends ReplacementEffectImpl {
     public RadiantInvocationHardenedEffect() {
         super(Duration.EndOfTurn, Outcome.Benefit);
-        staticText = "If one or more counters would be put on a permanent this turn, put that many plus one on it instead";
+        staticText = "If one or more counters would be put on a permanent this turn, put that many plus two on it instead";
     }
 
     private RadiantInvocationHardenedEffect(final RadiantInvocationHardenedEffect effect) {

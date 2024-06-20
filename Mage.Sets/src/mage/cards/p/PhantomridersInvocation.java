@@ -59,7 +59,7 @@ public final class PhantomridersInvocation extends CardImpl {
 
         // + {B} - mass flicker
         mode = new Mode(new ReturnFromGraveyardToBattlefieldTargetEffect(true));
-        FilterCard filterYard = new FilterCard("creature card with mana value 3 or less");
+        FilterCard filterYard = new FilterCard("creature card in a graveyard with mana value 3 or less");
         filterYard.add(CardType.CREATURE.getPredicate());
         filterYard.add(new ManaValuePredicate(ComparisonType.OR_LESS, 3));
         mode.addTarget(new TargetCardInGraveyard(0, 1, filterYard, false));
@@ -166,7 +166,7 @@ class PhantomridersCloneEffect extends OneShotEffect {
 
     PhantomridersCloneEffect() {
         super(Outcome.PutCardInPlay);
-        staticText = "Create a token that's a copy of it, except it's a 1/1 blue Illusion creature with flying";
+        staticText = "create a token that's a copy of it, except it's a 1/1 blue Illusion creature with flying";
     }
 
     private PhantomridersCloneEffect(final PhantomridersCloneEffect effect) {
