@@ -97,6 +97,7 @@ public final class ConstructedFormats {
 
     public static void buildLists() {
         underlyingSetCodesPerFormat.clear();
+        underlyingSetCodesPerFormat.put(CANDOUR, new ArrayList<>());
         underlyingSetCodesPerFormat.put(STANDARD, new ArrayList<>());
         underlyingSetCodesPerFormat.put(EXTENDED, new ArrayList<>());
         underlyingSetCodesPerFormat.put(FRONTIER, new ArrayList<>());
@@ -107,7 +108,6 @@ public final class ConstructedFormats {
         underlyingSetCodesPerFormat.put(JOKE, new ArrayList<>());
         underlyingSetCodesPerFormat.put(CUSTOM, new ArrayList<>());
         underlyingSetCodesPerFormat.put(XMAGE_SETS, new ArrayList<>());
-        underlyingSetCodesPerFormat.put(CANDOUR, new ArrayList<>());
         final Map<String, ExpansionInfo> expansionInfo = new HashMap<>();
         formats.clear(); // prevent NPE on sorting if this is not the first try
 

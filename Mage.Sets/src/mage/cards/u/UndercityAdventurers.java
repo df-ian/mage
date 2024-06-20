@@ -60,7 +60,6 @@ public final class UndercityAdventurers extends CardImpl {
         mode = new Mode(new CreateTokenEffect(new SkeletonMenaceToken()));
         mode.withFlavorWord("Catacombs");
         ability.addMode(mode);
-        this.addAbility(ability);
 
         ability.getModes().setMinModes(0);
         ability.getModes().setMaxModeDyn(PartyCount.instance);

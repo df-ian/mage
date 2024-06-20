@@ -33,12 +33,6 @@ public final class UniversalExpertise extends CardImpl {
     public UniversalExpertise(UUID ownerId, CardSetInfo setInfo) {
         super(ownerId, setInfo, new CardType[]{CardType.ENCHANTMENT}, "{W}");
 
-
-        // When Squad Commander enters the battlefield, create a 1/1 white Kor Warrior creature token for each creature in your party.
-        this.addAbility(new EntersBattlefieldTriggeredAbility(new CreateTokenEffect(
-                new KorWarriorToken(), PartyCount.instance)
-        ).addHint(PartyCountHint.instance));
-
         // At the beginning of combat on your turn, if you have a full party, creatures you control get +1/+0 and gain indestructible until end of turn.
         Ability ability = new ConditionalInterveningIfTriggeredAbility(
                 new BeginningOfCombatTriggeredAbility(
