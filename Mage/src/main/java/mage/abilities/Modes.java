@@ -2,6 +2,7 @@ package mage.abilities;
 
 import mage.abilities.condition.Condition;
 import mage.abilities.costs.OptionalAdditionalModeSourceCosts;
+import mage.abilities.dynamicvalue.DynamicValue;
 import mage.abilities.effects.Effect;
 import mage.cards.Card;
 import mage.constants.Outcome;
@@ -35,6 +36,7 @@ public class Modes extends LinkedHashMap<UUID, Mode> implements Copyable<Modes> 
 
     private int minModes;
     private int maxModes;
+    private DynamicValue maxModeVal;
     private Filter maxModesFilter; // calculates the max number of available modes
     private Condition moreCondition; // allows multiple modes choose (example: choose one... if condition, you may choose both)
 
@@ -206,6 +208,10 @@ public class Modes extends LinkedHashMap<UUID, Mode> implements Copyable<Modes> 
         this.maxModes = maxModes;
     }
 
+    public void setMaxModeDyn(DynamicValue maxModes) {
+        this.maxModeVal = maxModes;
+    }
+
     public Filter getMaxModesFilter() {
         return maxModesFilter;
     }
@@ -227,7 +233,11 @@ public class Modes extends LinkedHashMap<UUID, Mode> implements Copyable<Modes> 
      * @return
      */
     public int getMaxModes(Game game, Ability source) {
-        int realMaxModes = this.maxModes;
+        int actualMax = this.maxModes;
+        if (this.maxModeVal != null && source != null) {
+            actualMax = this.maxModeVal.calculate(game, source, null);
+        }
+        int realMaxModes = actualMax;
         if (game == null || source == null) {
             return realMaxModes;
         }
@@ -247,8 +257,8 @@ public class Modes extends LinkedHashMap<UUID, Mode> implements Copyable<Modes> 
                         realMaxModes++;
                     }
                 }
-                if (realMaxModes > this.maxModes) {
-                    realMaxModes = this.maxModes;
+                if (realMaxModes > actualMax) {
+                    realMaxModes = actualMax;
                 }
             }
         }
@@ -545,7 +555,9 @@ public class Modes extends LinkedHashMap<UUID, Mode> implements Copyable<Modes> 
                 }
                 sb.append("choose ");
             }
-            if (this.getMinModes() == 0 && this.getMaxModes(null, null) == 1) {
+            if (this.maxModeVal != null) {
+                sb.append("up to X, where X is " + this.maxModeVal.getMessage());
+            } else if (this.getMinModes() == 0 && this.getMaxModes(null, null) == 1) {
                 sb.append("up to one");
             } else if (this.getMinModes() == 0 && this.getMaxModes(null, null) > 2) {
                 sb.append("any number");
