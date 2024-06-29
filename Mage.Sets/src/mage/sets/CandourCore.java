@@ -47,6 +47,7 @@ public class CandourCore extends ExpansionSet {
         cards.add(new SetCardInfo("Unsettled Compass", "24", Rarity.RARE, mage.cards.u.UnsettledCompass.class));
         cards.add(new SetCardInfo("Animir, Nature's Aegis", "25", Rarity.RARE, mage.cards.a.AnimirNaturesAegis.class));
         cards.add(new SetCardInfo("Solar Sanction", "26", Rarity.UNCOMMON, mage.cards.s.SolarSanction.class));
+        cards.add(new SetCardInfo("Gilt-Leaf Slasher", "26", Rarity.RARE, mage.cards.g.GiltLeafSlasher.class));
         cards.add(new SetCardInfo("Lotus-Eyed Selkie", "27", Rarity.RARE, mage.cards.l.LotusEyedSelkie.class));
         cards.add(new SetCardInfo("Senate Loremage", "28", Rarity.RARE, mage.cards.s.SenateLoremage.class));
         cards.add(new SetCardInfo("Najeela, Blossoming Fury", "29", Rarity.MYTHIC, mage.cards.n.NajeelaBlossomingFury.class));
@@ -172,19 +173,36 @@ public class CandourCore extends ExpansionSet {
         cards.add(new SetCardInfo("Fateweaver", "151", Rarity.RARE, mage.cards.f.Fateweaver.class));
         cards.add(new SetCardInfo("Otherworldly Contrition", "152", Rarity.UNCOMMON, mage.cards.o.OtherworldlyContrition.class));
         cards.add(new SetCardInfo("Portal to Adarkar", "153", Rarity.RARE, mage.cards.p.PortalToAdarkar.class));
+        cards.add(new SetCardInfo("Feywild Sonneteer", "146", Rarity.RARE, mage.cards.f.FeywildSonneteer.class));
+        cards.add(new SetCardInfo("Grimhawk Tracker", "147", Rarity.UNCOMMON, mage.cards.g.GrimhawkTracker.class));
+        cards.add(new SetCardInfo("Deadshot Wight", "148", Rarity.MYTHIC, mage.cards.d.DeadshotWight.class));
+        cards.add(new SetCardInfo("Glimmerzoa", "149", Rarity.UNCOMMON, mage.cards.g.Glimmerzoa.class));
+        cards.add(new SetCardInfo("Urza's Obelisk", "150", Rarity.MYTHIC, mage.cards.u.UrzasObelisk.class));
+        cards.add(new SetCardInfo("Cunning Dreamthief", "151", Rarity.RARE, mage.cards.c.CunningDreamthief.class));
+        cards.add(new SetCardInfo("Deathbloom Acolyte", "152", Rarity.RARE, mage.cards.d.DeathbloomAcolyte.class));
+        cards.add(new SetCardInfo("Dire Trailblazer", "153", Rarity.MYTHIC, mage.cards.d.DireTrailblazer.class));
+        cards.add(new SetCardInfo("Ancestral Ambition", "154", Rarity.UNCOMMON, mage.cards.a.AncestralAmbition.class));
+        cards.add(new SetCardInfo("Damned Reunion", "155", Rarity.RARE, mage.cards.d.DamnedReunion.class));
         cards.add(new SetCardInfo("Hedron Valkyrie", "166", Rarity.UNCOMMON, mage.cards.h.HedronValkyrie.class));
         cards.add(new SetCardInfo("Mana Reshaper", "177", Rarity.MYTHIC, mage.cards.m.ManaReshaper.class));
         cards.add(new SetCardInfo("Splitcaster Mage", "178", Rarity.MYTHIC, mage.cards.s.SplitcasterMage.class));
         cards.add(new SetCardInfo("Agonizing Edict", "190", Rarity.UNCOMMON, mage.cards.a.AgonizingEdict.class));
         cards.add(new SetCardInfo("Tajuru Relic Seeker", "193", Rarity.RARE, mage.cards.t.TajuruRelicSeeker.class));
         cards.add(new SetCardInfo("Clockwork Curio", "201", Rarity.RARE, mage.cards.c.ClockworkCurio.class));
+        cards.add(new SetCardInfo("Forgeborn Hellkite", "202", Rarity.MYTHIC, mage.cards.f.ForgebornHellkite.class));
         cards.add(new SetCardInfo("Flickerfowl", "206", Rarity.UNCOMMON, mage.cards.f.Flickerfowl.class));
         cards.add(new SetCardInfo("Stalking Vipercat", "207", Rarity.UNCOMMON, mage.cards.s.StalkingVipercat.class));
         cards.add(new SetCardInfo("Saheeli's Splendor", "208", Rarity.RARE, mage.cards.s.SaheelisSplendor.class));
         cards.add(new SetCardInfo("Second Endeavour", "209", Rarity.UNCOMMON, mage.cards.s.SecondEndeavour.class));
-        cards.add(new SetCardInfo("Aurelia's Renown", "210", Rarity.RARE, mage.cards.a.AureliasRenown.class));
-        cards.add(new SetCardInfo("Midnight Beastcaller", "216", Rarity.RARE, mage.cards.m.MidnightBeastcaller.class));
+        cards.add(new SetCardInfo("Mistforge Cove", "210", Rarity.UNCOMMON, mage.cards.m.MistforgeCove.class));
+        cards.add(new SetCardInfo("Bitterslick Isle", "211", Rarity.UNCOMMON, mage.cards.b.BitterslickIsle.class));
+        cards.add(new SetCardInfo("Steelscourge Summit", "212", Rarity.UNCOMMON, mage.cards.s.SteelscourgeSummit.class));
+        cards.add(new SetCardInfo("Slagslide Peak", "213", Rarity.UNCOMMON, mage.cards.s.SlagslidePeak.class));
+        cards.add(new SetCardInfo("Whispervine Grove", "214", Rarity.UNCOMMON, mage.cards.w.WhispervineGrove.class));
+        cards.add(new SetCardInfo("Aurelia's Renown", "215", Rarity.RARE, mage.cards.a.AureliasRenown.class));
         cards.add(new SetCardInfo("Tasigur, Eternal Tyrant", "224", Rarity.RARE, mage.cards.t.TasigurEternalTyrant.class));
+        cards.add(new SetCardInfo("Midnight Beastcaller", "225", Rarity.RARE, mage.cards.m.MidnightBeastcaller.class));
+        cards.add(new SetCardInfo("Chrome Lotus", "226", Rarity.MYTHIC, mage.cards.c.ChromeLotus.class));
         cards.add(new SetCardInfo("Kolaghan, Thunderous Regent", "227", Rarity.MYTHIC, mage.cards.k.KolaghanThunderousRegent.class));
         cards.add(new SetCardInfo("Fae Court of Tuinvale", "228", Rarity.MYTHIC, mage.cards.f.FaeCourtOfTuinvale.class));
         cards.add(new SetCardInfo("Collected Construction", "229", Rarity.RARE, mage.cards.c.CollectedConstruction.class));
@@ -225,6 +243,7 @@ public class CandourCore extends ExpansionSet {
         cards.add(new SetCardInfo("Lotus of Turmoil", "264", Rarity.MYTHIC, mage.cards.l.LotusOfTurmoil.class));
         cards.add(new SetCardInfo("Demented Recollections", "265", Rarity.UNCOMMON, mage.cards.d.DementedRecollections.class));
         cards.add(new SetCardInfo("Void Shard", "266", Rarity.UNCOMMON, mage.cards.v.VoidShard.class));
+        cards.add(new SetCardInfo("Pyre Thrasher", "267", Rarity.RARE, mage.cards.p.PyreThrasher.class));
         cards.add(new SetCardInfo("Angelic Wrath", "268", Rarity.RARE, mage.cards.a.AngelicWrath.class));
         cards.add(new SetCardInfo("Whispering Henge", "269", Rarity.RARE, mage.cards.w.WhisperingHenge.class));
         cards.add(new SetCardInfo("Ruinous Sands", "270", Rarity.RARE, mage.cards.r.RuinousSands.class));
@@ -294,15 +313,12 @@ public class CandourCore extends ExpansionSet {
         //TO IMPLEMENT
         //Kaya Cassir
         //Liliana, Ambitious Healer
+        //Ajani, Avenger of the Pride
         //Imperial Bloodscribe
         //Nightmarish Ravager
         //Astral Projection
-        //Seething Summoner
-        //Schismatizing Iteration
-        //Filken, Midnight Commander
-        //Arcavios Dueling Peaks
-        //Bloodthirsty Coercion
-        //Basri, Steadfast Paladin
+        //Seeting Summoner
+
 
     }
 }
