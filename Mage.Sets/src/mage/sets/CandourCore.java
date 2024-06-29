@@ -173,6 +173,18 @@ public class CandourCore extends ExpansionSet {
         cards.add(new SetCardInfo("Fateweaver", "151", Rarity.RARE, mage.cards.f.Fateweaver.class));
         cards.add(new SetCardInfo("Otherworldly Contrition", "152", Rarity.UNCOMMON, mage.cards.o.OtherworldlyContrition.class));
         cards.add(new SetCardInfo("Portal to Adarkar", "153", Rarity.RARE, mage.cards.p.PortalToAdarkar.class));
+        cards.add(new SetCardInfo("Harbinger of Equilibrium", "154", Rarity.RARE, mage.cards.h.HarbingerOfEquilibrium.class));;
+        cards.add(new SetCardInfo("Force of Tenacity", "155", Rarity.MYTHIC, mage.cards.f.ForceOfTenacity.class));
+        cards.add(new SetCardInfo("Fireblitz", "156", Rarity.MYTHIC, mage.cards.f.Fireblitz.class));
+        cards.add(new SetCardInfo("Essence Retrieval", "157", Rarity.RARE, mage.cards.e.EssenceRetrieval.class));
+        cards.add(new SetCardInfo("Beastial Majesty", "158", Rarity.RARE, mage.cards.b.BeastialMajesty.class));
+        cards.add(new SetCardInfo("Argivian Exemplar", "159", Rarity.RARE, mage.cards.a.ArgivianExemplar.class));
+        cards.add(new SetCardInfo("Conjured Corruption", "160", Rarity.MYTHIC, mage.cards.c.ConjuredCorruption.class));
+        cards.add(new SetCardInfo("Narcoreaver", "161", Rarity.UNCOMMON, mage.cards.n.Narcoreaver.class));
+        cards.add(new SetCardInfo("Villaintown, Nefarious Confluence", "162", Rarity.MYTHIC, mage.cards.v.VillaintownNefariousConfluence.class));
+        cards.add(new SetCardInfo("Prosperity, City of Opportunity", "163", Rarity.MYTHIC, mage.cards.p.ProsperityCityOfOpportunity.class));
+        cards.add(new SetCardInfo("Cyntha, Lineweaver Adept", "164", Rarity.MYTHIC, mage.cards.c.CynthaLineweaverAdept.class));
+        cards.add(new SetCardInfo("Heliod, Resplendent Omen", "165", Rarity.MYTHIC, mage.cards.h.HeliodResplendentOmen.class));
         cards.add(new SetCardInfo("Feywild Sonneteer", "146", Rarity.RARE, mage.cards.f.FeywildSonneteer.class));
         cards.add(new SetCardInfo("Grimhawk Tracker", "147", Rarity.UNCOMMON, mage.cards.g.GrimhawkTracker.class));
         cards.add(new SetCardInfo("Deadshot Wight", "148", Rarity.MYTHIC, mage.cards.d.DeadshotWight.class));
@@ -184,6 +196,14 @@ public class CandourCore extends ExpansionSet {
         cards.add(new SetCardInfo("Ancestral Ambition", "154", Rarity.UNCOMMON, mage.cards.a.AncestralAmbition.class));
         cards.add(new SetCardInfo("Damned Reunion", "155", Rarity.RARE, mage.cards.d.DamnedReunion.class));
         cards.add(new SetCardInfo("Hedron Valkyrie", "166", Rarity.UNCOMMON, mage.cards.h.HedronValkyrie.class));
+        cards.add(new SetCardInfo("Elspeth Fells the Compleated", "167", Rarity.MYTHIC, mage.cards.e.ElspethFellsTheCompleated.class));
+        cards.add(new SetCardInfo("Magister of Vindication", "168", Rarity.RARE, mage.cards.m.MagisterOfVindication.class));
+        cards.add(new SetCardInfo("Elegant Appropriation", "169", Rarity.MYTHIC, mage.cards.e.ElegantAppropriation.class));
+        cards.add(new SetCardInfo("River Coatl", "170", Rarity.RARE, mage.cards.r.RiverCoatl.class));
+        cards.add(new SetCardInfo("Vitality Cleave", "171", Rarity.UNCOMMON, mage.cards.v.VitalityCleave.class));
+        cards.add(new SetCardInfo("Resolute Fealty", "172", Rarity.RARE, mage.cards.r.ResoluteFealty.class));
+        cards.add(new SetCardInfo("Rhox Warchief", "173", Rarity.RARE, mage.cards.r.RhoxWarchief.class));
+        cards.add(new SetCardInfo("Bittergale Sliver", "174", Rarity.RARE, mage.cards.b.BittergaleSliver.class));
         cards.add(new SetCardInfo("Mana Reshaper", "177", Rarity.MYTHIC, mage.cards.m.ManaReshaper.class));
         cards.add(new SetCardInfo("Splitcaster Mage", "178", Rarity.MYTHIC, mage.cards.s.SplitcasterMage.class));
         cards.add(new SetCardInfo("Agonizing Edict", "190", Rarity.UNCOMMON, mage.cards.a.AgonizingEdict.class));
@@ -317,8 +337,12 @@ public class CandourCore extends ExpansionSet {
         //Imperial Bloodscribe
         //Nightmarish Ravager
         //Astral Projection
-        //Seeting Summoner
-
+        //Seething Summoner
+        //Schismatizing Iteration
+        //Filken, Midnight Commander
+        //Arcavios Dueling Peaks
+        //Bloodthirsty Coercion
+        //Basri, Steadfast Paladin
 
     }
 }
